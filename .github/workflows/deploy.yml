@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -38,9 +38,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Copy index.html to 404.html (Fallback)
+      - name: Copy index.html to 404.html (SPA Fallback)
         run: cp dist/index.html dist/404.html
 
+      # 1. Deploy via GitHub Actions (quando Pages está em "GitHub Actions")
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -52,3 +53,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # 2. Deploy via gh-pages branch (quando Pages está em "Deploy from a branch")
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
