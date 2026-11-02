@@ -1,0 +1,184 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Scale, Check, ShoppingCart, ArrowLeft, Plus } from 'lucide-react';
+import { getAllProducts } from '../services/productService';
+import { formatCurrency } from '../lib/utils';
+import { useCart } from '../contexts/CartContext';
+import type { Product } from '../types';
+
+export function ComparePage() {
+  const allProducts = getAllProducts();
+  const { addItem } = useCart();
+
+  const [selectedIds, setSelectedIds] = useState<string[]>([
+    allProducts[0]?.id || '',
+    allProducts[1]?.id || '',
+    allProducts[2]?.id || '',
+  ]);
+
+  const selectedProducts = selectedIds
+    .map((id) => allProducts.find((p) => p.id === id))
+    .filter(Boolean) as Product[];
+
+  const handleSelect = (index: number, id: string) => {
+    const updated = [...selectedIds];
+    updated[index] = id;
+    setSelectedIds(updated);
+  };
+
+  return (
+    <div className="bg-dahora-ice min-h-screen py-10">
+      <div className="container-dahora">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-dahora-emerald mb-2">
+            <Scale className="w-3.5 h-3.5" />
+            <span>COMPARADOR COMPLETO</span>
+          </div>
+          <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text">
+            Compare Especificações Técnicas Lado a Lado
+          </h1>
+          <p className="text-xs sm:text-sm text-dahora-gray mt-2">
+            Escolha até 3 veículos e avalie potência, autonomia, tempo de recarga e condições comerciais.
+          </p>
+        </div>
+
+        {/* Selectors */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          {[0, 1, 2].map((idx) => (
+            <div key={idx} className="bg-white rounded-2xl border border-dahora-border p-4 shadow-sm">
+              <label className="block text-xs font-bold uppercase tracking-wider text-dahora-gray mb-1.5">
+                Veículo {idx + 1}
+              </label>
+              <select
+                value={selectedIds[idx] || ''}
+                onChange={(e) => handleSelect(idx, e.target.value)}
+                className="w-full input-field text-xs py-2 cursor-pointer font-medium"
+              >
+                {allProducts.map((p) => (
+                  <option key={p.id} value={p.id}>
+                    {p.name} ({formatCurrency(p.promotionalPrice || p.price)})
+                  </option>
+                ))}
+              </select>
+            </div>
+          ))}
+        </div>
+
+        {/* Comparison Table */}
+        <div className="bg-white rounded-3xl border border-dahora-border shadow-card overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs text-left">
+              <thead>
+                <tr className="border-b border-gray-100 bg-gray-50/70">
+                  <th className="p-4 font-bold text-dahora-text w-1/4">Característica</th>
+                  {selectedProducts.map((p) => (
+                    <th key={p.id} className="p-4 text-center w-1/4">
+                      <div className="space-y-1">
+                        <Link
+                          to={`/produto/${p.slug}`}
+                          className="font-display font-bold text-sm text-dahora-text hover:text-dahora-emerald-dark transition-colors block"
+                        >
+                          {p.name}
+                        </Link>
+                        <span className="text-xs font-extrabold text-dahora-emerald block tabular-nums">
+                          {formatCurrency(p.promotionalPrice || p.price)}
+                        </span>
+                        <button
+                          onClick={() => addItem(p)}
+                          className="btn-primary text-[11px] py-1.5 px-3 inline-flex items-center gap-1 mt-2"
+                        >
+                          <ShoppingCart className="w-3 h-3" />
+                          <span>Adicionar</span>
+                        </button>
+                      </div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr>
+                  <td className="p-4 font-semibold text-dahora-gray">Categoria</td>
+                  {selectedProducts.map((p) => (
+                    <td key={p.id} className="p-4 text-center text-dahora-text font-medium">
+                      {p.categoryId === 'cat-motos' && 'Moto Elétrica'}
+                      {p.categoryId === 'cat-scooters' && 'Scooter Elétrica'}
+                      {p.categoryId === 'cat-triciclos' && 'Triciclo Elétrico'}
+                      {p.categoryId === 'cat-patinetes' && 'Patinete Elétrico'}
+                    </td>
+                  ))}
+                </tr>
+                <tr className="bg-gray-50/40">
+                  <td className="p-4 font-semibold text-dahora-gray">Potência do Motor</td>
+                  {selectedProducts.map((p) => (
+                    <td key={p.id} className="p-4 text-center text-dahora-text font-bold">
+                      {p.power || 'Consulte'}
+                    </td>
+                  ))}
+                </tr>
+                <tr>
+                  <td className="p-4 font-semibold text-dahora-gray">Autonomia Estimada</td>
+                  {selectedProducts.map((p) => (
+                    <td key={p.id} className="p-4 text-center text-dahora-emerald font-bold">
+                      {p.range || 'Consulte'}
+                    </td>
+                  ))}
+                </tr>
+                <tr className="bg-gray-50/40">
+                  <td className="p-4 font-semibold text-dahora-gray">Velocidade Máxima</td>
+                  {selectedProducts.map((p) => (
+                    <td key={p.id} className="p-4 text-center text-dahora-text">
+                      {p.maxSpeed || 'Consulte'}
+                    </td>
+                  ))}
+                </tr>
+                <tr>
+                  <td className="p-4 font-semibold text-dahora-gray">Bateria</td>
+                  {selectedProducts.map((p) => (
+                    <td key={p.id} className="p-4 text-center text-dahora-text">
+                      {p.batteryType || 'Consulte'}
+                    </td>
+                  ))}
+                </tr>
+                <tr className="bg-gray-50/40">
+                  <td className="p-4 font-semibold text-dahora-gray">Tempo de Recarga</td>
+                  {selectedProducts.map((p) => (
+                    <td key={p.id} className="p-4 text-center text-dahora-text">
+                      {p.chargingTime || 'Consulte'}
+                    </td>
+                  ))}
+                </tr>
+                <tr>
+                  <td className="p-4 font-semibold text-dahora-gray">Capacidade de Carga</td>
+                  {selectedProducts.map((p) => (
+                    <td key={p.id} className="p-4 text-center text-dahora-text">
+                      {p.loadCapacity || 'Consulte'}
+                    </td>
+                  ))}
+                </tr>
+                <tr className="bg-gray-50/40">
+                  <td className="p-4 font-semibold text-dahora-gray">Garantia</td>
+                  {selectedProducts.map((p) => (
+                    <td key={p.id} className="p-4 text-center text-dahora-text">
+                      {p.warranty}
+                    </td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link
+            to="/veiculos"
+            className="text-xs text-dahora-emerald-dark font-semibold hover:underline inline-flex items-center gap-1"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>Voltar ao catálogo de veículos</span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

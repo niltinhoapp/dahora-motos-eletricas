@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-dahora-text bg-dahora-ice;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-dahora-cyan;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-dahora-emerald/20 text-dahora-text;
+  }
+
+  /* Number input - remove spinners */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  .container-dahora {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 
+           bg-dahora-emerald hover:bg-dahora-emerald-dark 
+           text-white font-semibold
+           px-6 py-3 rounded-xl
+           transition-all duration-200 ease-out
+           hover:shadow-glow-emerald
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dahora-emerald
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none
+           active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-transparent border border-dahora-border hover:border-dahora-gray
+           text-dahora-text font-semibold
+           px-6 py-3 rounded-xl
+           transition-all duration-200 ease-out
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dahora-cyan
+           disabled:opacity-50 disabled:cursor-not-allowed
+           active:scale-[0.98];
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2
+           bg-dahora-black hover:bg-dahora-midnight
+           text-white font-semibold
+           px-6 py-3 rounded-xl
+           transition-all duration-200 ease-out
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dahora-cyan
+           disabled:opacity-50 disabled:cursor-not-allowed
+           active:scale-[0.98];
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2
+           bg-[#25D366] hover:bg-[#20BD5A]
+           text-white font-semibold
+           px-6 py-3 rounded-xl
+           transition-all duration-200 ease-out
+           hover:shadow-lg
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]
+           active:scale-[0.98];
+  }
+
+  .card-product {
+    @apply bg-white rounded-2xl border border-dahora-border
+           shadow-card hover:shadow-card-hover
+           transition-all duration-300 ease-out
+           overflow-hidden;
+  }
+
+  .section-dark {
+    @apply bg-dahora-black text-white;
+  }
+
+  .section-midnight {
+    @apply bg-dahora-midnight text-white;
+  }
+
+  .badge-category {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full
+           text-xs font-medium
+           bg-dahora-cyan/10 text-dahora-cyan;
+  }
+
+  .badge-promo {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full
+           text-xs font-bold
+           bg-dahora-emerald text-white;
+  }
+
+  .badge-unavailable {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full
+           text-xs font-medium
+           bg-red-100 text-red-700;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl
+           border border-dahora-border
+           bg-white text-dahora-text
+           placeholder:text-dahora-gray
+           focus:border-dahora-cyan focus:ring-1 focus:ring-dahora-cyan
+           transition-colors duration-200
+           disabled:bg-gray-50 disabled:cursor-not-allowed;
+  }
+
+  .skeleton {
+    @apply bg-gray-200 rounded-lg animate-pulse;
+  }
+
+  .skeleton-dark {
+    @apply bg-dahora-border-dark rounded-lg animate-pulse;
+  }
+}
+
+@layer utilities {
+  .text-gradient-emerald {
+    @apply bg-gradient-to-r from-dahora-emerald to-dahora-cyan bg-clip-text text-transparent;
+  }
+
+  .price-display {
+    @apply font-sans font-extrabold tracking-tight tabular-nums;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
