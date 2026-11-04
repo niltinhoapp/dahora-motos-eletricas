@@ -44,12 +44,17 @@ export function AdminProductsPage() {
 
       {/* Search Filter */}
       <div className="bg-dahora-surface-dark border border-dahora-border-dark p-4 rounded-2xl flex items-center gap-3">
-        <Search className="w-4 h-4 text-gray-400" />
+        <label htmlFor="admin-product-search" className="cursor-pointer">
+          <Search className="w-4 h-4 text-gray-400" />
+        </label>
         <input
+          id="admin-product-search"
+          name="productSearch"
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Filtrar por nome ou marca..."
+          aria-label="Filtrar veículos cadastrados por nome ou marca"
           className="bg-transparent text-white text-xs w-full focus:outline-none placeholder:text-gray-500"
         />
       </div>

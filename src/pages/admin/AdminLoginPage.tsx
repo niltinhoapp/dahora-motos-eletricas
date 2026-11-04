@@ -43,11 +43,13 @@ export function AdminLoginPage() {
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center gap-1.5">
+            <label htmlFor="admin-password" className="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center gap-1.5 cursor-pointer">
               <Lock className="w-3.5 h-3.5 text-dahora-emerald" />
               <span>Senha de Segurança</span>
             </label>
             <input
+              id="admin-password"
+              name="adminPassword"
               type="password"
               required
               value={password}
@@ -56,6 +58,7 @@ export function AdminLoginPage() {
                 setError('');
               }}
               placeholder="Digite a senha administrativa"
+              aria-label="Senha de segurança administrativa"
               className="w-full px-4 py-3 rounded-xl bg-dahora-midnight border border-dahora-border-dark text-white text-sm focus:border-dahora-cyan focus:outline-none"
             />
             <p className="text-[11px] text-gray-500 mt-1">

@@ -252,8 +252,10 @@ export function CatalogPage() {
                 <h4 className="text-xs font-bold uppercase tracking-wider text-dahora-gray">Faixa de Preço</h4>
                 <div className="grid grid-cols-2 gap-2">
                   <div>
-                    <label className="text-[10px] text-gray-400 block mb-1">Mínimo</label>
+                    <label htmlFor="filter-min-price" className="text-[10px] text-gray-400 block mb-1 cursor-pointer">Mínimo</label>
                     <input
+                      id="filter-min-price"
+                      name="minPrice"
                       type="number"
                       placeholder={`R$ ${priceLimits.min}`}
                       value={minPrice ?? ''}
@@ -262,12 +264,15 @@ export function CatalogPage() {
                         setMinPrice(val);
                         applyFilters({ min: val ? String(val) : undefined });
                       }}
+                      aria-label="Preço mínimo em Reais"
                       className="input-field text-xs py-1.5 px-2.5"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] text-gray-400 block mb-1">Máximo</label>
+                    <label htmlFor="filter-max-price" className="text-[10px] text-gray-400 block mb-1 cursor-pointer">Máximo</label>
                     <input
+                      id="filter-max-price"
+                      name="maxPrice"
                       type="number"
                       placeholder={`R$ ${priceLimits.max}`}
                       value={maxPrice ?? ''}
@@ -276,6 +281,7 @@ export function CatalogPage() {
                         setMaxPrice(val);
                         applyFilters({ max: val ? String(val) : undefined });
                       }}
+                      aria-label="Preço máximo em Reais"
                       className="input-field text-xs py-1.5 px-2.5"
                     />
                   </div>
@@ -284,14 +290,17 @@ export function CatalogPage() {
 
               {/* Availability Filter */}
               <div className="pt-4 border-t border-gray-100">
-                <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-dahora-text">
+                <label htmlFor="filter-available-only" className="flex items-center gap-2 cursor-pointer text-xs font-medium text-dahora-text">
                   <input
+                    id="filter-available-only"
+                    name="availableOnly"
                     type="checkbox"
                     checked={availableOnly}
                     onChange={(e) => {
                       setAvailableOnly(e.target.checked);
                       applyFilters({ disponivel: e.target.checked ? 'true' : undefined });
                     }}
+                    aria-label="Filtrar somente modelos disponíveis em estoque"
                     className="rounded border-gray-300 text-dahora-emerald focus:ring-dahora-emerald accent-dahora-emerald w-4 h-4"
                   />
                   <span>Somente modelos disponíveis</span>
@@ -367,14 +376,17 @@ export function CatalogPage() {
 
               {/* Mobile Availability */}
               <div className="pt-4 border-t">
-                <label className="flex items-center gap-2 text-xs font-medium">
+                <label htmlFor="mobile-filter-available" className="flex items-center gap-2 text-xs font-medium cursor-pointer">
                   <input
+                    id="mobile-filter-available"
+                    name="mobileAvailableOnly"
                     type="checkbox"
                     checked={availableOnly}
                     onChange={(e) => {
                       setAvailableOnly(e.target.checked);
                       applyFilters({ disponivel: e.target.checked ? 'true' : undefined });
                     }}
+                    aria-label="Somente modelos disponíveis"
                     className="accent-dahora-emerald w-4 h-4"
                   />
                   <span>Somente modelos disponíveis</span>

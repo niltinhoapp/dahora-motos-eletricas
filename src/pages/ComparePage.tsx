@@ -47,12 +47,18 @@ export function ComparePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           {[0, 1, 2].map((idx) => (
             <div key={idx} className="bg-white rounded-2xl border border-dahora-border p-4 shadow-sm">
-              <label className="block text-xs font-bold uppercase tracking-wider text-dahora-gray mb-1.5">
+              <label
+                htmlFor={`compare-page-select-${idx}`}
+                className="block text-xs font-bold uppercase tracking-wider text-dahora-gray mb-1.5 cursor-pointer"
+              >
                 Veículo {idx + 1}
               </label>
               <select
+                id={`compare-page-select-${idx}`}
+                name={`compareVehicle${idx}`}
                 value={selectedIds[idx] || ''}
                 onChange={(e) => handleSelect(idx, e.target.value)}
+                aria-label={`Selecionar veículo ${idx + 1} para comparar`}
                 className="w-full input-field text-xs py-2 cursor-pointer font-medium"
               >
                 {allProducts.map((p) => (

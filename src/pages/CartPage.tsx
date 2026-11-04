@@ -205,17 +205,20 @@ export function CartPage() {
 
               {/* Shipping Estimator Form */}
               <div className="pt-3 border-t border-gray-100 space-y-2">
-                <label className="block text-xs font-semibold text-dahora-text flex items-center gap-1.5">
+                <label htmlFor="cart-cep-input" className="block text-xs font-semibold text-dahora-text flex items-center gap-1.5 cursor-pointer">
                   <Truck className="w-3.5 h-3.5 text-dahora-cyan" />
                   <span>Calcular Frete e Prazo</span>
                 </label>
                 <form onSubmit={handleCalculateShipping} className="flex gap-2">
                   <input
+                    id="cart-cep-input"
+                    name="cep"
                     type="text"
                     placeholder="00000-000"
                     maxLength={9}
                     value={cep}
                     onChange={(e) => setCep(formatCEP(e.target.value))}
+                    aria-label="Digite seu CEP para calcular frete"
                     className="input-field text-xs py-2"
                   />
                   <button type="submit" className="btn-secondary text-xs px-4 py-2 shrink-0">
@@ -231,16 +234,19 @@ export function CartPage() {
 
               {/* Coupon Form */}
               <div className="pt-3 border-t border-gray-100 space-y-2">
-                <label className="block text-xs font-semibold text-dahora-text flex items-center gap-1.5">
+                <label htmlFor="cart-coupon-input" className="block text-xs font-semibold text-dahora-text flex items-center gap-1.5 cursor-pointer">
                   <Tag className="w-3.5 h-3.5 text-dahora-emerald" />
                   <span>Cupom de Desconto</span>
                 </label>
                 <form onSubmit={handleApplyCoupon} className="flex gap-2">
                   <input
+                    id="cart-coupon-input"
+                    name="couponCode"
                     type="text"
                     placeholder="Código do cupom"
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
+                    aria-label="Código do cupom de desconto"
                     className="input-field text-xs py-2 uppercase"
                   />
                   <button type="submit" className="btn-secondary text-xs px-4 py-2 shrink-0">

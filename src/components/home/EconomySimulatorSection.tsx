@@ -86,16 +86,22 @@ export function EconomySimulatorSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {/* Km per day */}
               <div>
-                <label className="block text-xs font-semibold text-dahora-text mb-1.5">
+                <label htmlFor="sim-km-per-day" className="block text-xs font-semibold text-dahora-text mb-1.5 cursor-pointer">
                   Quilômetros por dia: <span className="text-dahora-emerald font-bold">{kmPerDay} km</span>
                 </label>
                 <input
+                  id="sim-km-per-day"
+                  name="kmPerDay"
                   type="range"
                   min="5"
                   max="150"
                   step="5"
                   value={kmPerDay}
                   onChange={(e) => setKmPerDay(Number(e.target.value))}
+                  aria-label="Quilômetros percorridos por dia"
+                  aria-valuemin={5}
+                  aria-valuemax={150}
+                  aria-valuenow={kmPerDay}
                   className="w-full accent-dahora-emerald cursor-pointer"
                 />
                 <div className="flex justify-between text-[10px] text-gray-400 mt-1">
@@ -106,16 +112,22 @@ export function EconomySimulatorSection() {
 
               {/* Days per month */}
               <div>
-                <label className="block text-xs font-semibold text-dahora-text mb-1.5">
+                <label htmlFor="sim-days-per-month" className="block text-xs font-semibold text-dahora-text mb-1.5 cursor-pointer">
                   Dias de uso no mês: <span className="text-dahora-emerald font-bold">{daysPerMonth} dias</span>
                 </label>
                 <input
+                  id="sim-days-per-month"
+                  name="daysPerMonth"
                   type="range"
                   min="5"
                   max="31"
                   step="1"
                   value={daysPerMonth}
                   onChange={(e) => setDaysPerMonth(Number(e.target.value))}
+                  aria-label="Dias de uso no mês"
+                  aria-valuemin={5}
+                  aria-valuemax={31}
+                  aria-valuenow={daysPerMonth}
                   className="w-full accent-dahora-emerald cursor-pointer"
                 />
                 <div className="flex justify-between text-[10px] text-gray-400 mt-1">
@@ -126,48 +138,57 @@ export function EconomySimulatorSection() {
 
               {/* Gas Consumption */}
               <div>
-                <label className="block text-xs font-semibold text-dahora-text mb-1.5">
+                <label htmlFor="sim-gas-km-per-liter" className="block text-xs font-semibold text-dahora-text mb-1.5 cursor-pointer">
                   Consumo moto a combustão (km/L)
                 </label>
                 <input
+                  id="sim-gas-km-per-liter"
+                  name="gasKmPerLiter"
                   type="number"
                   min="10"
                   max="60"
                   value={gasKmPerLiter}
                   onChange={(e) => setGasKmPerLiter(Number(e.target.value))}
+                  aria-label="Consumo da moto a combustão em quilômetros por litro"
                   className="input-field text-sm"
                 />
               </div>
 
               {/* Gas Price */}
               <div>
-                <label className="block text-xs font-semibold text-dahora-text mb-1.5">
+                <label htmlFor="sim-gas-price-per-liter" className="block text-xs font-semibold text-dahora-text mb-1.5 cursor-pointer">
                   Preço do litro da gasolina (R$)
                 </label>
                 <input
+                  id="sim-gas-price-per-liter"
+                  name="gasPricePerLiter"
                   type="number"
                   step="0.10"
                   min="3.00"
                   max="12.00"
                   value={gasPricePerLiter}
                   onChange={(e) => setGasPricePerLiter(Number(e.target.value))}
+                  aria-label="Preço do litro da gasolina em Reais"
                   className="input-field text-sm"
                 />
               </div>
 
               {/* Electric Consumption */}
               <div>
-                <label className="block text-xs font-semibold text-dahora-text mb-1.5 flex items-center justify-between">
+                <label htmlFor="sim-electric-kwh-per-km" className="block text-xs font-semibold text-dahora-text mb-1.5 flex items-center justify-between cursor-pointer">
                   <span>Consumo elétrico estimado</span>
                   <span className="text-[10px] text-gray-400">kWh/km</span>
                 </label>
                 <input
+                  id="sim-electric-kwh-per-km"
+                  name="electricKwhPerKm"
                   type="number"
                   step="0.005"
                   min="0.010"
                   max="0.080"
                   value={electricKwhPerKm}
                   onChange={(e) => setElectricKwhPerKm(Number(e.target.value))}
+                  aria-label="Consumo elétrico estimado em kWh por quilômetro"
                   className="input-field text-sm"
                 />
                 <span className="text-[10px] text-gray-400 mt-0.5 block">
@@ -177,17 +198,20 @@ export function EconomySimulatorSection() {
 
               {/* Electric Tariff */}
               <div>
-                <label className="block text-xs font-semibold text-dahora-text mb-1.5 flex items-center justify-between">
+                <label htmlFor="sim-kwh-rate" className="block text-xs font-semibold text-dahora-text mb-1.5 flex items-center justify-between cursor-pointer">
                   <span>Tarifa de energia elétrica</span>
                   <span className="text-[10px] text-gray-400">R$/kWh</span>
                 </label>
                 <input
+                  id="sim-kwh-rate"
+                  name="kwhRate"
                   type="number"
                   step="0.05"
                   min="0.40"
                   max="2.00"
                   value={kwhRate}
                   onChange={(e) => setKwhRate(Number(e.target.value))}
+                  aria-label="Tarifa de energia elétrica em Reais por kWh"
                   className="input-field text-sm"
                 />
                 <span className="text-[10px] text-gray-400 mt-0.5 block">

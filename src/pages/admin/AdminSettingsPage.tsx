@@ -39,74 +39,92 @@ export function AdminSettingsPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-xs">
             <div>
-              <label className="block text-gray-300 font-semibold mb-1">
+              <label htmlFor="settings-store-name" className="block text-gray-300 font-semibold mb-1 cursor-pointer">
                 Nome Comercial da Loja
               </label>
               <input
+                id="settings-store-name"
+                name="storeName"
                 type="text"
                 value={storeName}
                 onChange={(e) => setStoreName(e.target.value)}
+                aria-label="Nome comercial da loja"
                 className="w-full bg-dahora-midnight border border-dahora-border-dark rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-dahora-cyan"
               />
             </div>
 
             <div>
-              <label className="block text-gray-300 font-semibold mb-1">
+              <label htmlFor="settings-cnpj" className="block text-gray-300 font-semibold mb-1 cursor-pointer">
                 CNPJ
               </label>
               <input
+                id="settings-cnpj"
+                name="cnpj"
                 type="text"
                 value={cnpj}
                 onChange={(e) => setCnpj(e.target.value)}
+                aria-label="Número do CNPJ"
                 className="w-full bg-dahora-midnight border border-dahora-border-dark rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-dahora-cyan"
               />
             </div>
 
             <div>
-              <label className="block text-gray-300 font-semibold mb-1">
+              <label htmlFor="settings-whatsapp" className="block text-gray-300 font-semibold mb-1 cursor-pointer">
                 WhatsApp Oficial de Atendimento
               </label>
               <input
+                id="settings-whatsapp"
+                name="whatsapp"
                 type="text"
                 placeholder="5514998877886"
                 value={whatsapp}
                 onChange={(e) => setWhatsapp(e.target.value)}
+                aria-label="Número oficial do WhatsApp de atendimento"
                 className="w-full bg-dahora-midnight border border-dahora-border-dark rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-dahora-cyan"
               />
             </div>
 
             <div>
-              <label className="block text-gray-300 font-semibold mb-1">
+              <label htmlFor="settings-phone" className="block text-gray-300 font-semibold mb-1 cursor-pointer">
                 Telefone de Contato
               </label>
               <input
+                id="settings-phone"
+                name="phone"
                 type="text"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+                aria-label="Telefone de contato da loja"
                 className="w-full bg-dahora-midnight border border-dahora-border-dark rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-dahora-cyan"
               />
             </div>
 
             <div className="sm:col-span-2">
-              <label className="block text-gray-300 font-semibold mb-1">
+              <label htmlFor="settings-email" className="block text-gray-300 font-semibold mb-1 cursor-pointer">
                 E-mail de Contato
               </label>
               <input
+                id="settings-email"
+                name="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                aria-label="E-mail de contato da loja"
                 className="w-full bg-dahora-midnight border border-dahora-border-dark rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-dahora-cyan"
               />
             </div>
 
             <div className="sm:col-span-2">
-              <label className="block text-gray-300 font-semibold mb-1">
+              <label htmlFor="settings-announcement" className="block text-gray-300 font-semibold mb-1 cursor-pointer">
                 Mensagem da Barra Superior (Anúncio)
               </label>
               <input
+                id="settings-announcement"
+                name="announcement"
                 type="text"
                 value={announcement}
                 onChange={(e) => setAnnouncement(e.target.value)}
+                aria-label="Texto de anúncio da barra superior"
                 className="w-full bg-dahora-midnight border border-dahora-border-dark rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-dahora-cyan"
               />
             </div>

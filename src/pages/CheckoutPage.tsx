@@ -218,14 +218,17 @@ export function CheckoutPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="sm:col-span-2">
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">
+                      <label htmlFor="checkout-full-name" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">
                         Nome Completo *
                       </label>
                       <input
+                        id="checkout-full-name"
+                        name="fullName"
                         type="text"
                         value={formData.fullName}
                         onChange={(e) => handleInputChange('fullName', e.target.value)}
                         placeholder="Seu nome completo"
+                        aria-label="Nome completo para a Nota Fiscal"
                         className="input-field text-sm"
                       />
                       {formErrors.fullName && (
@@ -234,27 +237,33 @@ export function CheckoutPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">
+                      <label htmlFor="checkout-cpf" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">
                         CPF (para Nota Fiscal) *
                       </label>
                       <input
+                        id="checkout-cpf"
+                        name="cpf"
                         type="text"
                         value={formData.cpf}
                         onChange={(e) => handleInputChange('cpf', e.target.value)}
                         placeholder="000.000.000-00"
+                        aria-label="CPF para emissão da Nota Fiscal"
                         className="input-field text-sm"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">
+                      <label htmlFor="checkout-phone" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">
                         Telefone / WhatsApp *
                       </label>
                       <input
+                        id="checkout-phone"
+                        name="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange('phone', formatPhone(e.target.value))}
                         placeholder="(14) 99999-9999"
+                        aria-label="Telefone ou WhatsApp com DDD"
                         className="input-field text-sm"
                       />
                       {formErrors.phone && (
@@ -263,14 +272,17 @@ export function CheckoutPage() {
                     </div>
 
                     <div className="sm:col-span-2">
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">
+                      <label htmlFor="checkout-email" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">
                         E-mail de Notificação *
                       </label>
                       <input
+                        id="checkout-email"
+                        name="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => handleInputChange('email', e.target.value)}
                         placeholder="seuemail@exemplo.com"
+                        aria-label="E-mail para confirmação e acompanhamento do pedido"
                         className="input-field text-sm"
                       />
                       {formErrors.email && (
@@ -307,13 +319,16 @@ export function CheckoutPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">CEP *</label>
+                      <label htmlFor="checkout-cep" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">CEP *</label>
                       <input
+                        id="checkout-cep"
+                        name="cep"
                         type="text"
                         value={formData.cep}
                         onChange={(e) => handleInputChange('cep', formatCEP(e.target.value))}
                         placeholder="00000-000"
                         maxLength={9}
+                        aria-label="CEP para entrega"
                         className="input-field text-sm"
                       />
                       {formErrors.cep && (
@@ -322,12 +337,15 @@ export function CheckoutPage() {
                     </div>
 
                     <div className="sm:col-span-2">
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">Rua / Logradouro *</label>
+                      <label htmlFor="checkout-street" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">Rua / Logradouro *</label>
                       <input
+                        id="checkout-street"
+                        name="street"
                         type="text"
                         value={formData.street}
                         onChange={(e) => handleInputChange('street', e.target.value)}
                         placeholder="Rua, Avenida, Praça..."
+                        aria-label="Rua ou logradouro para entrega"
                         className="input-field text-sm"
                       />
                       {formErrors.street && (
@@ -336,12 +354,15 @@ export function CheckoutPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">Número *</label>
+                      <label htmlFor="checkout-number" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">Número *</label>
                       <input
+                        id="checkout-number"
+                        name="number"
                         type="text"
                         value={formData.number}
                         onChange={(e) => handleInputChange('number', e.target.value)}
                         placeholder="123"
+                        aria-label="Número do endereço"
                         className="input-field text-sm"
                       />
                       {formErrors.number && (
@@ -350,23 +371,29 @@ export function CheckoutPage() {
                     </div>
 
                     <div className="sm:col-span-2">
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">Complemento</label>
+                      <label htmlFor="checkout-complement" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">Complemento</label>
                       <input
+                        id="checkout-complement"
+                        name="complement"
                         type="text"
                         value={formData.complement}
                         onChange={(e) => handleInputChange('complement', e.target.value)}
                         placeholder="Apto, Bloco, etc."
+                        aria-label="Complemento do endereço (opcional)"
                         className="input-field text-sm"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">Bairro *</label>
+                      <label htmlFor="checkout-neighborhood" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">Bairro *</label>
                       <input
+                        id="checkout-neighborhood"
+                        name="neighborhood"
                         type="text"
                         value={formData.neighborhood}
                         onChange={(e) => handleInputChange('neighborhood', e.target.value)}
                         placeholder="Centro"
+                        aria-label="Bairro de entrega"
                         className="input-field text-sm"
                       />
                       {formErrors.neighborhood && (
@@ -375,21 +402,27 @@ export function CheckoutPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">Cidade *</label>
+                      <label htmlFor="checkout-city" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">Cidade *</label>
                       <input
+                        id="checkout-city"
+                        name="city"
                         type="text"
                         value={formData.city}
                         onChange={(e) => handleInputChange('city', e.target.value)}
                         placeholder="Macatuba"
+                        aria-label="Cidade de entrega"
                         className="input-field text-sm"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-dahora-text mb-1">Estado *</label>
+                      <label htmlFor="checkout-state" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">Estado *</label>
                       <select
+                        id="checkout-state"
+                        name="state"
                         value={formData.state}
                         onChange={(e) => handleInputChange('state', e.target.value)}
+                        aria-label="Estado da entrega"
                         className="input-field text-sm cursor-pointer"
                       >
                         <option value="SP">São Paulo (SP)</option>

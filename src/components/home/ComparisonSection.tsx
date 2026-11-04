@@ -46,12 +46,18 @@ export function ComparisonSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           {[0, 1, 2].map((colIndex) => (
             <div key={colIndex} className="bg-dahora-surface-dark border border-dahora-border-dark p-3 rounded-2xl">
-              <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
+              <label
+                htmlFor={`compare-vehicle-select-${colIndex}`}
+                className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 cursor-pointer"
+              >
                 Veículo {colIndex + 1}
               </label>
               <select
+                id={`compare-vehicle-select-${colIndex}`}
+                name={`compareVehicle${colIndex}`}
                 value={selectedIds[colIndex] || ''}
                 onChange={(e) => handleSelectProduct(colIndex, e.target.value)}
+                aria-label={`Selecionar veículo ${colIndex + 1} para comparar`}
                 className="w-full bg-dahora-midnight border border-dahora-border-dark rounded-xl px-3 py-2 text-xs font-medium text-white focus:outline-none focus:border-dahora-cyan"
               >
                 {allProducts.map((p) => (

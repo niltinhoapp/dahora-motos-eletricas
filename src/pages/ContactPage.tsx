@@ -119,58 +119,70 @@ export function ContactPage() {
                 </h3>
 
                 <div>
-                  <label className="block text-xs font-semibold text-dahora-text mb-1">
+                  <label htmlFor="contact-name" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">
                     Nome Completo *
                   </label>
                   <input
+                    id="contact-name"
+                    name="name"
                     type="text"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Seu nome"
+                    aria-label="Seu nome completo"
                     className="input-field text-sm"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-dahora-text mb-1">
+                    <label htmlFor="contact-email" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">
                       E-mail *
                     </label>
                     <input
+                      id="contact-email"
+                      name="email"
                       type="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="seu@email.com"
+                      aria-label="Seu endereço de e-mail"
                       className="input-field text-sm"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-dahora-text mb-1">
+                    <label htmlFor="contact-phone" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">
                       Telefone / WhatsApp
                     </label>
                     <input
+                      id="contact-phone"
+                      name="phone"
                       type="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="(14) 99999-9999"
+                      aria-label="Seu telefone ou WhatsApp com DDD"
                       className="input-field text-sm"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-dahora-text mb-1">
+                  <label htmlFor="contact-message" className="block text-xs font-semibold text-dahora-text mb-1 cursor-pointer">
                     Mensagem ou Dúvida *
                   </label>
                   <textarea
+                    id="contact-message"
+                    name="message"
                     required
                     rows={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Como podemos te ajudar hoje?"
+                    aria-label="Digite sua mensagem ou dúvida"
                     className="input-field text-sm resize-none"
                   />
                 </div>
