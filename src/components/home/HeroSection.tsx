@@ -76,7 +76,7 @@ export function HeroSection() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-white">2 Lojas Físicas</h4>
+                  <span className="text-xs font-bold text-white block">2 Lojas Físicas</span>
                   <p className="text-[11px] text-gray-400">Macatuba, SP</p>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export function HeroSection() {
                   <Wrench className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-white">Preparação</h4>
+                  <span className="text-xs font-bold text-white block">Preparação</span>
                   <p className="text-[11px] text-gray-400">Montado e revisado</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export function HeroSection() {
                   <Truck className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-white">Entrega</h4>
+                  <span className="text-xs font-bold text-white block">Entrega</span>
                   <p className="text-[11px] text-gray-400">Envio para todo o Brasil</p>
                 </div>
               </div>
@@ -117,9 +117,9 @@ export function HeroSection() {
                 <span className="text-[10px] font-mono uppercase tracking-widest text-dahora-cyan bg-dahora-black/80 px-2.5 py-1 rounded-md backdrop-blur-sm border border-dahora-cyan/30">
                   DESTAQUE DA CONCESSIONÁRIA
                 </span>
-                <h3 className="font-display font-extrabold text-xl text-white">
+                <p className="font-display font-extrabold text-xl text-white">
                   MOTO ELÉTRICA E80 SPEED
-                </h3>
+                </p>
                 <div className="flex items-center gap-2 text-xs">
                   <span className="text-dahora-emerald font-extrabold text-lg tabular-nums">
                     R$ 10.900

@@ -47,7 +47,11 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <article className="card-product group flex flex-col h-full bg-white relative">
       {/* Visual media container */}
-      <Link to={`/produto/${product.slug}`} className="block relative aspect-[4/3] bg-dahora-midnight overflow-hidden border-b border-dahora-border">
+      <Link
+        to={`/produto/${product.slug}`}
+        aria-label={`Ver detalhes de ${product.name}`}
+        className="block relative aspect-[4/3] bg-dahora-midnight overflow-hidden border-b border-dahora-border"
+      >
         {mainImage && !imgError ? (
           <img
             src={mainImage}
@@ -108,7 +112,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
 
           <h3 className="font-display font-bold text-base text-dahora-text group-hover:text-emerald-700 transition-colors line-clamp-1 mb-2">
-            <Link to={`/produto/${product.slug}`}>
+            <Link to={`/produto/${product.slug}`} aria-label={`Ver especificações de ${product.name}`}>
               {product.name}
             </Link>
           </h3>

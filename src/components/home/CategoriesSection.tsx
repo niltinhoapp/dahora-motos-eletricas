@@ -18,6 +18,7 @@ export function CategoriesSection() {
           </div>
           <Link
             to="/veiculos"
+            aria-label="Ver todos os 23 veículos do catálogo"
             className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
           >
             <span>Ver todos os 23 veículos</span>
@@ -31,6 +32,7 @@ export function CategoriesSection() {
             <Link
               key={category.id}
               to={`/categoria/${category.slug}`}
+              aria-label={`Ver todos os modelos de ${category.name}`}
               className="group bg-white rounded-3xl border border-dahora-border overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>

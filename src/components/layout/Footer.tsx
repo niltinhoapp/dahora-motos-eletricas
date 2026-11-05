@@ -26,6 +26,7 @@ export function Footer() {
   return (
     <footer className="bg-dahora-black text-gray-300 border-t border-dahora-border-dark pt-16 pb-12">
       <div className="container-dahora">
+        <h2 className="sr-only">Informações da Concessionária e Navegação</h2>
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-dahora-border-dark">
           {/* Column 1: Brand Info (2 cols) */}
