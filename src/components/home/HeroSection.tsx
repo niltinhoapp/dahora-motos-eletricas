@@ -7,7 +7,7 @@ import {
   Truck,
   Sparkles,
   MapPin,
-  Gift
+  Flame
 } from 'lucide-react';
 import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { buildWhatsAppUrl } from '../../lib/utils';
@@ -41,10 +41,10 @@ export function HeroSection() {
 
               <Link
                 to="/black-friday"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-red-600/30 to-amber-600/30 border border-red-500/50 text-red-200 text-xs font-bold hover:scale-105 transition-all shadow-md"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-600/30 to-amber-600/30 border border-red-500/50 text-red-200 text-xs font-black hover:scale-105 transition-all shadow-md"
               >
-                <Gift className="w-3.5 h-3.5 text-red-400 animate-pulse" />
-                <span>ESPECIAL NATAL & BLACK FRIDAY: TRICICLO INFANTIL</span>
+                <Flame className="w-3.5 h-3.5 text-red-400 fill-red-400 animate-pulse" />
+                <span>BLACK FRIDAY: TRICICLO DRIFT INFANTIL [VER OFERTA]</span>
                 <ArrowRight className="w-3 h-3 text-amber-300" />
               </Link>
             </div>

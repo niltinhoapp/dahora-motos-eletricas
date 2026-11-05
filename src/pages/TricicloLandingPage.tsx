@@ -8,7 +8,6 @@ import {
   Clock,
   Star,
   ArrowRight,
-  Gift,
   Check,
   ChevronDown,
   Volume2,
@@ -16,16 +15,13 @@ import {
   Gauge,
   Flame,
   Award,
-  Lock,
-  ThumbsUp,
   MapPin,
-  Calendar,
   Layers,
+  Tag,
 } from 'lucide-react';
 import { WhatsAppIcon } from '../components/common/WhatsAppIcon';
 import { demoProducts } from '../data/demo';
 
-// Produto principal da campanha
 const driftProduct = demoProducts.find((p) => p.slug === 'drift-201-mini-350w') || demoProducts[2];
 
 const colorsList = [
@@ -39,7 +35,7 @@ const colorsList = [
   {
     id: 'nitro-red',
     name: 'Vermelho Nitro Spider',
-    badge: 'Sucesso Infantil',
+    badge: 'Destaque Black Friday',
     image: 'https://static.wixstatic.com/media/acc37b_a516ab446c0741e6bd08647d7a0a19b8~mv2.jpeg/v1/fit/w_800,h_800,q_90/file.jpg',
     colorHex: '#dc2626',
   },
@@ -63,12 +59,12 @@ export function TricicloLandingPage() {
   const [selectedColor, setSelectedColor] = useState(colorsList[0]);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // Countdown timer para o fim da oferta de Natal / Black Friday
+  // Countdown timer para o fim do lote de Black Friday
   const [timeLeft, setTimeLeft] = useState({
-    days: 14,
-    hours: 8,
-    minutes: 42,
-    seconds: 19,
+    days: 7,
+    hours: 14,
+    minutes: 36,
+    seconds: 45,
   });
 
   useEffect(() => {
@@ -85,28 +81,29 @@ export function TricicloLandingPage() {
   }, []);
 
   const whatsappMessage = encodeURIComponent(
-    `Olá Da Hora Motos! Vi a oferta especial de Black Friday & Natal do TRICICLO ELÉTRICO DRIFT MINI (${selectedColor.name}) por R$ 1.899 no Pix (ou 12x de R$ 166,58). Gostaria de reservar para entrega com Frete Grátis até 150km ou retirada em Macatuba!`
+    `Olá Da Hora Motos! Vi a oferta oficial de BLACK FRIDAY do TRICICLO ELÉTRICO DRIFT MINI (${selectedColor.name}) por R$ 1.899 no Pix (ou 12x de R$ 166,58 sem juros). Gostaria de garantir minha unidade com Frete Grátis até 150km!`
   );
   const whatsappUrl = `https://wa.me/5514998877886?text=${whatsappMessage}`;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-dahora-emerald selection:text-slate-950">
-      {/* 1. TOPO DA OFERTA / URGÊNCIA */}
-      <div className="bg-gradient-to-r from-red-700 via-dahora-navy to-emerald-800 text-white py-2.5 px-4 text-center text-xs md:text-sm font-bold tracking-wide border-b border-red-500/40 shadow-lg">
-        <div className="container-custom flex flex-wrap items-center justify-center gap-2">
-          <span className="inline-flex items-center gap-1.5 bg-red-600 text-white px-2 py-0.5 rounded-full text-[11px] uppercase tracking-wider animate-pulse">
-            <Flame className="w-3.5 h-3.5" /> Black Friday & Natal 2026
+      
+      {/* 1. TOPO DA BLACK FRIDAY / URGÊNCIA */}
+      <div className="bg-gradient-to-r from-red-700 via-slate-950 to-red-800 text-white py-2.5 px-4 sm:px-6 lg:px-8 text-center text-xs md:text-sm font-bold tracking-wide border-b border-red-500/50 shadow-lg">
+        <div className="container-dahora flex flex-wrap items-center justify-center gap-2">
+          <span className="inline-flex items-center gap-1.5 bg-red-600 text-white px-2.5 py-0.5 rounded-full text-[11px] uppercase tracking-wider font-black animate-pulse">
+            <Flame className="w-3.5 h-3.5 fill-white" /> BLACK FRIDAY OFICIAL 2026
           </span>
           <span>
-            🎁 Garanta o presente dos sonhos antes que esgote o lote de fim de ano! <strong>Frete Grátis até 150 km</strong> com veículo 100% montado.
+            ⚡ Desconto histórico de <strong>R$ 591,00</strong> no Triciclo Drift Infantil • <strong>Frete Grátis até 150 km</strong> • Veículo 100% Montado!
           </span>
         </div>
       </div>
 
       {/* 2. HEADER SIMPLIFICADO DE ALTA CONVERSÃO */}
-      <header className="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 py-3.5 px-4">
-        <div className="container-custom flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group" aria-label="Voltar para a página inicial da Da Hora Motos">
+      <header className="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 py-3.5 px-4 sm:px-6 lg:px-8">
+        <div className="container-dahora flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2.5 group" aria-label="Voltar para a página inicial da Da Hora Motos">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-dahora-emerald to-teal-500 flex items-center justify-center shadow-glow-emerald">
               <Zap className="w-5 h-5 text-slate-950 font-black" />
             </div>
@@ -114,23 +111,23 @@ export function TricicloLandingPage() {
               <span className="text-base md:text-lg font-black tracking-tight text-white block leading-tight">
                 DA HORA <span className="text-dahora-emerald">MOTOS</span>
               </span>
-              <span className="text-[10px] text-slate-400 uppercase tracking-widest block font-semibold">
-                Concessionária Digital • Macatuba/SP
+              <span className="text-[10px] text-red-400 uppercase tracking-widest block font-bold">
+                Black Friday • Loja 2 Vendas Macatuba
               </span>
             </div>
           </Link>
 
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex flex-col text-right">
-              <span className="text-xs text-slate-400 font-medium">Dúvidas? Fale com a Loja 2:</span>
+              <span className="text-xs text-slate-400 font-medium">Plantão Black Friday:</span>
               <span className="text-xs font-bold text-dahora-emerald">(14) 99887-7886</span>
             </div>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-slate-950 font-bold text-xs md:text-sm py-2 px-4 rounded-xl shadow-lg transition-transform hover:scale-105 active:scale-95"
-              aria-label="Falar com especialista no WhatsApp sobre o Triciclo Infantil"
+              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-slate-950 font-black text-xs md:text-sm py-2 px-4 rounded-xl shadow-lg transition-transform hover:scale-105 active:scale-95"
+              aria-label="Falar com especialista no WhatsApp sobre a Black Friday"
             >
               <WhatsAppIcon className="w-4 h-4 text-slate-950" />
               <span>Chamar no WhatsApp</span>
@@ -139,63 +136,64 @@ export function TricicloLandingPage() {
         </div>
       </header>
 
-      {/* 3. HERO SECTION - EMOÇÃO DA CRIANÇA + SEGURANÇA DOS PAIS */}
-      <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden">
-        {/* Glow de fundo */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-dahora-emerald/15 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute top-40 right-10 w-[300px] h-[300px] bg-red-600/10 blur-[100px] rounded-full pointer-events-none" />
+      {/* 3. HERO SECTION - BLACK FRIDAY EXCLUSIVA */}
+      <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden px-4 sm:px-6 lg:px-8">
+        {/* Ambient Glows */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-red-600/15 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-40 right-10 w-[300px] h-[300px] bg-dahora-emerald/10 blur-[100px] rounded-full pointer-events-none" />
 
-        <div className="container-custom relative">
+        <div className="container-dahora relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Coluna de Texto e Oferta */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-red-500/15 border border-red-500/30 text-red-400 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                <Gift className="w-4 h-4 text-red-400" />
-                <span>O Maior Sucesso de Natal & Black Friday para Crianças e Jovens</span>
+              <div className="inline-flex items-center gap-2 bg-red-500/15 border border-red-500/40 text-red-400 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
+                <Tag className="w-3.5 h-3.5 text-red-400" />
+                <span>O Maior Sucesso de Vendas da Black Friday para Menores</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.15] tracking-tight">
-                O Presente Inesquecível de Natal: <br className="hidden sm:inline" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-dahora-emerald via-teal-300 to-dahora-gold">
+                Black Friday Oficial: <br className="hidden sm:inline" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-amber-400 to-dahora-emerald">
                   Triciclo Elétrico Drift 360°
                 </span>
               </h1>
 
               <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Pura diversão para seu filho com a tranquilidade que você exige: <strong>3 rodas de estabilidade total (não tomba)</strong>, 
-                3 níveis de velocidade com chave limitadora para os pais, farol de LED, som Bluetooth e <strong>bateria recarregável em qualquer tomada comum de casa</strong>.
+                Pura diversão para crianças e adolescentes com a segurança e tranquilidade que os pais procuram: 
+                <strong> 3 rodas de alta estabilidade (não tomba)</strong>, 3 velocidades com chave limitadora para os pais, 
+                farol de LED, som Bluetooth e <strong>bateria recarregável em tomada comum</strong>.
               </p>
 
-              {/* Box de Preço e Condições */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl relative overflow-hidden max-w-xl mx-auto lg:mx-0">
-                <div className="absolute top-0 right-0 bg-gradient-to-l from-red-600 to-amber-600 text-white text-[11px] font-extrabold uppercase py-1 px-4 rounded-bl-xl shadow-md">
-                  Economize R$ 591 hoje
+              {/* Box de Preço Black Friday */}
+              <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-red-500/30 shadow-2xl relative overflow-hidden max-w-xl mx-auto lg:mx-0">
+                <div className="absolute top-0 right-0 bg-gradient-to-l from-red-600 to-amber-600 text-white text-[11px] font-black uppercase py-1 px-4 rounded-bl-xl shadow-md">
+                  Economia de R$ 591,00
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-3">
                   <span className="text-sm text-slate-400 line-through">De R$ 2.490,00</span>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-xs text-dahora-emerald font-semibold uppercase">Por apenas</span>
+                    <span className="text-xs text-red-400 font-bold uppercase">Preço Black Friday:</span>
                     <span className="text-3xl sm:text-4xl font-black text-white">R$ 1.899,00</span>
-                    <span className="text-xs font-bold text-dahora-emerald bg-dahora-emerald/10 px-2 py-0.5 rounded-md">à vista no Pix</span>
+                    <span className="text-xs font-bold text-dahora-emerald bg-dahora-emerald/10 px-2 py-0.5 rounded-md">no Pix</span>
                   </div>
                 </div>
 
                 <p className="text-sm text-slate-300 font-medium">
-                  Ou parcelado em até <strong className="text-white">12x de R$ 166,58 sem juros</strong> no cartão de crédito.
+                  Ou parcelado em até <strong className="text-white">12x de R$ 166,58 sem juros</strong> em todos os cartões.
                 </p>
 
-                {/* Contador Regressivo */}
+                {/* Contador Regressivo da Black Friday */}
                 <div className="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between flex-wrap gap-2 text-xs text-slate-400">
-                  <span className="flex items-center gap-1.5 font-semibold text-amber-400">
-                    <Clock className="w-4 h-4" /> Lote Promocional Encerra em:
+                  <span className="flex items-center gap-1.5 font-bold text-red-400">
+                    <Clock className="w-4 h-4" /> Lote Black Friday Encerra em:
                   </span>
                   <div className="flex items-center gap-1.5 font-mono text-white font-bold">
-                    <span className="bg-slate-800 px-2 py-1 rounded border border-slate-700">{String(timeLeft.days).padStart(2, '0')}d</span> :
-                    <span className="bg-slate-800 px-2 py-1 rounded border border-slate-700">{String(timeLeft.hours).padStart(2, '0')}h</span> :
-                    <span className="bg-slate-800 px-2 py-1 rounded border border-slate-700">{String(timeLeft.minutes).padStart(2, '0')}m</span> :
-                    <span className="bg-slate-800 px-2 py-1 rounded border border-slate-700 text-red-400">{String(timeLeft.seconds).padStart(2, '0')}s</span>
+                    <span className="bg-slate-800 px-2.5 py-1 rounded border border-slate-700">{String(timeLeft.days).padStart(2, '0')}d</span> :
+                    <span className="bg-slate-800 px-2.5 py-1 rounded border border-slate-700">{String(timeLeft.hours).padStart(2, '0')}h</span> :
+                    <span className="bg-slate-800 px-2.5 py-1 rounded border border-slate-700">{String(timeLeft.minutes).padStart(2, '0')}m</span> :
+                    <span className="bg-slate-800 px-2.5 py-1 rounded border border-slate-700 text-red-400">{String(timeLeft.seconds).padStart(2, '0')}s</span>
                   </div>
                 </div>
 
@@ -206,39 +204,39 @@ export function TricicloLandingPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-slate-950 font-black text-sm sm:text-base py-3.5 px-6 rounded-xl shadow-glow-emerald transition-all transform hover:scale-[1.02] active:scale-[0.98]"
-                    aria-label="Garantir Triciclo Elétrico pelo WhatsApp com desconto"
+                    aria-label="Garantir Triciclo na Black Friday pelo WhatsApp"
                   >
                     <WhatsAppIcon className="w-5 h-5 text-slate-950" />
-                    <span>GARANTIR NO WHATSAPP</span>
+                    <span>GARANTIR PREÇO BLACK FRIDAY</span>
                   </a>
 
                   <Link
                     to="/produto/drift-201-mini-350w"
                     className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm py-3.5 px-6 rounded-xl border border-slate-700 transition-colors"
                   >
-                    <span>Ver Ficha Completa</span>
+                    <span>Ficha Técnica</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
 
-              {/* Selos de Confiança Imediatos */}
+              {/* 4 Pilares de Confiança com Margem Confortável */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-left">
                 <div className="flex items-center gap-2 text-xs text-slate-300">
                   <Truck className="w-4 h-4 text-dahora-emerald shrink-0" />
                   <span><strong>Frete Grátis</strong> até 150 km</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-slate-300">
-                  <Award className="w-4 h-4 text-dahora-gold shrink-0" />
-                  <span><strong>100% Montado</strong> & Pronto</span>
+                  <Award className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span><strong>100% Montado</strong> & Revisado</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-slate-300">
                   <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0" />
                   <span><strong>Garantia & Peças</strong> na Loja 1</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-slate-300">
-                  <Zap className="w-4 h-4 text-amber-400 shrink-0" />
-                  <span><strong>Bateria Inclusa</strong> + Carregador</span>
+                  <Zap className="w-4 h-4 text-dahora-gold shrink-0" />
+                  <span><strong>Bateria Inclusa</strong> Bivolt</span>
                 </div>
               </div>
 
@@ -246,14 +244,14 @@ export function TricicloLandingPage() {
 
             {/* Coluna da Imagem e Seletor de Cores */}
             <div className="lg:col-span-5">
-              <div className="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-2xl relative">
+              <div className="bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-2xl relative">
                 
                 {/* Badge da Cor Ativa */}
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs uppercase tracking-wider font-bold text-slate-400">
-                    Cor Selecionada: <strong className="text-white">{selectedColor.name}</strong>
+                    Cor: <strong className="text-white">{selectedColor.name}</strong>
                   </span>
-                  <span className="bg-dahora-emerald/15 text-dahora-emerald border border-dahora-emerald/30 text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+                  <span className="bg-red-500/15 text-red-400 border border-red-500/30 text-[11px] font-bold px-2.5 py-0.5 rounded-full">
                     {selectedColor.badge}
                   </span>
                 </div>
@@ -262,19 +260,19 @@ export function TricicloLandingPage() {
                 <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center group">
                   <img
                     src={selectedColor.image}
-                    alt={`Triciclo Elétrico Drift Infantil - ${selectedColor.name}`}
+                    alt={`Triciclo Elétrico Drift Infantil Black Friday - ${selectedColor.name}`}
                     className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
                   />
                   <div className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-[11px] font-semibold text-slate-300 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-dahora-gold" />
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                     <span>Luzes de LED + Som Bluetooth Ativo</span>
                   </div>
                 </div>
 
                 {/* Seletor de Cores Miniaturas */}
                 <div className="mt-4">
-                  <p className="text-xs font-semibold text-slate-400 mb-2">Escolha a cor para o presente:</p>
+                  <p className="text-xs font-semibold text-slate-400 mb-2">Escolha sua cor na Black Friday:</p>
                   <div className="grid grid-cols-4 gap-2">
                     {colorsList.map((color) => {
                       const isSelected = selectedColor.id === color.id;
@@ -302,12 +300,12 @@ export function TricicloLandingPage() {
                   </div>
                 </div>
 
-                {/* Aviso de Entrega Montada Especial de Natal */}
+                {/* Destaque de Entrega Montada */}
                 <div className="mt-4 p-3 bg-emerald-950/40 border border-emerald-500/30 rounded-xl text-xs text-emerald-200 flex items-start gap-2.5">
-                  <Gift className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <Truck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-emerald-300 font-bold">Sem dor de cabeça na véspera de Natal:</strong>
-                    Nós entregamos o triciclo 100% montado, regulado e com a bateria carregada para o seu filho andar na hora!
+                    <strong className="block text-emerald-300 font-bold">Entrega Pronta para Andar:</strong>
+                    Entregamos o triciclo 100% montado, regulado e com a bateria carregada para seu filho curtir na hora!
                   </div>
                 </div>
 
@@ -318,87 +316,81 @@ export function TricicloLandingPage() {
         </div>
       </section>
 
-      {/* 4. POR QUE ESTE É O PRESENTE PERFEITO? (DIVERSÃO X SEGURANÇA) */}
-      <section className="py-16 bg-slate-900/60 border-y border-slate-800">
-        <div className="container-custom">
+      {/* 4. BENEFÍCIOS TÉCNICOS & SEGURANÇA */}
+      <section className="py-16 bg-slate-900/60 border-y border-slate-800 px-4 sm:px-6 lg:px-8">
+        <div className="container-dahora">
           
           <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-dahora-emerald">
-              Projetado para Crianças & Aprovado pelos Pais
+            <span className="text-xs font-bold uppercase tracking-widest text-red-400">
+              Engenharia Segura & Diversão Radical
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white">
-              A Emoção que Seu Filho Quer com a Proteção que Você Precisa
+              A Adrenalina que a Criança Quer com a Proteção dos Pais
             </h2>
             <p className="text-slate-400 text-sm sm:text-base">
-              Ao contrário de brinquedos descartáveis de shopping que quebram na primeira semana, o Triciclo Elétrico Drift possui chassi em aço tubular reforçado e mecânica de verdade.
+              Ao contrário de brinquedos descartáveis de plástico frágil, o Triciclo Elétrico Drift possui chassi em aço tubular reforçado e mecânica de verdade.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            {/* Benefício 1 */}
             <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-dahora-emerald/40 transition-all group">
               <div className="w-12 h-12 rounded-xl bg-dahora-emerald/15 text-dahora-emerald flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">3 Rodas: Estabilidade Máxima</h3>
+              <h3 className="text-lg font-bold text-white mb-2">3 Rodas: Estabilidade Absoluta</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                A geometria triangular com centro de gravidade baixo impede que o triciclo tombe nas curvas. Muito mais seguro do que bicicletas convencionais ou patinetes de 2 rodas.
+                Geometria triangular com centro de gravidade rebaixado que impede tombamentos. Muito mais seguro do que bicicletas e patinetes de 2 rodas.
               </p>
             </div>
 
-            {/* Benefício 2 */}
             <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-dahora-emerald/40 transition-all group">
               <div className="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Gauge className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">3 Modos com Trava dos Pais</h3>
+              <h3 className="text-lg font-bold text-white mb-2">3 Modos de Velocidade</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Você define o limite: Modo 1 (iniciante/lento para crianças menores), Modo 2 (passeio) e Modo 3 (velocidade máxima liberada de até 25 km/h para manobras de drift).
+                Os pais decidem: Modo 1 (lento para iniciantes/crianças pequenas), Modo 2 (passeio) e Modo 3 (velocidade máxima de até 25 km/h para manobras de drift).
               </p>
             </div>
 
-            {/* Benefício 3 */}
             <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-dahora-emerald/40 transition-all group">
               <div className="w-12 h-12 rounded-xl bg-teal-500/15 text-teal-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Volume2 className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Bluetooth + Farol & LED 360°</h3>
+              <h3 className="text-lg font-bold text-white mb-2">Bluetooth + Farol & Luzes LED</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Conecta no celular para tocar as músicas favoritas enquanto passeia. Rodinhas traseiras e carenagem frontal com iluminação LED de alta visibilidade e diversão noturna.
+                Conecta no smartphone para tocar as músicas favoritas enquanto passeia. Rodinhas traseiras com iluminação LED de alta visibilidade e diversão.
               </p>
             </div>
 
-            {/* Benefício 4 */}
             <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-dahora-emerald/40 transition-all group">
               <div className="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <BatteryCharging className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Carrega na Tomada Comum</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Basta ligar o carregador bivolt incluso em qualquer tomada 110V ou 220V de casa. Custa menos de R$ 0,50 por recarga para até 2 horas de brincadeira sem parar.
+                Acompanha carregador inteligente bivolt (110V/220V). Custa menos de R$ 0,50 por recarga para horas de brincadeira contínua.
               </p>
             </div>
 
-            {/* Benefício 5 */}
             <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-dahora-emerald/40 transition-all group">
               <div className="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Layers className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Estrutura Telescópica Ajustável</h3>
+              <h3 className="text-lg font-bold text-white mb-2">Chassi Telescópico Ajustável</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                O chassi possui regulagem de comprimento para se ajustar conforme a criança cresce. Acomoda com conforto crianças a partir de 4 anos até adolescentes de até 75 kg.
+                Estrutura metálica com regulagem de comprimento que acompanha o crescimento do seu filho (indicado de 4 a 14 anos, suporta até 75 kg).
               </p>
             </div>
 
-            {/* Benefício 6 */}
             <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-dahora-emerald/40 transition-all group">
               <div className="w-12 h-12 rounded-xl bg-red-500/15 text-red-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Award className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Oficina & Peças em Macatuba</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Se precisar de pneus, rodinhas de reposição, baterias ou revisão, nossa Loja 1 (Assistência Técnica) conta com estoque completo de peças e mecânicos especializados.
+                Nossa Loja 1 (Alameda Tiradentes, 348) é dedicada à Assistência Técnica própria, garantindo peças de reposição imediatas e suporte técnico vitalício.
               </p>
             </div>
 
@@ -407,19 +399,19 @@ export function TricicloLandingPage() {
         </div>
       </section>
 
-      {/* 5. TABELA COMPARATIVA: DA HORA MOTOS X BRINQUEDOS DE SHOPPING/INTERNET */}
-      <section className="py-16">
-        <div className="container-custom">
+      {/* 5. TABELA COMPARATIVA: BLACK FRIDAY DA HORA X INTERNET */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="container-dahora">
           
           <div className="max-w-3xl mx-auto text-center space-y-3 mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-dahora-gold">
-              Comparativo Inteligente
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
+              Garantia de Qualidade
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-white">
-              Por que Comprar na Da Hora Motos Elétricas?
+              Por que Aproveitar a Black Friday da Da Hora Motos?
             </h2>
             <p className="text-slate-400 text-sm">
-              Não arrisque a noite de Natal da sua família comprando de revendedores anônimos de marketplaces sem suporte local.
+              Não compre às cegas em marketplaces distantes sem assistência ou garantia local.
             </p>
           </div>
 
@@ -433,20 +425,20 @@ export function TricicloLandingPage() {
                       Da Hora Motos Elétricas
                     </th>
                     <th className="py-4 px-4 sm:px-6 font-bold text-slate-400 text-center">
-                      Lojas Genéricas da Internet
+                      Lojas Genéricas de Marketplaces
                     </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-800">
                   <tr>
                     <td className="py-4 px-4 sm:px-6 font-medium text-slate-200">
-                      Como você recebe o produto?
+                      Montagem e Entrega
                     </td>
                     <td className="py-4 px-4 sm:px-6 text-center font-bold text-dahora-emerald bg-dahora-emerald/5">
-                      <span className="inline-flex items-center gap-1.5"><Check className="w-4 h-4" /> 100% Montado, Testado e Carregado</span>
+                      <span className="inline-flex items-center gap-1.5"><Check className="w-4 h-4" /> 100% Montado, Regulado e Carregado</span>
                     </td>
                     <td className="py-4 px-4 sm:px-6 text-center text-red-400">
-                      Em caixa desmontado (horas de trabalho na véspera)
+                      Na caixa desmontado (manual em chinês)
                     </td>
                   </tr>
                   <tr>
@@ -457,7 +449,7 @@ export function TricicloLandingPage() {
                       <span className="inline-flex items-center gap-1.5"><Check className="w-4 h-4" /> Frete Grátis na Porta</span>
                     </td>
                     <td className="py-4 px-4 sm:px-6 text-center text-slate-400">
-                      Fretes caros de R$ 250 a R$ 450
+                      Frete caro de R$ 200 a R$ 400
                     </td>
                   </tr>
                   <tr>
@@ -465,10 +457,10 @@ export function TricicloLandingPage() {
                       Assistência Técnica & Peças
                     </td>
                     <td className="py-4 px-4 sm:px-6 text-center font-bold text-dahora-emerald bg-dahora-emerald/5">
-                      <span className="inline-flex items-center gap-1.5"><Check className="w-4 h-4" /> Loja 1 Própria em Macatuba</span>
+                      <span className="inline-flex items-center gap-1.5"><Check className="w-4 h-4" /> Loja 1 com Oficina Própria em Macatuba</span>
                     </td>
                     <td className="py-4 px-4 sm:px-6 text-center text-red-400">
-                      Inexistente ou apenas via chat robô
+                      Sem peças de reposição ou suporte
                     </td>
                   </tr>
                   <tr>
@@ -479,18 +471,18 @@ export function TricicloLandingPage() {
                       <span className="inline-flex items-center gap-1.5"><Check className="w-4 h-4" /> Aço Tubular Reforçado (Até 75kg)</span>
                     </td>
                     <td className="py-4 px-4 sm:px-6 text-center text-slate-400">
-                      Plástico oco frágil (quebra fácil)
+                      Plástico frágil (quebra fácil)
                     </td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 sm:px-6 font-medium text-slate-200">
-                      Test-ride antes de comprar
+                      Test-ride no Showroom
                     </td>
                     <td className="py-4 px-4 sm:px-6 text-center font-bold text-dahora-emerald bg-dahora-emerald/5">
-                      <span className="inline-flex items-center gap-1.5"><Check className="w-4 h-4" /> Disponível no Showroom (Loja 2)</span>
+                      <span className="inline-flex items-center gap-1.5"><Check className="w-4 h-4" /> Disponível na Loja 2 Macatuba</span>
                     </td>
                     <td className="py-4 px-4 sm:px-6 text-center text-red-400">
-                      Sem possibilidade de teste
+                      Impossível testar antes
                     </td>
                   </tr>
                 </tbody>
@@ -501,64 +493,64 @@ export function TricicloLandingPage() {
         </div>
       </section>
 
-      {/* 6. LOGÍSTICA DE NATAL: ENTREGA ATÉ 150 KM & RETIRADA VIP */}
-      <section className="py-16 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
-        <div className="container-custom">
+      {/* 6. LOGÍSTICA: FRETE GRÁTIS ATÉ 150 KM & RETIRADA */}
+      <section className="py-16 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800 px-4 sm:px-6 lg:px-8">
+        <div className="container-dahora">
           
           <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-dahora-emerald/10 blur-[100px] pointer-events-none rounded-full" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/10 blur-[100px] pointer-events-none rounded-full" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               <div className="lg:col-span-8 space-y-4">
                 <span className="inline-flex items-center gap-2 bg-dahora-emerald/15 text-dahora-emerald text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                  <Truck className="w-4 h-4" /> Compromisso de Entrega de Natal
+                  <Truck className="w-4 h-4" /> Entrega Especial Black Friday
                 </span>
 
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
-                  Frete Grátis em até 150 km com Veículo Pronto para Andar
+                  Frete Grátis em até 150 km com Veículo Pronto
                 </h2>
 
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Levamos o triciclo diretamente até sua casa em <strong>Macatuba, Lençóis Paulista, Bauru, Jaú, Botucatu, Barra Bonita, Agudos, Pederneiras, Igaraçu do Tietê</strong> e todas as cidades num raio de até 150 km!
+                  Entregamos na sua porta em <strong>Macatuba, Lençóis Paulista, Bauru, Jaú, Botucatu, Barra Bonita, Agudos, Pederneiras, Igaraçu do Tietê</strong> e todas as cidades num raio de até 150 km!
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
                     <h4 className="font-bold text-white text-sm mb-1 flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-dahora-emerald" /> Opção 1: Entrega em Casa
+                      <MapPin className="w-4 h-4 text-dahora-emerald" /> Entrega em Casa com Frete Grátis
                     </h4>
                     <p className="text-xs text-slate-400">
-                      Agendamos o melhor dia e horário. Você recebe na porta, confere o funcionamento e seu filho já sai andando.
+                      Você recebe em mãos o veículo pronto, confere o funcionamento e seu filho já sai andando.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
                     <h4 className="font-bold text-white text-sm mb-1 flex items-center gap-2">
-                      <Gift className="w-4 h-4 text-red-400" /> Opção 2: Retirada Surpresa na Loja 2
+                      <Zap className="w-4 h-4 text-amber-400" /> Retirada no Showroom (Loja 2)
                     </h4>
                     <p className="text-xs text-slate-400">
-                      Reserve agora e retire no nosso Showroom de Vendas (Rua Lucilo Dellamura) perto da véspera de Natal para manter a surpresa em segredo!
+                      Garanta o preço de Black Friday e retire na nossa loja física (Rua Lucilo Dellamura) no dia que preferir.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-4 text-center p-6 bg-slate-950 rounded-2xl border border-slate-800 space-y-4">
-                <span className="text-xs text-slate-400 uppercase tracking-widest font-bold">Lote Limitado de Natal</span>
-                <div className="text-4xl font-black text-dahora-gold">Apenas 18 Unidades</div>
+              <div className="lg:col-span-4 text-center p-6 bg-slate-950 rounded-2xl border border-red-500/30 space-y-4 shadow-xl">
+                <span className="text-xs text-red-400 uppercase tracking-widest font-black">Lote Promocional Black Friday</span>
+                <div className="text-4xl font-black text-white">Apenas 14 Unidades</div>
                 <p className="text-xs text-slate-300">
-                  Garantia de preço promocional da Black Friday mantido para compras antecipadas de Natal.
+                  Preço histórico garantido enquanto durar a cota de Black Friday.
                 </p>
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-slate-950 font-bold text-sm py-3 px-4 rounded-xl shadow-lg transition-transform hover:scale-105"
-                  aria-label="Reservar unidade do Triciclo Infantil no WhatsApp"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-slate-950 font-black text-sm py-3.5 px-4 rounded-xl shadow-lg transition-transform hover:scale-105"
+                  aria-label="Garantir unidade no WhatsApp"
                 >
                   <WhatsAppIcon className="w-4 h-4 text-slate-950" />
-                  <span>RESERVAR MINHA UNIDADE</span>
+                  <span>GARANTIR MINHA UNIDADE</span>
                 </a>
               </div>
 
@@ -569,16 +561,16 @@ export function TricicloLandingPage() {
         </div>
       </section>
 
-      {/* 7. DEPOIMENTOS DE PAIS QUE JÁ COMPRARAM */}
-      <section className="py-16">
-        <div className="container-custom">
+      {/* 7. DEPOIMENTOS DE CLIENTES */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="container-dahora">
           
           <div className="max-w-2xl mx-auto text-center space-y-3 mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-dahora-emerald">
-              Avaliações Reais de Famílias
+              Avaliações Verificadas
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-white">
-              Quem Comprou, Recomenda
+              O que Dizem as Famílias da Região
             </h2>
           </div>
 
@@ -591,7 +583,7 @@ export function TricicloLandingPage() {
                 ))}
               </div>
               <p className="text-sm text-slate-300 italic">
-                "Comprei para o aniversário do meu filho de 8 anos aqui em Lençóis Paulista. O triciclo já veio montado e pronto para andar! Ele amou o drift e as luzes, e eu fiquei tranquilo porque a velocidade é bem controlada. Atendimento nota 10."
+                "Comprei para o meu filho de 8 anos aqui em Lençóis Paulista. O triciclo já veio montado e pronto para andar! Ele amou o drift e as luzes, e eu fiquei tranquilo porque a velocidade é bem controlada. Atendimento nota 10."
               </p>
               <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
                 <span className="font-bold text-white">Rodrigo Mendes</span>
@@ -606,7 +598,7 @@ export function TricicloLandingPage() {
                 ))}
               </div>
               <p className="text-sm text-slate-300 italic">
-                "O que me fez comprar na Da Hora foi saber que eles têm loja física e oficina própria em Macatuba. Brinquedo elétrico estraga se comprar de longe e não tiver peça. Aqui tive certeza de garantia e assistência técnica."
+                "O diferencial da Da Hora é saber que eles têm loja física e oficina própria em Macatuba. Brinquedo elétrico estraga se comprar de longe e não tiver peça. Aqui tive certeza de garantia e assistência técnica."
               </p>
               <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
                 <span className="font-bold text-white">Mariana Silveira</span>
@@ -621,7 +613,7 @@ export function TricicloLandingPage() {
                 ))}
               </div>
               <p className="text-sm text-slate-300 italic">
-                "Presente inesquecível. As crianças não saem de cima do drift. Conecta o bluetooth para colocar música e as rodinhas têm luz de LED à noite. Valeu cada centavo, melhor compra do ano!"
+                "As crianças não saem de cima do drift! Conecta o Bluetooth para colocar música e as rodinhas têm luz de LED à noite. Valeu cada centavo, melhor presente que comprei!"
               </p>
               <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
                 <span className="font-bold text-white">Cláudio Rezende</span>
@@ -634,44 +626,44 @@ export function TricicloLandingPage() {
         </div>
       </section>
 
-      {/* 8. FAQ - PERGUNTAS FREQUENTES DOS PAIS */}
-      <section className="py-16 bg-slate-900/60 border-t border-slate-800">
-        <div className="container-custom max-w-3xl">
+      {/* 8. FAQ - PERGUNTAS FREQUENTES */}
+      <section className="py-16 bg-slate-900/60 border-t border-slate-800 px-4 sm:px-6 lg:px-8">
+        <div className="container-dahora max-w-3xl">
           
           <div className="text-center space-y-3 mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-dahora-emerald">
-              Tire Todas as Suas Dúvidas
+            <span className="text-xs font-bold uppercase tracking-widest text-red-400">
+              Dúvidas Frequentes
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-white">
-              Perguntas Frequentes dos Pais
+              Perguntas e Respostas da Black Friday
             </h2>
           </div>
 
           <div className="space-y-3">
             {[
               {
-                q: 'Para qual faixa de idade e peso o Triciclo é indicado?',
-                a: 'O Triciclo Drift 201 Mini 350W é indicado para crianças a partir de 4 anos até adolescentes de até 75 kg. A estrutura telescópica se alonga para acompanhar o crescimento do seu filho.',
+                q: 'Para qual idade e peso o Triciclo é indicado?',
+                a: 'O Triciclo Drift 201 Mini 350W é indicado para crianças e jovens de 4 a 14 anos, suportando até 75 kg. A estrutura telescópica é regulável para acompanhar o crescimento.',
               },
               {
-                q: 'Ele tomba nas curvas ou durante o drift?',
-                a: 'Não! O triciclo possui um centro de gravidade extremamente baixo com 3 apoios largos no chão. Mesmo executando giros e drifts de 360°, o veículo mantém estabilidade absoluta e os pés da criança ficam protegidos nos apoios dianteiros.',
+                q: 'Ele tomba nas curvas ou durante as manobras?',
+                a: 'Não! O triciclo possui geometria triangular com centro de gravidade baixo e 3 apoios largos no chão. Mesmo em giros de 360°, mantém estabilidade total e segurança para a criança.',
               },
               {
-                q: 'Como funciona a entrega com Frete Grátis até 150 km?',
-                a: 'Entregamos gratuitamente em um raio de até 150 km de Macatuba/SP (inclui Macatuba, Bauru, Lençóis Paulista, Jaú, Botucatu, Barra Bonita, Pederneiras, etc.). O veículo é transportado montado, com revisão feita e bateria carregada.',
+                q: 'Como funciona o Frete Grátis em até 150 km?',
+                a: 'Entregamos gratuitamente em qualquer cidade em um raio de até 150 km de Macatuba/SP (inclui Macatuba, Bauru, Lençóis Paulista, Jaú, Botucatu, Barra Bonita, Agudos, Pederneiras, etc.). O veículo é transportado montado, testado e carregado.',
               },
               {
                 q: 'Como é feita a recarga da bateria?',
-                a: 'Muito simples: acompanha um carregador inteligente bivolt automático (110V e 220V). Você conecta na tomada comum de casa. O tempo de recarga é de cerca de 3 a 5 horas e custa menos de R$ 0,50 na conta de luz.',
+                a: 'Acompanha carregador bivolt automático (110V/220V) para tomada comum residencial. A recarga completa leva de 3 a 5 horas e consome menos de R$ 0,50 de energia elétrica.',
               },
               {
                 q: 'Vocês têm peças de reposição e assistência técnica?',
-                a: 'Sim! Esse é o nosso maior diferencial: a Loja 1 da Da Hora Motos (Alameda Tiradentes, 348 em Macatuba) é dedicada exclusivamente à Assistência Técnica, Oficina e Reposição de Peças (rodinhas de drift, pneus, baterias, freios, carregadores).',
+                a: 'Sim! Nossa Loja 1 (Alameda Tiradentes, 348 em Macatuba) é dedicada exclusivamente à Assistência Técnica, Oficina e Reposição de Peças (rodinhas de drift, pneus, freios, baterias e carregadores).',
               },
               {
-                q: 'Posso reservar agora para retirar bem perto do Natal?',
-                a: 'Com certeza! Você pode garantir a compra antecipada com as condições especiais da Black Friday e agendar a retirada no Showroom da Loja 2 (Rua Lucilo Dellamura) na semana do Natal para fazer a surpresa perfeita!',
+                q: 'Quais as formas de pagamento na Black Friday?',
+                a: 'Você pode pagar à vista com desconto no Pix (R$ 1.899,00) ou parcelar em até 12x de R$ 166,58 sem juros no cartão de crédito.',
               },
             ].map((faq, idx) => {
               const isOpen = openFaq === idx;
@@ -706,9 +698,9 @@ export function TricicloLandingPage() {
         </div>
       </section>
 
-      {/* 9. RODAPÉ INSTITUCIONAL & CREDIBILIDADE DA CONCESSIONÁRIA */}
-      <footer className="py-12 bg-slate-950 border-t border-slate-800 text-xs text-slate-400">
-        <div className="container-custom space-y-8">
+      {/* 9. RODAPÉ INSTITUCIONAL */}
+      <footer className="py-12 bg-slate-950 border-t border-slate-800 text-xs text-slate-400 px-4 sm:px-6 lg:px-8">
+        <div className="container-dahora space-y-8">
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-3">
@@ -716,7 +708,7 @@ export function TricicloLandingPage() {
                 DA HORA <span className="text-dahora-emerald">MOTOS ELÉTRICAS</span>
               </span>
               <p className="text-slate-400 text-xs leading-relaxed">
-                A sua concessionária digital de veículos elétricos leves, scooters e triciclos em Macatuba e região central do Estado de SP.
+                Concessionária digital de veículos elétricos leves, scooters e triciclos em Macatuba e região central de SP.
               </p>
               <div className="text-xs text-slate-300 font-semibold">
                 WhatsApp Vendas: (14) 99887-7886
@@ -738,7 +730,7 @@ export function TricicloLandingPage() {
             <div className="space-y-2">
               <h4 className="font-bold text-white text-xs uppercase tracking-wider">Segurança & Garantia:</h4>
               <p className="text-slate-400 leading-relaxed">
-                Todos os veículos possuem garantia legal e verificação pré-entrega. Pagamento facilitado em até 12x no cartão ou desconto especial no Pix.
+                Veículos com garantia legal e revisão pré-entrega. Pagamento facilitado em até 12x sem juros no cartão ou desconto no Pix.
               </p>
               <div className="pt-2 flex items-center gap-3">
                 <Link to="/" className="text-dahora-emerald hover:underline font-semibold">
@@ -757,18 +749,18 @@ export function TricicloLandingPage() {
           </div>
 
           <div className="pt-6 border-t border-slate-900 text-center text-slate-600 text-[11px]">
-            © {new Date().getFullYear()} Da Hora Motos Elétricas. Todos os direitos reservados. CNPJ: Macatuba/SP.
+            © {new Date().getFullYear()} Da Hora Motos Elétricas. Todos os direitos reservados. Macatuba/SP.
           </div>
 
         </div>
       </footer>
 
-      {/* 10. STICKY MOBILE CONVERSION BAR (FIXA NO RODAPÉ DO CELULAR) */}
+      {/* 10. STICKY MOBILE CONVERSION BAR */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-t border-slate-800 p-3 sm:hidden shadow-2xl">
         <div className="flex items-center justify-between gap-3">
           <div className="leading-tight">
             <span className="text-[10px] text-slate-400 block line-through">De R$ 2.490</span>
-            <span className="text-base font-black text-white">R$ 1.899 <span className="text-[10px] text-dahora-emerald font-bold">Pix</span></span>
+            <span className="text-base font-black text-white">R$ 1.899 <span className="text-[10px] text-red-400 font-bold">Pix</span></span>
             <span className="text-[10px] text-slate-400 block">ou 12x R$ 166,58</span>
           </div>
 
@@ -777,10 +769,10 @@ export function TricicloLandingPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] active:bg-[#20ba59] text-slate-950 font-black text-xs py-3 px-4 rounded-xl shadow-glow-emerald"
-            aria-label="Pedir Triciclo Infantil no WhatsApp"
+            aria-label="Garantir Triciclo na Black Friday pelo WhatsApp"
           >
             <WhatsAppIcon className="w-4 h-4 text-slate-950" />
-            <span>GARANTIR NO WHATSAPP</span>
+            <span>GARANTIR NA BLACK FRIDAY</span>
           </a>
         </div>
       </div>
