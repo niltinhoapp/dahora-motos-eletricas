@@ -23,6 +23,7 @@ const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage').then((m
 const TermsPage = lazy(() => import('./pages/TermsPage').then((m) => ({ default: m.TermsPage })));
 const ReturnsPage = lazy(() => import('./pages/ReturnsPage').then((m) => ({ default: m.ReturnsPage })));
 const TricicloLandingPage = lazy(() => import('./pages/TricicloLandingPage').then((m) => ({ default: m.TricicloLandingPage })));
+const PatineteLandingPage = lazy(() => import('./pages/PatineteLandingPage').then((m) => ({ default: m.PatineteLandingPage })));
 
 // Lazy loading Admin Pages
 const AdminLayout = lazy(() => import('./components/admin/AdminLayout').then((m) => ({ default: m.AdminLayout })));
@@ -76,6 +77,9 @@ export function App() {
           {/* Dedicated Landing Pages (High-Conversion Paid Traffic & Campaigns) */}
           <Route path="lp/triciclo-infantil" element={<TricicloLandingPage />} />
           <Route path="black-friday" element={<TricicloLandingPage />} />
+          <Route path="black-friday/triciclo" element={<TricicloLandingPage />} />
+          <Route path="black-friday/patinete" element={<PatineteLandingPage />} />
+          <Route path="lp/patinete-eletrico" element={<PatineteLandingPage />} />
           <Route path="natal-triciclo" element={<TricicloLandingPage />} />
 
           {/* Administrative Routes */}

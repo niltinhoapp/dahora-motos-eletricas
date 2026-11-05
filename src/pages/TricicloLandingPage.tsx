@@ -136,6 +136,20 @@ export function TricicloLandingPage() {
         </div>
       </header>
 
+      {/* 2.1 SWITCHER DE OFERTAS: TRICICLO X PATINETE */}
+      <div className="bg-slate-900/80 border-b border-slate-800 py-2.5 px-4 sm:px-6 lg:px-8">
+        <div className="container-dahora flex flex-wrap items-center justify-center gap-3 text-xs">
+          <span className="text-slate-400 font-medium">Outra opção de Black Friday:</span>
+          <Link
+            to="/black-friday/patinete"
+            className="inline-flex items-center gap-1.5 text-amber-300 hover:text-white font-bold underline transition-colors"
+          >
+            <span>Ver oferta do Patinete Elétrico Dobrável XM-01 350W</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      </div>
+
       {/* 3. HERO SECTION - BLACK FRIDAY EXCLUSIVA */}
       <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden px-4 sm:px-6 lg:px-8">
         {/* Ambient Glows */}
