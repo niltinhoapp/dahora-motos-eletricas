@@ -31,14 +31,14 @@ export function ComparePage() {
       <div className="container-dahora">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-dahora-emerald mb-2">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-emerald-700 mb-2">
             <Scale className="w-3.5 h-3.5" />
             <span>COMPARADOR COMPLETO</span>
           </div>
           <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text">
             Compare Especificações Técnicas Lado a Lado
           </h1>
-          <p className="text-xs sm:text-sm text-dahora-gray mt-2">
+          <p className="text-xs sm:text-sm text-slate-600 mt-2">
             Escolha até 3 veículos e avalie potência, autonomia, tempo de recarga e condições comerciais.
           </p>
         </div>
@@ -83,11 +83,11 @@ export function ComparePage() {
                       <div className="space-y-1">
                         <Link
                           to={`/produto/${p.slug}`}
-                          className="font-display font-bold text-sm text-dahora-text hover:text-dahora-emerald-dark transition-colors block"
+                          className="font-display font-bold text-sm text-dahora-text hover:text-emerald-700 transition-colors block"
                         >
                           {p.name}
                         </Link>
-                        <span className="text-xs font-extrabold text-dahora-emerald block tabular-nums">
+                        <span className="text-xs font-extrabold text-emerald-700 block tabular-nums">
                           {formatCurrency(p.promotionalPrice || p.price)}
                         </span>
                         <button
@@ -125,7 +125,7 @@ export function ComparePage() {
                 <tr>
                   <td className="p-4 font-semibold text-dahora-gray">Autonomia Estimada</td>
                   {selectedProducts.map((p) => (
-                    <td key={p.id} className="p-4 text-center text-dahora-emerald font-bold">
+                    <td key={p.id} className="p-4 text-center text-emerald-700 font-bold">
                       {p.range || 'Consulte'}
                     </td>
                   ))}

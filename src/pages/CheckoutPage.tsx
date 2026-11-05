@@ -158,7 +158,7 @@ export function CheckoutPage() {
             </div>
 
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-dahora-emerald">
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-700">
                 Pedido Registrado com Sucesso
               </span>
               <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text">
@@ -556,7 +556,7 @@ export function CheckoutPage() {
                       <p className="font-semibold text-dahora-text">{item.product.name}</p>
                       <span className="text-[10px] text-dahora-gray">Qtd: {item.quantity}</span>
                     </div>
-                    <span className="font-bold text-dahora-emerald tabular-nums">
+                    <span className="font-extrabold text-emerald-700 tabular-nums">
                       {formatCurrency(item.unitPrice * item.quantity)}
                     </span>
                   </div>

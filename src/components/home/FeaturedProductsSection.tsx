@@ -12,21 +12,21 @@ export function FeaturedProductsSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-dahora-emerald mb-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-emerald-700 mb-1">
               <Sparkles className="w-3.5 h-3.5" />
               <span>VEÍCULOS SELECIONADOS</span>
             </div>
             <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text">
               Destaques da Concessionária
             </h2>
-            <p className="text-sm text-dahora-gray mt-1">
+            <p className="text-sm text-slate-600 mt-1">
               Modelos com excelente custo-benefício, alta autonomia e prontos para entrega.
             </p>
           </div>
 
           <Link
             to="/veiculos"
-            className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-dahora-emerald-dark hover:text-dahora-emerald transition-colors"
+            className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
           >
             <span>Ver todos ({featured.length} em destaque)</span>
             <ArrowRight className="w-4 h-4" />

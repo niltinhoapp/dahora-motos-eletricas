@@ -224,14 +224,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
           <div>
             &copy; {new Date().getFullYear()} Da Hora Motos Elétricas — CNPJ: 65.283.458/0001-40. Macatuba - SP.
           </div>
           <div className="flex items-center gap-4">
             <span>2 Unidades em Macatuba</span>
             <span>•</span>
-            <Link to="/admin" className="hover:text-gray-400 transition-colors">
+            <Link to="/admin" className="hover:text-white transition-colors">
               Painel Administrativo
             </Link>
           </div>

@@ -87,7 +87,7 @@
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 
            bg-dahora-emerald hover:bg-dahora-emerald-dark 
-           text-white font-semibold
+           text-dahora-black font-extrabold
            px-6 py-3 rounded-xl
            transition-all duration-200 ease-out
            hover:shadow-glow-emerald
@@ -121,7 +121,7 @@
   .btn-whatsapp {
     @apply inline-flex items-center justify-center gap-2
            bg-[#25D366] hover:bg-[#20BD5A]
-           text-white font-semibold
+           text-dahora-black font-extrabold
            px-6 py-3 rounded-xl
            transition-all duration-200 ease-out
            hover:shadow-lg
@@ -152,8 +152,8 @@
 
   .badge-promo {
     @apply inline-flex items-center px-2.5 py-0.5 rounded-full
-           text-xs font-bold
-           bg-dahora-emerald text-white;
+           text-xs font-extrabold
+           bg-dahora-emerald text-dahora-black;
   }
 
   .badge-unavailable {

@@ -41,7 +41,7 @@ export function CategoryPage() {
           <ChevronRight className="w-3.5 h-3.5" />
           <Link to="/veiculos" className="hover:text-dahora-text">Veículos</Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-dahora-emerald font-semibold">{category.name}</span>
+          <span className="text-emerald-700 font-bold">{category.name}</span>
         </nav>
 
         {/* Category Hero Banner */}

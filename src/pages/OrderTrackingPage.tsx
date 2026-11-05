@@ -36,10 +36,10 @@ export function OrderTrackingPage() {
         <div className="bg-white rounded-3xl border border-dahora-border p-8 sm:p-10 shadow-card space-y-8">
           {/* Header */}
           <div className="text-center space-y-2 border-b border-gray-100 pb-6">
-            <div className="w-14 h-14 rounded-2xl bg-dahora-emerald/15 text-dahora-emerald flex items-center justify-center mx-auto mb-3">
+            <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center mx-auto mb-3">
               <PackageCheck className="w-7 h-7" />
             </div>
-            <span className="text-xs font-bold uppercase tracking-wider text-dahora-gray">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-600">
               Acompanhamento de Pedido
             </span>
             <h1 className="font-display font-extrabold text-2xl text-dahora-text">
@@ -77,12 +77,12 @@ export function OrderTrackingPage() {
                 <div>
                   <h3
                     className={`text-sm font-bold ${
-                      step.current ? 'text-dahora-emerald-dark' : 'text-dahora-text'
+                      step.current ? 'text-emerald-700' : 'text-dahora-text'
                     }`}
                   >
                     {step.title}
                   </h3>
-                  <p className="text-xs text-dahora-gray mt-0.5">{step.desc}</p>
+                  <p className="text-xs text-slate-600 mt-0.5">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -90,7 +90,7 @@ export function OrderTrackingPage() {
 
           {/* Support Box */}
           <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-            <div className="flex items-center gap-2 text-dahora-gray">
+            <div className="flex items-center gap-2 text-slate-600">
               <HelpCircle className="w-4 h-4 text-dahora-cyan shrink-0" />
               <span>Precisa de suporte sobre este pedido?</span>
             </div>
@@ -109,7 +109,7 @@ export function OrderTrackingPage() {
           <div className="text-center pt-2">
             <Link
               to="/"
-              className="text-xs text-dahora-emerald font-semibold hover:underline inline-flex items-center gap-1"
+              className="text-xs text-emerald-700 font-bold hover:text-emerald-800 hover:underline inline-flex items-center gap-1"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Voltar à página inicial</span>

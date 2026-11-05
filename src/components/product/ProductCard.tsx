@@ -100,14 +100,14 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
           {/* Category & Name */}
-          <div className="text-[11px] font-bold uppercase tracking-wider text-dahora-gray mb-1">
+          <div className="text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
             {product.categoryId === 'cat-motos' && 'Moto Elétrica'}
             {product.categoryId === 'cat-scooters' && 'Scooter Elétrica'}
             {product.categoryId === 'cat-triciclos' && 'Triciclo Elétrico'}
             {product.categoryId === 'cat-patinetes' && 'Patinete / Drift'}
           </div>
 
-          <h3 className="font-display font-bold text-base text-dahora-text group-hover:text-dahora-emerald-dark transition-colors line-clamp-1 mb-2">
+          <h3 className="font-display font-bold text-base text-dahora-text group-hover:text-emerald-700 transition-colors line-clamp-1 mb-2">
             <Link to={`/produto/${product.slug}`}>
               {product.name}
             </Link>
@@ -117,7 +117,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <div className="grid grid-cols-2 gap-2 text-xs text-dahora-gray-light bg-gray-50 p-2.5 rounded-xl border border-gray-100 mb-4">
             {product.power && (
               <div className="flex items-center gap-1.5 text-dahora-text font-medium">
-                <Zap className="w-3.5 h-3.5 text-dahora-emerald shrink-0" />
+                <Zap className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
                 <span className="truncate">{product.power}</span>
               </div>
             )}
@@ -141,7 +141,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {/* Price display */}
           <div className="mb-3">
             {hasDiscount && (
-              <span className="text-xs text-dahora-gray line-through block mb-0.5 tabular-nums">
+              <span className="text-xs text-slate-600 line-through block mb-0.5 tabular-nums">
                 {formatCurrency(product.price)}
               </span>
             )}
@@ -150,13 +150,13 @@ export function ProductCard({ product }: ProductCardProps) {
             </div>
 
             {product.pixPrice && (
-              <div className="text-xs font-semibold text-dahora-emerald mt-0.5">
+              <div className="text-xs font-bold text-emerald-700 mt-0.5">
                 {formatCurrency(product.pixPrice)} à vista no Pix
               </div>
             )}
 
             {product.installments && (
-              <div className="text-[11px] text-dahora-gray mt-0.5">
+              <div className="text-[11px] text-slate-600 font-medium mt-0.5">
                 ou {product.installments.count}x de {formatCurrency(product.installments.value)} sem juros
               </div>
             )}
@@ -167,9 +167,9 @@ export function ProductCard({ product }: ProductCardProps) {
             <button
               onClick={handleAddToCart}
               disabled={!product.isAvailable}
-              className={`flex-1 py-2.5 px-3 rounded-xl font-semibold text-xs transition-all duration-200 flex items-center justify-center gap-1.5 ${
+              className={`flex-1 py-2.5 px-3 rounded-xl text-xs transition-all duration-200 flex items-center justify-center gap-1.5 ${
                 added
-                  ? 'bg-dahora-emerald text-white'
+                  ? 'bg-dahora-emerald text-dahora-black font-extrabold shadow-sm'
                   : 'btn-primary'
               }`}
               aria-label={`Comprar ${product.name}`}

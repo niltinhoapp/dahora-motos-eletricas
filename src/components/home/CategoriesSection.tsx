@@ -9,7 +9,7 @@ export function CategoriesSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-dahora-emerald">
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">
               LINHA DE VEÍCULOS
             </span>
             <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text mt-1">
@@ -18,7 +18,7 @@ export function CategoriesSection() {
           </div>
           <Link
             to="/veiculos"
-            className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-dahora-emerald-dark hover:text-dahora-emerald transition-colors"
+            className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
           >
             <span>Ver todos os 23 veículos</span>
             <ArrowRight className="w-4 h-4" />
@@ -52,14 +52,14 @@ export function CategoriesSection() {
                   <h3 className="font-display font-bold text-lg text-dahora-text group-hover:text-dahora-emerald-dark transition-colors mb-1.5">
                     {category.name}
                   </h3>
-                  <p className="text-xs text-dahora-gray leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {category.description}
                   </p>
                 </div>
               </div>
 
               {/* Action */}
-              <div className="p-5 pt-0 flex items-center justify-between text-xs font-bold text-dahora-emerald-dark group-hover:text-dahora-emerald">
+              <div className="p-5 pt-0 flex items-center justify-between text-xs font-bold text-emerald-700 group-hover:text-emerald-800">
                 <span>Ver modelos</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>

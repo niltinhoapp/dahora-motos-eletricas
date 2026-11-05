@@ -32,7 +32,7 @@ export function ContactPage() {
     <div className="bg-dahora-ice min-h-screen py-12">
       <div className="container-dahora max-w-4xl space-y-10">
         <div className="text-center space-y-2">
-          <span className="text-xs font-bold uppercase tracking-widest text-dahora-emerald">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">
             CANAIS DE ATENDIMENTO
           </span>
           <h1 className="font-display font-extrabold text-3xl text-dahora-text">

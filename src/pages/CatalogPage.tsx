@@ -110,7 +110,7 @@ export function CatalogPage() {
           {selectedCategory && (
             <>
               <ChevronRight className="w-3.5 h-3.5" />
-              <span className="text-dahora-emerald font-semibold capitalize">
+              <span className="text-emerald-700 font-bold capitalize">
                 {categories.find((c) => c.slug === selectedCategory)?.name || selectedCategory}
               </span>
             </>
@@ -171,7 +171,7 @@ export function CatalogPage() {
           <div className="flex flex-wrap items-center gap-2 mb-6 p-3 bg-white rounded-2xl border border-dahora-border shadow-sm">
             <span className="text-xs font-semibold text-dahora-gray mr-1">Filtros ativos:</span>
             {selectedCategory && (
-              <span className="inline-flex items-center gap-1 text-xs bg-dahora-emerald/10 text-dahora-emerald px-2.5 py-1 rounded-full font-medium">
+              <span className="inline-flex items-center gap-1 text-xs bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full font-medium">
                 Categoria: {categories.find((c) => c.slug === selectedCategory)?.name}
                 <button onClick={() => handleCategoryChange(selectedCategory)} className="hover:text-red-500">
                   <X className="w-3 h-3" />

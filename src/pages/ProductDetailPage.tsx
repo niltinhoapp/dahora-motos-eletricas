@@ -93,7 +93,7 @@ export function ProductDetailPage() {
           <ChevronRight className="w-3.5 h-3.5" />
           <Link to="/veiculos" className="hover:text-dahora-text">Veículos</Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-dahora-emerald font-semibold">{product.name}</span>
+          <span className="text-emerald-700 font-bold">{product.name}</span>
         </nav>
 
         {/* Top Product Showcase (Two-Column Desktop) */}
@@ -158,19 +158,19 @@ export function ProductDetailPage() {
               )}
               {product.range && (
                 <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 text-center">
-                  <span className="text-[10px] text-dahora-gray font-bold uppercase block">Autonomia</span>
-                  <strong className="text-xs sm:text-sm text-dahora-emerald">{product.range}</strong>
+                  <span className="text-[10px] text-slate-600 font-bold uppercase block">Autonomia</span>
+                  <strong className="text-xs sm:text-sm text-emerald-700 font-extrabold">{product.range}</strong>
                 </div>
               )}
               {product.maxSpeed && (
                 <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 text-center">
-                  <span className="text-[10px] text-dahora-gray font-bold uppercase block">Velocidade Máx.</span>
+                  <span className="text-[10px] text-slate-600 font-bold uppercase block">Velocidade Máx.</span>
                   <strong className="text-xs sm:text-sm text-dahora-text">{product.maxSpeed}</strong>
                 </div>
               )}
               {product.chargingTime && (
                 <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 text-center">
-                  <span className="text-[10px] text-dahora-gray font-bold uppercase block">Recarga</span>
+                  <span className="text-[10px] text-slate-600 font-bold uppercase block">Recarga</span>
                   <strong className="text-xs sm:text-sm text-dahora-text">{product.chargingTime}</strong>
                 </div>
               )}
@@ -182,13 +182,13 @@ export function ProductDetailPage() {
             <div className="space-y-4">
               {/* Category & Title */}
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-dahora-emerald">
+                <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">
                   {product.brand} • MACATUBA/SP
                 </span>
                 <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text mt-1">
                   {product.name}
                 </h1>
-                <p className="text-xs text-dahora-gray mt-2 leading-relaxed">
+                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                   {product.shortDescription}
                 </p>
               </div>
@@ -196,25 +196,25 @@ export function ProductDetailPage() {
               {/* Price Box */}
               <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 space-y-2">
                 {hasDiscount && (
-                  <span className="text-xs text-dahora-gray line-through block tabular-nums">
+                  <span className="text-xs text-slate-600 line-through block tabular-nums">
                     De {formatCurrency(product.price)}
                   </span>
                 )}
                 <div className="flex items-baseline gap-2">
-                  <span className="text-xs text-dahora-gray font-semibold">Por</span>
+                  <span className="text-xs text-slate-600 font-semibold">Por</span>
                   <span className="text-3xl font-extrabold text-dahora-text tabular-nums">
                     {formatCurrency(currentPrice)}
                   </span>
                 </div>
 
                 {product.pixPrice && (
-                  <div className="text-xs font-bold text-dahora-emerald bg-emerald-50 p-2 rounded-xl inline-block">
+                  <div className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 p-2 rounded-xl inline-block">
                     {formatCurrency(product.pixPrice)} à vista com desconto no Pix
                   </div>
                 )}
 
                 {product.installments && (
-                  <p className="text-xs text-dahora-gray">
+                  <p className="text-xs text-slate-600">
                     ou em até {product.installments.count}x de {formatCurrency(product.installments.value)} sem juros
                   </p>
                 )}
@@ -226,7 +226,7 @@ export function ProductDetailPage() {
                 <div className="flex items-center border border-dahora-border rounded-xl bg-white overflow-hidden">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="p-2 hover:bg-gray-100 text-dahora-gray transition-colors"
+                    className="p-2 hover:bg-gray-100 text-slate-600 transition-colors"
                     aria-label="Diminuir quantidade"
                   >
                     <Minus className="w-3.5 h-3.5" />
@@ -236,13 +236,13 @@ export function ProductDetailPage() {
                   </span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="p-2 hover:bg-gray-100 text-dahora-gray transition-colors"
+                    className="p-2 hover:bg-gray-100 text-slate-600 transition-colors"
                     aria-label="Aumentar quantidade"
                   >
                     <Plus className="w-3.5 h-3.5" />
                   </button>
                 </div>
-                <span className="text-xs text-dahora-emerald font-semibold">
+                <span className="text-xs text-emerald-700 font-bold">
                   Disponível em Macatuba
                 </span>
               </div>

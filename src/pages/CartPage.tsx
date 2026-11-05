@@ -115,7 +115,7 @@ export function CartPage() {
                       <p className="text-xs text-dahora-gray mt-0.5">
                         {item.product.power} • {item.product.range}
                       </p>
-                      <span className="text-xs font-bold text-dahora-emerald mt-1 block sm:hidden tabular-nums">
+                      <span className="text-xs font-extrabold text-emerald-700 mt-1 block sm:hidden tabular-nums">
                         {formatCurrency(item.unitPrice)} cada
                       </span>
                     </div>
@@ -127,7 +127,7 @@ export function CartPage() {
                     <div className="flex items-center border border-dahora-border rounded-xl bg-gray-50 overflow-hidden">
                       <button
                         onClick={() => updateQuantity(item.product.id, item.quantity - 1, item.variantId)}
-                        className="p-2 hover:bg-gray-200 text-dahora-gray transition-colors"
+                        className="p-2 hover:bg-gray-200 text-slate-600 transition-colors"
                         aria-label="Diminuir"
                       >
                         <Minus className="w-3.5 h-3.5" />
@@ -137,7 +137,7 @@ export function CartPage() {
                       </span>
                       <button
                         onClick={() => updateQuantity(item.product.id, item.quantity + 1, item.variantId)}
-                        className="p-2 hover:bg-gray-200 text-dahora-gray transition-colors"
+                        className="p-2 hover:bg-gray-200 text-slate-600 transition-colors"
                         aria-label="Aumentar"
                       >
                         <Plus className="w-3.5 h-3.5" />
@@ -149,7 +149,7 @@ export function CartPage() {
                       <div className="text-base font-extrabold text-dahora-text tabular-nums">
                         {formatCurrency(item.unitPrice * item.quantity)}
                       </div>
-                      <span className="text-[11px] text-dahora-gray hidden sm:block">
+                      <span className="text-[11px] text-slate-600 font-medium hidden sm:block">
                         {formatCurrency(item.unitPrice)} unid.
                       </span>
                     </div>
@@ -157,7 +157,7 @@ export function CartPage() {
                     {/* Remove */}
                     <button
                       onClick={() => removeItem(item.product.id, item.variantId)}
-                      className="p-2 text-gray-400 hover:text-red-500 rounded-lg transition-colors"
+                      className="p-2 text-slate-500 hover:text-red-500 rounded-lg transition-colors"
                       title="Remover"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -171,7 +171,7 @@ export function CartPage() {
             <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
               <Link
                 to="/veiculos"
-                className="text-xs text-dahora-emerald-dark font-semibold hover:underline inline-flex items-center gap-1"
+                className="text-xs text-emerald-700 font-bold hover:text-emerald-800 hover:underline inline-flex items-center gap-1"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>Continuar comprando</span>
@@ -263,7 +263,7 @@ export function CartPage() {
               {/* Total Display */}
               <div className="pt-4 border-t border-gray-100 flex justify-between items-baseline">
                 <span className="font-bold text-sm text-dahora-text">Total Estimado</span>
-                <span className="text-2xl font-extrabold text-dahora-emerald tabular-nums">
+                <span className="text-2xl font-extrabold text-emerald-700 tabular-nums">
                   {formatCurrency(subtotal)}
                 </span>
               </div>

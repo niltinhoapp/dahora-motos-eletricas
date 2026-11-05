@@ -9,13 +9,13 @@ export function TestimonialsSection() {
       <div className="container-dahora">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-dahora-emerald">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">
             DEPOIMENTOS E ENTREGAS
           </span>
           <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text mt-1">
             Experiência de Nossos Clientes
           </h2>
-          <p className="text-sm text-dahora-gray mt-2">
+          <p className="text-sm text-slate-600 mt-2">
             Acompanhe entregas reais, avaliações verificadas e a satisfação de quem já escolheu a mobilidade elétrica.
           </p>
         </div>
@@ -43,7 +43,7 @@ export function TestimonialsSection() {
                 <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
                   <span className="font-bold text-dahora-text">{review.customerName}</span>
                   {review.customerCity && (
-                    <span className="text-dahora-gray">{review.customerCity}</span>
+                    <span className="text-slate-600">{review.customerCity}</span>
                   )}
                 </div>
               </div>
@@ -52,17 +52,17 @@ export function TestimonialsSection() {
         ) : (
           /* Honest Empty State — No fake reviews generated */
           <div className="max-w-xl mx-auto bg-white rounded-3xl border border-dahora-border p-8 sm:p-10 text-center shadow-card space-y-4">
-            <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center text-dahora-emerald mx-auto">
+            <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center text-emerald-700 mx-auto">
               <MessageSquareQuote className="w-7 h-7" />
             </div>
             <h3 className="font-display font-bold text-lg text-dahora-text">
               Galeria de Entregas e Avaliações Reais
             </h3>
-            <p className="text-xs text-dahora-gray max-w-md mx-auto leading-relaxed">
+            <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
               Valorizamos a transparência absoluta: não publicamos depoimentos fictícios. As primeiras fotos de entregas e avaliações autorizadas de nossos compradores estarão disponíveis aqui e em nossas redes sociais.
             </p>
             <div className="pt-2">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-dahora-gray-light bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
                 <ShieldAlert className="w-3.5 h-3.5 text-dahora-cyan" />
                 <span>Espaço reservado para depoimentos autorizados</span>
               </span>

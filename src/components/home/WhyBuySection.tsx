@@ -66,13 +66,13 @@ export function WhyBuySection() {
       <div className="container-dahora">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-dahora-emerald">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">
             TRANSPARÊNCIA E CREDIBILIDADE
           </span>
           <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text mt-1">
             Por que comprar na Da Hora?
           </h2>
-          <p className="text-sm text-dahora-gray mt-2">
+          <p className="text-sm text-slate-600 mt-2">
             Comprar um veículo elétrico pela internet exige confiança e compromisso. Conheça nossos pilares de atendimento.
           </p>
         </div>
@@ -90,7 +90,7 @@ export function WhyBuySection() {
               <h3 className="font-display font-bold text-base text-dahora-text mb-2">
                 {item.title}
               </h3>
-              <p className="text-xs text-dahora-gray leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 {item.description}
               </p>
             </div>

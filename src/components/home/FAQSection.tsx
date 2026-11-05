@@ -16,14 +16,14 @@ export function FAQSection() {
       <div className="container-dahora">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-dahora-emerald mb-2">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-emerald-700 mb-2">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>ESCLARECIMENTOS</span>
           </div>
           <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text">
             Perguntas Frequentes
           </h2>
-          <p className="text-sm text-dahora-gray mt-2">
+          <p className="text-sm text-slate-600 mt-2">
             Tire suas principais dúvidas sobre entrega, formas de pagamento, garantia, documentação e manutenção.
           </p>
         </div>
@@ -41,7 +41,7 @@ export function FAQSection() {
                   aria-expanded={isOpen}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-xs bg-gray-200/80 text-dahora-gray font-semibold px-2.5 py-0.5 rounded-full shrink-0">
+                    <span className="text-xs bg-slate-100 text-slate-700 border border-slate-200 font-semibold px-2.5 py-0.5 rounded-full shrink-0">
                       {item.category}
                     </span>
                     <span className="font-display font-bold text-sm sm:text-base text-dahora-text">
@@ -50,13 +50,13 @@ export function FAQSection() {
                   </div>
                   <ChevronDown
                     className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-dahora-emerald' : ''
+                      isOpen ? 'rotate-180 text-emerald-700' : ''
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-dahora-gray leading-relaxed animate-fade-in">
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-700 leading-relaxed animate-fade-in">
                     <p>{item.answer}</p>
                   </div>
                 )}
@@ -66,11 +66,11 @@ export function FAQSection() {
         </div>
 
         {/* Additional help footer */}
-        <div className="text-center mt-10 text-xs text-dahora-gray">
+        <div className="text-center mt-10 text-xs text-slate-600">
           <span>Ainda com dúvidas específicas? </span>
           <a
             href="#whatsapp"
-            className="text-dahora-emerald font-semibold hover:underline inline-flex items-center gap-1"
+            className="text-emerald-700 font-bold hover:text-emerald-800 hover:underline inline-flex items-center gap-1"
           >
             Fale diretamente com nossa equipe no WhatsApp &rarr;
           </a>

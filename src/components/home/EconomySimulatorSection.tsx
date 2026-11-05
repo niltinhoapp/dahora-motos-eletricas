@@ -64,14 +64,14 @@ export function EconomySimulatorSection() {
       <div className="container-dahora">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-dahora-emerald mb-2">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-emerald-700 mb-2">
             <Calculator className="w-3.5 h-3.5" />
             <span>CALCULADORA DE ECONOMIA REAL</span>
           </div>
           <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text">
             Descubra quanto você pode economizar
           </h2>
-          <p className="text-sm text-dahora-gray mt-2">
+          <p className="text-sm text-slate-600 mt-2">
             Ajuste os parâmetros abaixo de acordo com sua rotina e veja a diferença de custo entre gasolina e eletricidade.
           </p>
         </div>
@@ -87,7 +87,7 @@ export function EconomySimulatorSection() {
               {/* Km per day */}
               <div>
                 <label htmlFor="sim-km-per-day" className="block text-xs font-semibold text-dahora-text mb-1.5 cursor-pointer">
-                  Quilômetros por dia: <span className="text-dahora-emerald font-bold">{kmPerDay} km</span>
+                  Quilômetros por dia: <span className="text-emerald-700 font-extrabold">{kmPerDay} km</span>
                 </label>
                 <input
                   id="sim-km-per-day"
@@ -104,7 +104,7 @@ export function EconomySimulatorSection() {
                   aria-valuenow={kmPerDay}
                   className="w-full accent-dahora-emerald cursor-pointer"
                 />
-                <div className="flex justify-between text-[10px] text-gray-400 mt-1">
+                <div className="flex justify-between text-[10px] text-slate-600 font-medium mt-1">
                   <span>5 km</span>
                   <span>150 km</span>
                 </div>
@@ -113,7 +113,7 @@ export function EconomySimulatorSection() {
               {/* Days per month */}
               <div>
                 <label htmlFor="sim-days-per-month" className="block text-xs font-semibold text-dahora-text mb-1.5 cursor-pointer">
-                  Dias de uso no mês: <span className="text-dahora-emerald font-bold">{daysPerMonth} dias</span>
+                  Dias de uso no mês: <span className="text-emerald-700 font-extrabold">{daysPerMonth} dias</span>
                 </label>
                 <input
                   id="sim-days-per-month"
@@ -130,7 +130,7 @@ export function EconomySimulatorSection() {
                   aria-valuenow={daysPerMonth}
                   className="w-full accent-dahora-emerald cursor-pointer"
                 />
-                <div className="flex justify-between text-[10px] text-gray-400 mt-1">
+                <div className="flex justify-between text-[10px] text-slate-600 font-medium mt-1">
                   <span>5 dias</span>
                   <span>31 dias</span>
                 </div>
@@ -177,7 +177,7 @@ export function EconomySimulatorSection() {
               <div>
                 <label htmlFor="sim-electric-kwh-per-km" className="block text-xs font-semibold text-dahora-text mb-1.5 flex items-center justify-between cursor-pointer">
                   <span>Consumo elétrico estimado</span>
-                  <span className="text-[10px] text-gray-400">kWh/km</span>
+                  <span className="text-[10px] text-slate-600 font-medium">kWh/km</span>
                 </label>
                 <input
                   id="sim-electric-kwh-per-km"
@@ -191,7 +191,7 @@ export function EconomySimulatorSection() {
                   aria-label="Consumo elétrico estimado em kWh por quilômetro"
                   className="input-field text-sm"
                 />
-                <span className="text-[10px] text-gray-400 mt-0.5 block">
+                <span className="text-[10px] text-slate-600 font-medium mt-0.5 block">
                   Média de veículos elétricos leves: ~0.025 kWh/km
                 </span>
               </div>
@@ -200,7 +200,7 @@ export function EconomySimulatorSection() {
               <div>
                 <label htmlFor="sim-kwh-rate" className="block text-xs font-semibold text-dahora-text mb-1.5 flex items-center justify-between cursor-pointer">
                   <span>Tarifa de energia elétrica</span>
-                  <span className="text-[10px] text-gray-400">R$/kWh</span>
+                  <span className="text-[10px] text-slate-600 font-medium">R$/kWh</span>
                 </label>
                 <input
                   id="sim-kwh-rate"
@@ -214,7 +214,7 @@ export function EconomySimulatorSection() {
                   aria-label="Tarifa de energia elétrica em Reais por kWh"
                   className="input-field text-sm"
                 />
-                <span className="text-[10px] text-gray-400 mt-0.5 block">
+                <span className="text-[10px] text-slate-600 font-medium mt-0.5 block">
                   Média residencial com impostos: ~R$ 0,85
                 </span>
               </div>
