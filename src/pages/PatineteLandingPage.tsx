@@ -133,15 +133,23 @@ export function PatineteLandingPage() {
         </div>
       </header>
 
-      {/* 3. SWITCHER DE OFERTAS: PATINETE X TRICICLO */}
+      {/* 3. SWITCHER DE OFERTAS: PATINETE X DRIFT X TRICICLO */}
       <div className="bg-slate-900/80 border-b border-slate-800 py-2.5 px-4 sm:px-6 lg:px-8">
-        <div className="container-dahora flex flex-wrap items-center justify-center gap-3 text-xs">
-          <span className="text-slate-400 font-medium">Outra opção de Black Friday:</span>
+        <div className="container-dahora flex flex-wrap items-center justify-center gap-4 text-xs">
+          <span className="text-slate-400 font-medium">Outras ofertas de Black Friday:</span>
           <Link
-            to="/black-friday"
+            to="/black-friday/drift"
             className="inline-flex items-center gap-1.5 text-amber-300 hover:text-white font-bold underline transition-colors"
           >
-            <span>Ver oferta do Triciclo Infantil Drift 360°</span>
+            <span>🏎️ Kart Drift Trike 360°</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+          <span className="text-slate-600">•</span>
+          <Link
+            to="/black-friday"
+            className="inline-flex items-center gap-1.5 text-teal-300 hover:text-white font-bold underline transition-colors"
+          >
+            <span>🛺 Triciclo Infantil Estabilidade</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

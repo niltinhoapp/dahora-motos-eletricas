@@ -136,15 +136,23 @@ export function TricicloLandingPage() {
         </div>
       </header>
 
-      {/* 2.1 SWITCHER DE OFERTAS: TRICICLO X PATINETE */}
+      {/* 2.1 SWITCHER DE OFERTAS: TRICICLO X DRIFT X PATINETE */}
       <div className="bg-slate-900/80 border-b border-slate-800 py-2.5 px-4 sm:px-6 lg:px-8">
-        <div className="container-dahora flex flex-wrap items-center justify-center gap-3 text-xs">
-          <span className="text-slate-400 font-medium">Outra opção de Black Friday:</span>
+        <div className="container-dahora flex flex-wrap items-center justify-center gap-4 text-xs">
+          <span className="text-slate-400 font-medium">Outras ofertas de Black Friday:</span>
           <Link
-            to="/black-friday/patinete"
+            to="/black-friday/drift"
             className="inline-flex items-center gap-1.5 text-amber-300 hover:text-white font-bold underline transition-colors"
           >
-            <span>Ver oferta do Patinete Elétrico Dobrável XM-01 350W</span>
+            <span>🏎️ Kart Drift Trike 360°</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+          <span className="text-slate-600">•</span>
+          <Link
+            to="/black-friday/patinete"
+            className="inline-flex items-center gap-1.5 text-teal-300 hover:text-white font-bold underline transition-colors"
+          >
+            <span>🛴 Patinete Dobrável XM-01</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
