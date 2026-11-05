@@ -5,10 +5,10 @@ import {
   Gauge,
   BatteryCharging,
   ShoppingCart,
-  MessageSquare,
   Check,
   Image as ImageIcon
 } from 'lucide-react';
+import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { useCart } from '../../contexts/CartContext';
 import { formatCurrency, formatDiscount, buildWhatsAppUrl, buildProductWhatsAppMessage } from '../../lib/utils';
 import { env } from '../../config/env';
@@ -199,7 +199,7 @@ export function ProductCard({ product }: ProductCardProps) {
               title="Tirar dúvidas no WhatsApp"
               aria-label={`Falar sobre ${product.name} no WhatsApp`}
             >
-              <MessageSquare className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
             </a>
           </div>
         </div>

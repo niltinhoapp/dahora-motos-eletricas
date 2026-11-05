@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import {
   Zap,
   MapPin,
-  ChevronDown,
-  MessageSquare
+  ChevronDown
 } from 'lucide-react';
+import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { defaultStoreSettings, demoCategories, macatubaStores } from '../../data/demo';
 import { env } from '../../config/env';
 import { buildWhatsAppUrl } from '../../lib/utils';
@@ -69,8 +69,9 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp text-xs py-2.5 px-4 inline-flex items-center gap-2"
+                aria-label="Falar com a Da Hora no WhatsApp oficial"
               >
-                <MessageSquare className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4 text-dahora-black" />
                 <span>WhatsApp: (14) 99887-7886</span>
               </a>
             </div>
@@ -139,12 +140,12 @@ export function Footer() {
             >
               <li>
                 <Link to="/showroom" className="text-gray-400 hover:text-white transition-colors">
-                  Loja 1: Alameda Tiradentes, 348
+                  Loja 1: Alameda Tiradentes, 348 (Assistência Técnica)
                 </Link>
               </li>
               <li>
                 <Link to="/showroom" className="text-gray-400 hover:text-white transition-colors">
-                  Loja 2: Rua Lucilo Dellamura
+                  Loja 2: Rua Lucilo Dellamura (Vendas & Showroom)
                 </Link>
               </li>
               <li>

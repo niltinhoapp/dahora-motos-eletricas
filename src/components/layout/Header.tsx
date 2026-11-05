@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Sparkles
 } from 'lucide-react';
+import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { AnnouncementBar } from './AnnouncementBar';
 import { MobileMenu } from './MobileMenu';
 import { useCart } from '../../contexts/CartContext';
@@ -35,7 +36,7 @@ export function Header() {
   const categoriesDropdownRef = useRef<HTMLDivElement>(null);
 
   const categories = getAllCategories();
-  const whatsappNumber = env.WHATSAPP_NUMBER || defaultStoreSettings.whatsapp || '5514999999999';
+  const whatsappNumber = env.WHATSAPP_NUMBER || defaultStoreSettings.whatsapp || '5514998877886';
   const whatsappUrl = buildWhatsAppUrl(
     whatsappNumber,
     'Olá! Estou no site da Da Hora Motos Elétricas e gostaria de atendimento.'
@@ -290,11 +291,11 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden xl:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-xl bg-dahora-surface-dark border border-dahora-border-dark text-gray-200 hover:text-white hover:border-[#25D366] transition-all duration-200"
-                aria-label="Falar com especialista no WhatsApp"
+                aria-label="Falar com especialista no WhatsApp oficial"
               >
                 <div className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-                <Phone className="w-3.5 h-3.5 text-[#25D366]" />
-                <span>Atendimento</span>
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                <span>Atendimento WhatsApp</span>
               </a>
 
               {/* Cart Button */}

@@ -1,4 +1,5 @@
-import { MapPin, Clock, Phone, MessageSquare, Navigation, Store, ShieldCheck } from 'lucide-react';
+import { MapPin, Clock, Phone, Navigation, Store, ShieldCheck, Wrench, Sparkles } from 'lucide-react';
+import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { macatubaStores } from '../../data/demo';
 import { env } from '../../config/env';
 import { buildWhatsAppUrl } from '../../lib/utils';
@@ -13,13 +14,13 @@ export function ShowroomSection() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-dahora-cyan mb-2">
             <Store className="w-3.5 h-3.5" />
-            <span>2 UNIDADES FÍSICAS EM MACATUBA/SP</span>
+            <span>LOJA 1: ASSISTÊNCIA TÉCNICA • LOJA 2: SHOWROOM DE VENDAS</span>
           </div>
           <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-white">
-            Conheça Nossas Lojas em Macatuba
+            Nossas 2 Unidades em Macatuba/SP
           </h2>
           <p className="text-sm text-gray-300 mt-2">
-            Venha fazer um test-ride, conhecer de perto nossa linha completa de motos e scooters elétricas e receber consultoria técnica especializada.
+            Separamos o showroom comercial da nossa oficina mecânica/elétrica para você ter o melhor atendimento em vendas e o mais completo suporte pós-venda.
           </p>
         </div>
 
@@ -96,8 +97,9 @@ export function ShowroomSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary flex-1 py-2.5 text-xs flex items-center justify-center gap-2"
+                    aria-label={`Falar no WhatsApp sobre a ${store.name}`}
                   >
-                    <MessageSquare className="w-4 h-4" />
+                    <WhatsAppIcon className="w-4 h-4 fill-dahora-black" />
                     <span>Falar no WhatsApp</span>
                   </a>
 
@@ -118,17 +120,20 @@ export function ShowroomSection() {
 
         {/* Bottom Banner */}
         <div className="mt-10 bg-white/5 border border-white/10 rounded-2xl p-5 text-center text-xs text-gray-300 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-dahora-emerald animate-pulse" />
-            <span>Mora em outra cidade ou estado? Enviamos com frete seguro e veículo montado.</span>
+          <div className="flex items-center gap-2 text-left">
+            <span className="w-2.5 h-2.5 rounded-full bg-dahora-emerald animate-pulse shrink-0" />
+            <span>
+              <strong className="text-white">Frete Grátis em até 150 km de Macatuba/SP</strong> (veículo 100% montado e revisado). Para outras cidades, enviamos com seguro para todo o Brasil.
+            </span>
           </div>
           <a
-            href={buildWhatsAppUrl(whatsappNumber, 'Olá! Gostaria de saber como funciona o envio para minha cidade.')}
+            href={buildWhatsAppUrl(whatsappNumber, 'Olá! Gostaria de consultar o frete grátis ou envio para minha cidade.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-dahora-emerald font-semibold hover:underline inline-flex items-center gap-1"
+            className="text-dahora-emerald font-bold hover:underline inline-flex items-center gap-1 shrink-0"
           >
-            <span>Consultar frete para sua localidade &rarr;</span>
+            <WhatsAppIcon className="w-3.5 h-3.5 text-dahora-emerald" />
+            <span>Consultar frete para sua cidade &rarr;</span>
           </a>
         </div>
       </div>

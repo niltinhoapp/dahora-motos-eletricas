@@ -5,10 +5,10 @@ import {
   ShieldCheck,
   Wrench,
   Truck,
-  MessageSquare,
   Sparkles,
   MapPin
 } from 'lucide-react';
+import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { buildWhatsAppUrl } from '../../lib/utils';
 import { env } from '../../config/env';
 
@@ -34,7 +34,7 @@ export function HeroSection() {
             {/* Tagline pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-dahora-cyan text-xs font-semibold tracking-wide backdrop-blur-sm">
               <Sparkles className="w-3.5 h-3.5 text-dahora-cyan animate-pulse" />
-              <span>DA HORA MOTOS ELÉTRICAS • 2 LOJAS EM MACATUBA/SP</span>
+              <span>DA HORA MOTOS ELÉTRICAS • LOJA 1 ASSISTÊNCIA • LOJA 2 VENDAS</span>
             </div>
 
             {/* Main Heading */}
@@ -45,7 +45,7 @@ export function HeroSection() {
 
             {/* Description */}
             <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-              Descubra motos, scooters, triciclos e patinetes elétricos selecionados para transformar sua rotina, zerar a dependência da gasolina e inaugurar uma nova experiência de mobilidade com revisão técnica garantida.
+              Descubra motos, scooters, triciclos e patinetes elétricos selecionados para sua rotina e lazer. <strong>Entrega grátis em até 150 km de Macatuba/SP</strong> com veículo montado, revisado e suporte técnico completo da nossa oficina própria.
             </p>
 
             {/* Action Buttons */}
@@ -63,8 +63,9 @@ export function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary w-full sm:w-auto text-base py-3.5 px-8 text-white border-white/20 hover:bg-white/5 hover:border-dahora-emerald flex items-center justify-center gap-2.5"
+                aria-label="Falar com a Da Hora no WhatsApp oficial"
               >
-                <MessageSquare className="w-4 h-4 text-dahora-emerald" />
+                <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
                 <span>WHATSAPP (14) 99887-7886</span>
               </a>
             </div>
@@ -76,8 +77,8 @@ export function HeroSection() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-white block">2 Lojas Físicas</span>
-                  <p className="text-[11px] text-gray-400">Macatuba, SP</p>
+                  <span className="text-xs font-bold text-white block">Loja 1 & Loja 2</span>
+                  <p className="text-[11px] text-gray-400">Oficina & Showroom</p>
                 </div>
               </div>
 
@@ -86,8 +87,8 @@ export function HeroSection() {
                   <Wrench className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-white block">Preparação</span>
-                  <p className="text-[11px] text-gray-400">Montado e revisado</p>
+                  <span className="text-xs font-bold text-white block">Assistência Técnica</span>
+                  <p className="text-[11px] text-gray-400">Peças e manutenção</p>
                 </div>
               </div>
 
@@ -96,8 +97,8 @@ export function HeroSection() {
                   <Truck className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-white block">Entrega</span>
-                  <p className="text-[11px] text-gray-400">Envio para todo o Brasil</p>
+                  <span className="text-xs font-bold text-white block">Frete Grátis até 150 km</span>
+                  <p className="text-[11px] text-gray-400">Macatuba e região</p>
                 </div>
               </div>
             </div>

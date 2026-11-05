@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { X, ChevronRight, Phone, MessageSquare, MapPin, ShieldCheck, Zap } from 'lucide-react';
+import { X, ChevronRight, Phone, MapPin, ShieldCheck, Zap } from 'lucide-react';
+import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { demoCategories, defaultStoreSettings } from '../../data/demo';
 import { buildWhatsAppUrl } from '../../lib/utils';
 import { env } from '../../config/env';
@@ -25,7 +26,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   if (!isOpen) return null;
 
-  const whatsappNumber = env.WHATSAPP_NUMBER || defaultStoreSettings.whatsapp || '5514999999999';
+  const whatsappNumber = env.WHATSAPP_NUMBER || defaultStoreSettings.whatsapp || '5514998877886';
   const whatsappUrl = buildWhatsAppUrl(
     whatsappNumber,
     'Olá! Estou navegando pelo site da Da Hora Motos Elétricas e gostaria de mais informações.'
@@ -171,8 +172,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp w-full py-2.5 text-sm flex items-center justify-center gap-2"
+            aria-label="Falar com a Da Hora no WhatsApp oficial"
           >
-            <MessageSquare className="w-4 h-4" />
+            <WhatsAppIcon className="w-5 h-5 text-dahora-black" />
             <span>Falar no WhatsApp</span>
           </a>
           <Link
