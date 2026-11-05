@@ -22,6 +22,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage').then((m) => ({ defa
 const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage').then((m) => ({ default: m.PrivacyPolicyPage })));
 const TermsPage = lazy(() => import('./pages/TermsPage').then((m) => ({ default: m.TermsPage })));
 const ReturnsPage = lazy(() => import('./pages/ReturnsPage').then((m) => ({ default: m.ReturnsPage })));
+const TricicloLandingPage = lazy(() => import('./pages/TricicloLandingPage').then((m) => ({ default: m.TricicloLandingPage })));
 
 // Lazy loading Admin Pages
 const AdminLayout = lazy(() => import('./components/admin/AdminLayout').then((m) => ({ default: m.AdminLayout })));
@@ -71,6 +72,11 @@ export function App() {
             {/* Fallback 404 */}
             <Route path="*" element={<CatalogPage />} />
           </Route>
+
+          {/* Dedicated Landing Pages (High-Conversion Paid Traffic & Campaigns) */}
+          <Route path="lp/triciclo-infantil" element={<TricicloLandingPage />} />
+          <Route path="black-friday" element={<TricicloLandingPage />} />
+          <Route path="natal-triciclo" element={<TricicloLandingPage />} />
 
           {/* Administrative Routes */}
           <Route path="/admin/login" element={<AdminLoginPage />} />

@@ -200,6 +200,14 @@ export function Header() {
               >
                 Sobre
               </Link>
+
+              <Link
+                to="/black-friday"
+                className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 text-white font-black text-xs uppercase tracking-wider shadow-md hover:scale-105 transition-all flex items-center gap-1.5 border border-red-400/40"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+                <span>Black Friday & Natal</span>
+              </Link>
             </nav>
 
             {/* Search Bar (Desktop) */}

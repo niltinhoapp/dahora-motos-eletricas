@@ -6,7 +6,8 @@ import {
   Wrench,
   Truck,
   Sparkles,
-  MapPin
+  MapPin,
+  Gift
 } from 'lucide-react';
 import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { buildWhatsAppUrl } from '../../lib/utils';
@@ -31,10 +32,21 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Commercial Copy & CTAs */}
           <div className="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-left">
-            {/* Tagline pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-dahora-cyan text-xs font-semibold tracking-wide backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5 text-dahora-cyan animate-pulse" />
-              <span>DA HORA MOTOS ELÉTRICAS • LOJA 1 ASSISTÊNCIA • LOJA 2 VENDAS</span>
+            {/* Promo Banner Pill */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-dahora-cyan text-xs font-semibold tracking-wide backdrop-blur-sm">
+                <Sparkles className="w-3.5 h-3.5 text-dahora-cyan animate-pulse" />
+                <span>DA HORA MOTOS • LOJA 1 ASSISTÊNCIA • LOJA 2 VENDAS</span>
+              </div>
+
+              <Link
+                to="/black-friday"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-red-600/30 to-amber-600/30 border border-red-500/50 text-red-200 text-xs font-bold hover:scale-105 transition-all shadow-md"
+              >
+                <Gift className="w-3.5 h-3.5 text-red-400 animate-pulse" />
+                <span>ESPECIAL NATAL & BLACK FRIDAY: TRICICLO INFANTIL</span>
+                <ArrowRight className="w-3 h-3 text-amber-300" />
+              </Link>
             </div>
 
             {/* Main Heading */}
