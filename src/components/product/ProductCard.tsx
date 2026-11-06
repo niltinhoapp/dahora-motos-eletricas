@@ -57,7 +57,7 @@ export function ProductCard({ product }: ProductCardProps) {
             src={mainImage}
             alt={product.name}
             onError={() => setImgError(true)}
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500 ease-out"
             loading="lazy"
           />
         ) : (

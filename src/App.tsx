@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 import { HomePage } from './pages/HomePage';
 import { AdminAuthProvider } from './contexts/AdminAuthContext';
@@ -76,15 +76,16 @@ export function App() {
           </Route>
 
           {/* Dedicated Landing Pages (High-Conversion Paid Traffic & Campaigns) */}
-          <Route path="lp/triciclo-infantil" element={<TricicloLandingPage />} />
           <Route path="black-friday" element={<DriftLandingPage />} />
           <Route path="black-friday/drift" element={<DriftLandingPage />} />
+          <Route path="black-friday/patinete" element={<PatineteLandingPage />} />
+          {/* Redirecionamentos para consolidar campanhas e evitar duplicidade de páginas */}
+          <Route path="black-friday/triciclo" element={<Navigate to="/black-friday/drift" replace />} />
+          <Route path="lp/triciclo-infantil" element={<Navigate to="/black-friday/drift" replace />} />
           <Route path="lp/drift-trike" element={<DriftLandingPage />} />
           <Route path="lp/kart-drift" element={<DriftLandingPage />} />
-          <Route path="black-friday/triciclo" element={<TricicloLandingPage />} />
-          <Route path="black-friday/patinete" element={<PatineteLandingPage />} />
           <Route path="lp/patinete-eletrico" element={<PatineteLandingPage />} />
-          <Route path="natal-triciclo" element={<TricicloLandingPage />} />
+          <Route path="natal-triciclo" element={<Navigate to="/black-friday/drift" replace />} />
 
           {/* Administrative Routes */}
           <Route path="/admin/login" element={<AdminLoginPage />} />

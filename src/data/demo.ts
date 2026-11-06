@@ -354,28 +354,28 @@ export const demoProducts: Product[] = [
     "images": [
       {
         "id": "img-2-0",
-        "url": "https://static.wixstatic.com/media/acc37b_95c4cbea1ed04aaea084b4f435e052e6~mv2.webp/v1/fit/w_500,h_500,q_90/file.webp",
+        "url": "https://static.wixstatic.com/media/acc37b_95c4cbea1ed04aaea084b4f435e052e6~mv2.webp/v1/fit/w_800,h_800,q_90/file.webp",
         "alt": "PATINETE XM-01 350W - Da Hora Motos Elétricas Macatuba",
         "order": 1,
         "isMain": true
       },
       {
         "id": "img-2-1",
-        "url": "https://static.wixstatic.com/media/acc37b_be6f605317604e73a629eed38dcf8991~mv2.webp/v1/fit/w_500,h_500,q_90/file.webp",
+        "url": "https://static.wixstatic.com/media/acc37b_be6f605317604e73a629eed38dcf8991~mv2.webp/v1/fit/w_800,h_800,q_90/file.webp",
         "alt": "PATINETE XM-01 350W - Da Hora Motos Elétricas Macatuba",
         "order": 2,
         "isMain": false
       },
       {
         "id": "img-2-2",
-        "url": "https://static.wixstatic.com/media/acc37b_2fe8ad0b1fec47479ae7f656945c7052~mv2.webp/v1/fit/w_500,h_500,q_90/file.webp",
+        "url": "https://static.wixstatic.com/media/acc37b_2fe8ad0b1fec47479ae7f656945c7052~mv2.webp/v1/fit/w_800,h_800,q_90/file.webp",
         "alt": "PATINETE XM-01 350W - Da Hora Motos Elétricas Macatuba",
         "order": 3,
         "isMain": false
       },
       {
         "id": "img-2-3",
-        "url": "https://static.wixstatic.com/media/acc37b_42fdbdeb344948b8949c4f8c8c8dc8e3~mv2.webp/v1/fit/w_500,h_500,q_90/file.webp",
+        "url": "https://static.wixstatic.com/media/acc37b_42fdbdeb344948b8949c4f8c8c8dc8e3~mv2.webp/v1/fit/w_800,h_800,q_90/file.webp",
         "alt": "PATINETE XM-01 350W - Da Hora Motos Elétricas Macatuba",
         "order": 4,
         "isMain": false

@@ -133,23 +133,15 @@ export function PatineteLandingPage() {
         </div>
       </header>
 
-      {/* 3. SWITCHER DE OFERTAS: PATINETE X DRIFT X TRICICLO */}
+      {/* 3. SWITCHER DE OFERTAS: PATINETE X DRIFT */}
       <div className="bg-slate-900/80 border-b border-slate-800 py-2.5 px-4 sm:px-6 lg:px-8">
         <div className="container-dahora flex flex-wrap items-center justify-center gap-4 text-xs">
-          <span className="text-slate-400 font-medium">Outras ofertas de Black Friday:</span>
+          <span className="text-slate-400 font-medium">Outra oferta oficial de Black Friday:</span>
           <Link
             to="/black-friday/drift"
             className="inline-flex items-center gap-1.5 text-amber-300 hover:text-white font-bold underline transition-colors"
           >
-            <span>🏎️ Kart Drift Trike 360°</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-          <span className="text-slate-600">•</span>
-          <Link
-            to="/black-friday"
-            className="inline-flex items-center gap-1.5 text-teal-300 hover:text-white font-bold underline transition-colors"
-          >
-            <span>🛺 Triciclo Infantil Estabilidade</span>
+            <span>🏎️ Kart Drift Trike 201 Mini 350W (R$ 1.899)</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -308,7 +300,7 @@ export function PatineteLandingPage() {
                           aria-label={`Ver foto ${img.title}`}
                         >
                           <div className="w-full aspect-square rounded-lg overflow-hidden bg-slate-900 border border-slate-800">
-                            <img src={img.url} alt={img.title} className="w-full h-full object-cover" />
+                            <img src={img.url} alt={img.title} className="w-full h-full object-contain p-1" />
                           </div>
                           <span className="text-[10px] font-bold text-slate-200 truncate w-full text-center">
                             Foto {img.id.replace('img-', '')}

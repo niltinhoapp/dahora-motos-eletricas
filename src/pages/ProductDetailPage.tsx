@@ -106,7 +106,7 @@ export function ProductDetailPage() {
                 <img
                   src={activeImage}
                   alt={product.name}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
               ) : (
                 <div className="w-24 h-24 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-dahora-emerald">
@@ -142,7 +142,7 @@ export function ProductDetailPage() {
                         : 'border-dahora-border hover:border-dahora-gray opacity-70 hover:opacity-100'
                     }`}
                   >
-                    <img src={img.url} alt={`Foto ${idx + 1}`} className="w-full h-full object-cover" />
+                    <img src={img.url} alt={`Foto ${idx + 1}`} className="w-full h-full object-contain p-1 bg-dahora-midnight" />
                   </button>
                 ))}
               </div>

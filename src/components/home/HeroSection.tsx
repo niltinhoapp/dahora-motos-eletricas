@@ -40,11 +40,11 @@ export function HeroSection() {
               </div>
 
               <Link
-                to="/black-friday"
+                to="/black-friday/drift"
                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-600/30 to-amber-600/30 border border-red-500/50 text-red-200 text-xs font-black hover:scale-105 transition-all shadow-md"
               >
                 <Flame className="w-3.5 h-3.5 text-red-400 fill-red-400 animate-pulse" />
-                <span>BLACK FRIDAY: TRICICLO DRIFT INFANTIL [VER OFERTA]</span>
+                <span>BLACK FRIDAY: DRIFT &amp; PATINETES [VER OFERTAS]</span>
                 <ArrowRight className="w-3 h-3 text-amber-300" />
               </Link>
             </div>
@@ -122,7 +122,7 @@ export function HeroSection() {
               <img
                 src={heroVehicleImg}
                 alt="Moto Elétrica Da Hora"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dahora-black via-transparent to-transparent opacity-80" />
 

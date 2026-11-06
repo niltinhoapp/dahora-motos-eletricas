@@ -37,14 +37,14 @@ export function CategoriesSection() {
             >
               <div>
                 {/* Real Photographic Header */}
-                <div className="relative aspect-[4/3] bg-dahora-midnight overflow-hidden">
+                <div className="relative aspect-[4/3] bg-dahora-midnight overflow-hidden flex items-center justify-center p-3">
                   <img
                     src={category.image}
                     alt={category.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dahora-black/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dahora-black/80 via-transparent to-transparent pointer-events-none" />
                   <span className="absolute bottom-3 left-4 text-xs font-bold bg-dahora-black/60 text-white backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/20">
                     {category.productCount} {category.productCount === 1 ? 'modelo' : 'modelos'}
                   </span>
