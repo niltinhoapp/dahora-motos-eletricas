@@ -29,9 +29,10 @@ export function ProductCard({ product }: ProductCardProps) {
   const currentPrice = product.promotionalPrice || product.price;
 
   const whatsappNumber = env.WHATSAPP_NUMBER || defaultStoreSettings.whatsapp || '5514998877886';
+  const productUrl = `${window.location.origin}${import.meta.env.BASE_URL.replace(/\/$/, '')}/produto/${product.slug}`;
   const whatsappUrl = buildWhatsAppUrl(
     whatsappNumber,
-    buildProductWhatsAppMessage(product.name, `${window.location.origin}/produto/${product.slug}`)
+    buildProductWhatsAppMessage(product.name, productUrl)
   );
 
   const handleAddToCart = (e: React.MouseEvent) => {
