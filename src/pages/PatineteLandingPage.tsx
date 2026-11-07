@@ -530,7 +530,7 @@ export function PatineteLandingPage() {
                       <Zap className="w-4 h-4 text-amber-400" /> Retirada Imediata no Showroom (Loja 2)
                     </h4>
                     <p className="text-xs text-slate-400">
-                      Prefere retirar hoje mesmo? Passe no nosso Showroom na Rua Lucilo Dellamura e leve o seu na hora.
+                      Prefere retirar hoje mesmo? Passe no nosso Showroom na Rua José Cruzerá, 241, Jardim Planalto e leve o seu na hora.
                     </p>
                   </div>
                 </div>
@@ -723,7 +723,7 @@ export function PatineteLandingPage() {
               </p>
               <p className="text-slate-300 pt-1">
                 🛵 <strong className="text-white">Loja 2 (Showroom & Vendas):</strong><br />
-                Rua Lucilo Dellamura – Macatuba/SP
+                Rua José Cruzerá, 241 – Jardim Planalto, Macatuba/SP
               </p>
             </div>
 

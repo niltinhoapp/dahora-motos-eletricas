@@ -429,7 +429,7 @@ export function ProductDetailPage() {
                     <span>Suporte Local em Macatuba</span>
                   </h4>
                   <p className="text-dahora-gray leading-relaxed">
-                    Dispomos de 2 unidades físicas em Macatuba (Alameda Tiradentes, 348 e Rua Lucilo Dellamura) para assistência técnica, peças de reposição e revisões.
+                    Dispomos de 2 unidades físicas em Macatuba (Alameda Tiradentes, 348 e Rua José Cruzerá, 241, Jardim Planalto) para assistência técnica, showroom de vendas, peças de reposição e revisões.
                   </p>
                 </div>
               </div>

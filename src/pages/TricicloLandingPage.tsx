@@ -552,7 +552,7 @@ export function TricicloLandingPage() {
                       <Zap className="w-4 h-4 text-amber-400" /> Retirada no Showroom (Loja 2)
                     </h4>
                     <p className="text-xs text-slate-400">
-                      Garanta o preço de Black Friday e retire na nossa loja física (Rua Lucilo Dellamura) no dia que preferir.
+                      Garanta o preço de Black Friday e retire na nossa loja física (Rua José Cruzerá, 241, Jardim Planalto) no dia que preferir.
                     </p>
                   </div>
                 </div>
@@ -745,7 +745,7 @@ export function TricicloLandingPage() {
               </p>
               <p className="text-slate-300 pt-1">
                 🛵 <strong className="text-white">Loja 2 (Showroom & Vendas):</strong><br />
-                Rua Lucilo Dellamura – Macatuba/SP
+                Rua José Cruzerá, 241 – Jardim Planalto, Macatuba/SP
               </p>
             </div>
 

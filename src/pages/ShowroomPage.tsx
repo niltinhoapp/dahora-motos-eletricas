@@ -48,7 +48,7 @@ export function ShowroomPage() {
                 Loja 2: Showroom de Vendas & Novos
               </h3>
               <p className="text-slate-600 leading-relaxed text-xs">
-                Localizada na Rua Lucilo Dellamura, Jardim Capri, é o nosso espaço comercial dedicado para você conhecer de perto toda a linha de motos, scooters, triciclos e patinetes elétricos 0km, realizar test-ride e receber consultoria especializada para sua compra.
+                Localizada na Rua José Cruzerá, 241, Jardim Planalto, é o nosso espaço comercial dedicado para você conhecer de perto toda a linha de motos, scooters, triciclos e patinetes elétricos 0km, realizar test-ride e receber consultoria especializada para sua compra.
               </p>
             </div>
           </div>

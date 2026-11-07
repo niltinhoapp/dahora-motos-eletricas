@@ -145,7 +145,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/showroom" className="text-gray-400 hover:text-white transition-colors">
-                  Loja 2: Rua Lucilo Dellamura (Vendas & Showroom)
+                  Loja 2: Rua José Cruzerá, 241, Jardim Planalto (Vendas & Showroom)
                 </Link>
               </li>
               <li>
