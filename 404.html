@@ -5,17 +5,101 @@
     <link rel="icon" type="image/svg+xml" href="/dahora-motos-eletricas/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#060911" />
-    <meta name="description" content="Da Hora Motos Elétricas — Motos, scooters e veículos elétricos. Economia, tecnologia e praticidade para sua rotina." />
-    <meta property="og:title" content="Da Hora Motos Elétricas" />
-    <meta property="og:description" content="Motos, scooters e veículos elétricos para transformar sua rotina." />
+    <meta name="description" content="Da Hora Motos Elétricas — Concessionária digital em Macatuba/SP. Motos, scooters, triciclos e patinetes elétricos 0km com assistência técnica especializada e entrega grátis até 150 km." />
+    <link rel="canonical" href="https://niltinhoapp.github.io/dahora-motos-eletricas/" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://niltinhoapp.github.io/dahora-motos-eletricas/" />
+    <meta property="og:site_name" content="Da Hora Motos Elétricas" />
+    <meta property="og:title" content="Da Hora Motos Elétricas | Concessionária Oficial Macatuba/SP" />
+    <meta property="og:description" content="Motos, scooters, triciclos e patinetes elétricos 0km. 2 lojas físicas em Macatuba, oficina própria e parcelamento em até 21x no cartão." />
+    <meta property="og:image" content="https://static.wixstatic.com/media/acc37b_236b7762a73a4c7c85b51059c02394e2~mv2.jpeg/v1/fit/w_800,h_800,q_90/file.jpg" />
     <meta property="og:locale" content="pt_BR" />
-    <title>Da Hora Motos Elétricas | Motos e Scooters Elétricas</title>
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Da Hora Motos Elétricas | Concessionária Oficial Macatuba/SP" />
+    <meta name="twitter:description" content="Motos, scooters, triciclos e patinetes elétricos 0km com oficina própria e frete grátis até 150 km." />
+    <meta name="twitter:image" content="https://static.wixstatic.com/media/acc37b_236b7762a73a4c7c85b51059c02394e2~mv2.jpeg/v1/fit/w_800,h_800,q_90/file.jpg" />
+
+    <title>Da Hora Motos Elétricas | Concessionária Digital em Macatuba/SP</title>
+
+    <!-- Schema.org Structured Data (AutoDealer / LocalBusiness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoDealer",
+      "name": "Da Hora Motos Elétricas",
+      "legalName": "Daniel Nunes Comercio de Autopropelidos - ME",
+      "image": "https://static.wixstatic.com/media/acc37b_236b7762a73a4c7c85b51059c02394e2~mv2.jpeg/v1/fit/w_800,h_800,q_90/file.jpg",
+      "telephone": "+55-14-99887-7886",
+      "url": "https://niltinhoapp.github.io/dahora-motos-eletricas/",
+      "priceRange": "$$",
+      "paymentAccepted": "Pix, Cartão de Crédito",
+      "department": [
+        {
+          "@type": "AutoRepair",
+          "name": "Da Hora Motos - Loja 1 (Assistência Técnica, Oficina & Peças)",
+          "telephone": "+55-14-99887-7886",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Alameda Tiradentes, 348",
+            "addressLocality": "Macatuba",
+            "addressRegion": "SP",
+            "postalCode": "17290-000",
+            "addressCountry": "BR"
+          }
+        },
+        {
+          "@type": "AutoDealer",
+          "name": "Da Hora Motos - Loja 2 (Showroom de Vendas & Novos)",
+          "telephone": "+55-14-99887-7886",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua José Cruzerá, 241, Jardim Planalto",
+            "addressLocality": "Macatuba",
+            "addressRegion": "SP",
+            "postalCode": "17290-000",
+            "addressCountry": "BR"
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- Preconnect e DNS-prefetch para CDNs críticos -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Migração automática de URLs com hash antiga (/#/...) para URLs limpas -->
+    <link rel="preconnect" href="https://static.wixstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://static.wixstatic.com" />
+
+    <!-- Preload do elemento LCP (Hero da Home) -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://static.wixstatic.com/media/acc37b_236b7762a73a4c7c85b51059c02394e2~mv2.jpeg/v1/fit/w_600,h_600,q_80/file.webp"
+      fetchpriority="high"
+      type="image/webp"
+    />
+
+    <!-- Tipografia otimizada sem bloquear renderização (font-display: swap) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+    />
+    <!-- Roteamento SPA limpo para GitHub Pages (sem /#/) e migração de URLs legadas -->
     <script type="text/javascript">
       (function(l) {
+        // 1. Processa redirecionamento vindo do 404.html do GitHub Pages
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+        // 2. Migração automática de URLs com hash antiga (/#/...) para URLs limpas
         if (l.hash && l.hash.indexOf('#/') === 0) {
           var cleanRoute = l.hash.substring(1);
           var basePath = '/dahora-motos-eletricas';
@@ -24,37 +108,12 @@
         }
       }(window.location));
     </script>
-    <script type="module" crossorigin src="/dahora-motos-eletricas/assets/index-CeYHfth0.js"></script>
-    <link rel="modulepreload" crossorigin href="/dahora-motos-eletricas/assets/vendor-react-BcdB47MK.js">
-    <link rel="modulepreload" crossorigin href="/dahora-motos-eletricas/assets/vendor-icons-cTwxgtrW.js">
-    <link rel="stylesheet" crossorigin href="/dahora-motos-eletricas/assets/index-B1__vaGK.css">
+    <script type="module" crossorigin src="/dahora-motos-eletricas/assets/index-CDZfZgHc.js"></script>
+    <link rel="modulepreload" crossorigin href="/dahora-motos-eletricas/assets/vendor-react-CJ5WUd7P.js">
+    <link rel="modulepreload" crossorigin href="/dahora-motos-eletricas/assets/vendor-icons-ffMt_59P.js">
+    <link rel="stylesheet" crossorigin href="/dahora-motos-eletricas/assets/index-BtG_kl9N.css">
   </head>
   <body>
     <div id="root"></div>
-
-    <!-- Detector de erros em tempo real no navegador -->
-    <script>
-      window.addEventListener('error', function(event) {
-        var errBox = document.getElementById('runtime-error-banner');
-        if (!errBox) {
-          errBox = document.createElement('div');
-          errBox.id = 'runtime-error-banner';
-          errBox.style.cssText = 'position:fixed;bottom:20px;left:20px;right:20px;max-width:600px;margin:0 auto;background:#7f1d1d;color:#fecaca;border:1px solid #ef4444;border-radius:12px;padding:16px;z-index:9999999;font-family:monospace;font-size:12px;box-shadow:0 10px 25px rgba(0,0,0,0.5);white-space:pre-wrap;';
-          document.body.appendChild(errBox);
-        }
-        errBox.textContent = '⚠️ Erro de Execução no Navegador:\n' + (event.message || event.error) + '\nArquivo: ' + (event.filename || '') + ' Linha: ' + (event.lineno || '');
-      });
-      window.addEventListener('unhandledrejection', function(event) {
-        var errBox = document.getElementById('runtime-error-banner');
-        if (!errBox) {
-          errBox = document.createElement('div');
-          errBox.id = 'runtime-error-banner';
-          errBox.style.cssText = 'position:fixed;bottom:20px;left:20px;right:20px;max-width:600px;margin:0 auto;background:#7f1d1d;color:#fecaca;border:1px solid #ef4444;border-radius:12px;padding:16px;z-index:9999999;font-family:monospace;font-size:12px;box-shadow:0 10px 25px rgba(0,0,0,0.5);white-space:pre-wrap;';
-          document.body.appendChild(errBox);
-        }
-        var msg = event.reason ? (event.reason.stack || event.reason.message || event.reason) : 'Promise rejeitada';
-        errBox.textContent = '⚠️ Erro Assíncrono no Navegador:\n' + msg;
-      });
-    </script>
   </body>
 </html>
