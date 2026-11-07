@@ -11,7 +11,7 @@ export function AnnouncementBar() {
   }
 
   return (
-    <div className="bg-dahora-black text-white text-xs border-b border-dahora-border-dark relative z-50">
+    <div className="bg-dahora-black text-white text-xs border-b border-dahora-border-dark relative z-50 min-h-[36px] flex items-center">
       <div className="container-dahora py-2 px-4 flex items-center justify-between">
         <div className="flex-1 flex items-center justify-center gap-2 text-center font-medium tracking-wide">
           <Sparkles className="w-3.5 h-3.5 text-dahora-emerald shrink-0 animate-pulse" />

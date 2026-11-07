@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import {
   Zap,
   MapPin,
-  ChevronDown
+  ChevronDown,
+  Instagram
 } from 'lucide-react';
 import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { defaultStoreSettings, demoCategories, macatubaStores } from '../../data/demo';
@@ -62,17 +63,27 @@ export function Footer() {
               ))}
             </div>
 
-            {/* WhatsApp CTA */}
-            <div className="pt-2">
+            {/* WhatsApp e Instagram Oficiais */}
+            <div className="pt-2 flex flex-wrap gap-2.5 items-center">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp text-xs py-2.5 px-4 inline-flex items-center gap-2"
+                className="btn-whatsapp text-xs py-2 px-3.5 inline-flex items-center gap-2"
                 aria-label="Falar com a Da Hora no WhatsApp oficial"
               >
                 <WhatsAppIcon className="w-4 h-4 text-dahora-black" />
-                <span>WhatsApp: (14) 99887-7886</span>
+                <span>(14) 99887-7886</span>
+              </a>
+              <a
+                href="https://www.instagram.com/dahoramotoseletricas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 text-white text-xs py-2 px-3.5 rounded-xl border border-white/15 inline-flex items-center gap-2 transition-colors"
+                aria-label="Seguir Da Hora Motos Elétricas no Instagram oficial"
+              >
+                <Instagram className="w-4 h-4 text-pink-400" />
+                <span>@dahoramotoseletricas</span>
               </a>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Scale, Check, ShoppingCart, ArrowLeft, Plus } from 'lucide-react';
 import { getAllProducts } from '../services/productService';
+import { demoCategories } from '../data/demo';
 import { formatCurrency } from '../lib/utils';
 import { useCart } from '../contexts/CartContext';
 import type { Product } from '../types';
@@ -107,10 +108,7 @@ export function ComparePage() {
                   <td className="p-4 font-semibold text-dahora-gray">Categoria</td>
                   {selectedProducts.map((p) => (
                     <td key={p.id} className="p-4 text-center text-dahora-text font-medium">
-                      {p.categoryId === 'cat-motos' && 'Moto Elétrica'}
-                      {p.categoryId === 'cat-scooters' && 'Scooter Elétrica'}
-                      {p.categoryId === 'cat-triciclos' && 'Triciclo Elétrico'}
-                      {p.categoryId === 'cat-patinetes' && 'Patinete Elétrico'}
+                      {demoCategories.find((c) => c.id === p.categoryId)?.name || 'Veículo Elétrico'}
                     </td>
                   ))}
                 </tr>

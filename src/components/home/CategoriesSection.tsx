@@ -26,8 +26,8 @@ export function CategoriesSection() {
           </Link>
         </div>
 
-        {/* Categories 4-Card Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Categories 5-Card Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {demoCategories.map((category) => (
             <Link
               key={category.id}
@@ -36,16 +36,16 @@ export function CategoriesSection() {
               className="group bg-white rounded-3xl border border-dahora-border overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>
-                {/* Real Photographic Header */}
-                <div className="relative aspect-[4/3] bg-dahora-midnight overflow-hidden flex items-center justify-center p-3">
+                {/* Real Photographic Header - Imagem 100% visível sem sobreposições bloqueando o veículo */}
+                <div className="relative aspect-[4/3] bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden flex items-center justify-center p-5 border-b border-dahora-border">
                   <img
                     src={category.image}
                     alt={category.name}
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    decoding="async"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dahora-black/80 via-transparent to-transparent pointer-events-none" />
-                  <span className="absolute bottom-3 left-4 text-xs font-bold bg-dahora-black/60 text-white backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/20">
+                  <span className="absolute top-3 right-3 text-[11px] font-bold bg-slate-900/80 text-emerald-400 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-emerald-500/30 shadow-sm">
                     {category.productCount} {category.productCount === 1 ? 'modelo' : 'modelos'}
                   </span>
                 </div>

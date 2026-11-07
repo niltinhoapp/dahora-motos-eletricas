@@ -504,7 +504,7 @@ export function CheckoutPage() {
                       <div>
                         <h4 className="font-bold text-xs text-dahora-text">Cartão de Crédito</h4>
                         <p className="text-[11px] text-dahora-gray mt-0.5">
-                          Parcelamento em até 12x
+                          Parcelamento em até 12x sem juros ou em até 21x
                         </p>
                       </div>
                     </button>

@@ -25,7 +25,7 @@ export function CartPage() {
   const [shippingFeedback, setShippingFeedback] = useState<string | null>(null);
   const [couponFeedback, setCouponFeedback] = useState<string | null>(null);
 
-  const whatsappNumber = env.WHATSAPP_NUMBER || defaultStoreSettings.whatsapp || '5514999999999';
+  const whatsappNumber = env.WHATSAPP_NUMBER || defaultStoreSettings.whatsapp || '5514998877886';
   const whatsappUrl = buildWhatsAppUrl(whatsappNumber, buildCartWhatsAppMessage());
 
   const handleCalculateShipping = (e: React.FormEvent) => {
@@ -34,9 +34,8 @@ export function CartPage() {
       setShippingFeedback('Por favor, informe um CEP válido com 8 dígitos.');
       return;
     }
-    // Transparently communicate pending API integration as requested by guidelines
     setShippingFeedback(
-      'Integração de frete em fase de configuração. As opções e cotações reais serão apresentadas na etapa de checkout após contato com a transportadora.'
+      'Entrega Grátis garantida para Macatuba e cidades em até 150 km com o veículo 100% montado, revisado e com suporte técnico! Para outras regiões, o frete especializado é confirmado na etapa seguinte.'
     );
   };
 

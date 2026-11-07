@@ -12,7 +12,7 @@ import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { useCart } from '../../contexts/CartContext';
 import { formatCurrency, formatDiscount, buildWhatsAppUrl, buildProductWhatsAppMessage } from '../../lib/utils';
 import { env } from '../../config/env';
-import { defaultStoreSettings } from '../../data/demo';
+import { defaultStoreSettings, demoCategories } from '../../data/demo';
 import type { Product } from '../../types';
 
 interface ProductCardProps {
@@ -47,19 +47,20 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="card-product group flex flex-col h-full bg-white relative">
-      {/* Visual media container */}
+      {/* Visual media container - Enquadramento completo e sem corte */}
       <Link
         to={`/produto/${product.slug}`}
         aria-label={`Ver detalhes de ${product.name}`}
-        className="block relative aspect-[4/3] bg-dahora-midnight overflow-hidden border-b border-dahora-border"
+        className="block relative aspect-[4/3] bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden border-b border-dahora-border"
       >
         {mainImage && !imgError ? (
           <img
             src={mainImage}
             alt={product.name}
             onError={() => setImgError(true)}
-            className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="w-full h-full object-contain p-5 sm:p-6 group-hover:scale-105 transition-transform duration-500 ease-out"
             loading="lazy"
+            decoding="async"
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-dahora-surface-dark to-dahora-midnight flex flex-col items-center justify-center p-6 text-center transition-transform duration-500 group-hover:scale-105">
@@ -106,10 +107,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <div>
           {/* Category & Name */}
           <div className="text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
-            {product.categoryId === 'cat-motos' && 'Moto Elétrica'}
-            {product.categoryId === 'cat-scooters' && 'Scooter Elétrica'}
-            {product.categoryId === 'cat-triciclos' && 'Triciclo Elétrico'}
-            {product.categoryId === 'cat-patinetes' && 'Patinete / Drift'}
+            {demoCategories.find((c) => c.id === product.categoryId)?.name || 'Veículo Elétrico'}
           </div>
 
           <h3 className="font-display font-bold text-base text-dahora-text group-hover:text-emerald-700 transition-colors line-clamp-1 mb-2">
@@ -162,7 +160,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
             {product.installments && (
               <div className="text-[11px] text-slate-600 font-medium mt-0.5">
-                ou {product.installments.count}x de {formatCurrency(product.installments.value)} sem juros
+                ou {product.installments.count}x de {formatCurrency(product.installments.value)} sem juros • até 21x
               </div>
             )}
           </div>

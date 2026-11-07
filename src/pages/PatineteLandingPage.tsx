@@ -92,7 +92,7 @@ export function PatineteLandingPage() {
             <Flame className="w-3.5 h-3.5 fill-white" /> BLACK FRIDAY OFICIAL 2026
           </span>
           <span>
-            ⚡ Desconto histórico de <strong>R$ 591,00</strong> no Patinete Elétrico XM-01 350W • <strong>Frete Grátis até 150 km</strong> • Veículo 100% Montado!
+            Desconto histórico de <strong>R$ 591,00</strong> no Patinete Elétrico XM-01 350W • <strong>Frete Grátis até 150 km</strong> • Veículo 100% Montado!
           </span>
         </div>
       </div>
@@ -141,7 +141,7 @@ export function PatineteLandingPage() {
             to="/black-friday/drift"
             className="inline-flex items-center gap-1.5 text-amber-300 hover:text-white font-bold underline transition-colors"
           >
-            <span>🏎️ Kart Drift Trike 201 Mini 350W (R$ 1.899)</span>
+            <span>Kart Drift Trike 201 Mini 350W (R$ 1.899)</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -257,28 +257,29 @@ export function PatineteLandingPage() {
             <div className="lg:col-span-5">
               <div className="bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-2xl relative">
                 
-                {/* Header da Foto */}
+                {/* Header da Foto com Subtítulo */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs uppercase tracking-wider font-bold text-slate-400">
-                    Detalhe: <strong className="text-white">{selectedImage.title}</strong>
-                  </span>
+                  <div>
+                    <span className="text-xs uppercase tracking-wider font-bold text-slate-400 block">
+                      Detalhe: <strong className="text-white">{selectedImage.title}</strong>
+                    </span>
+                    <span className="text-[11px] text-emerald-400 font-medium">
+                      {selectedImage.subtitle}
+                    </span>
+                  </div>
                   <span className="bg-red-500/15 text-red-400 border border-red-500/30 text-[11px] font-bold px-2.5 py-0.5 rounded-full">
                     Black Friday
                   </span>
                 </div>
 
-                {/* Imagem Principal */}
+                {/* Imagem Principal - Enquadramento completo sem sobreposições */}
                 <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center group">
                   <img
                     src={selectedImage.url}
                     alt={`Patinete Elétrico XM-01 350W Da Hora Motos - ${selectedImage.title}`}
-                    className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
                   />
-                  <div className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-[11px] font-semibold text-slate-300 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                    <span>{selectedImage.subtitle}</span>
-                  </div>
                 </div>
 
                 {/* Miniaturas da Galeria */}
@@ -718,11 +719,11 @@ export function PatineteLandingPage() {
             <div className="space-y-2">
               <h4 className="font-bold text-white text-xs uppercase tracking-wider">Nossas 2 Unidades em Macatuba/SP:</h4>
               <p className="text-slate-300">
-                🛠️ <strong className="text-white">Loja 1 (Assistência Técnica & Peças):</strong><br />
+                <strong className="text-white">Loja 1 (Assistência Técnica & Peças):</strong><br />
                 Alameda Tiradentes, 348 – Centro, Macatuba/SP
               </p>
               <p className="text-slate-300 pt-1">
-                🛵 <strong className="text-white">Loja 2 (Showroom & Vendas):</strong><br />
+                <strong className="text-white">Loja 2 (Showroom & Vendas):</strong><br />
                 Rua José Cruzerá, 241 – Jardim Planalto, Macatuba/SP
               </p>
             </div>

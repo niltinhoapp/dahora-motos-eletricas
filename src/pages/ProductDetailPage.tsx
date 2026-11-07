@@ -100,13 +100,13 @@ export function ProductDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 bg-white rounded-3xl border border-dahora-border p-6 sm:p-10 shadow-card mb-12">
           {/* Left Column: Gallery & Media */}
           <div className="lg:col-span-7 space-y-4">
-            {/* Main Stage Image */}
-            <div className="aspect-[4/3] rounded-2xl bg-dahora-midnight border border-dahora-border-dark flex items-center justify-center relative overflow-hidden group shadow-inner">
+            {/* Main Stage Image - Enquadramento completo do veículo */}
+            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-dahora-border-dark flex items-center justify-center relative overflow-hidden group shadow-inner">
               {activeImage ? (
                 <img
                   src={activeImage}
                   alt={product.name}
-                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain p-6 sm:p-8 group-hover:scale-105 transition-transform duration-500"
                 />
               ) : (
                 <div className="w-24 h-24 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-dahora-emerald">
@@ -215,7 +215,7 @@ export function ProductDetailPage() {
 
                 {product.installments && (
                   <p className="text-xs text-slate-600">
-                    ou em até {product.installments.count}x de {formatCurrency(product.installments.value)} sem juros
+                    ou em até {product.installments.count}x de {formatCurrency(product.installments.value)} sem juros (ou em até 21x no cartão)
                   </p>
                 )}
               </div>

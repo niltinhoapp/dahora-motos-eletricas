@@ -95,7 +95,7 @@ export function TricicloLandingPage() {
             <Flame className="w-3.5 h-3.5 fill-white" /> BLACK FRIDAY OFICIAL 2026
           </span>
           <span>
-            ⚡ Desconto histórico de <strong>R$ 591,00</strong> no Triciclo Drift Infantil • <strong>Frete Grátis até 150 km</strong> • Veículo 100% Montado!
+            Desconto histórico de <strong>R$ 591,00</strong> no Triciclo Drift Infantil • <strong>Frete Grátis até 150 km</strong> • Veículo 100% Montado!
           </span>
         </div>
       </div>
@@ -144,7 +144,7 @@ export function TricicloLandingPage() {
             to="/black-friday/drift"
             className="inline-flex items-center gap-1.5 text-amber-300 hover:text-white font-bold underline transition-colors"
           >
-            <span>🏎️ Kart Drift Trike 360°</span>
+            <span>Kart Drift Trike 360°</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
           <span className="text-slate-600">•</span>
@@ -152,7 +152,7 @@ export function TricicloLandingPage() {
             to="/black-friday/patinete"
             className="inline-flex items-center gap-1.5 text-teal-300 hover:text-white font-bold underline transition-colors"
           >
-            <span>🛴 Patinete Dobrável XM-01</span>
+            <span>Patinete Dobrável XM-01</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -740,11 +740,11 @@ export function TricicloLandingPage() {
             <div className="space-y-2">
               <h4 className="font-bold text-white text-xs uppercase tracking-wider">Nossas 2 Unidades em Macatuba/SP:</h4>
               <p className="text-slate-300">
-                🛠️ <strong className="text-white">Loja 1 (Assistência Técnica & Peças):</strong><br />
+                <strong className="text-white">Loja 1 (Assistência Técnica & Peças):</strong><br />
                 Alameda Tiradentes, 348 – Centro, Macatuba/SP
               </p>
               <p className="text-slate-300 pt-1">
-                🛵 <strong className="text-white">Loja 2 (Showroom & Vendas):</strong><br />
+                <strong className="text-white">Loja 2 (Showroom & Vendas):</strong><br />
                 Rua José Cruzerá, 241 – Jardim Planalto, Macatuba/SP
               </p>
             </div>

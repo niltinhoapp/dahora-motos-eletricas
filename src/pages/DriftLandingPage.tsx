@@ -97,7 +97,7 @@ export function DriftLandingPage() {
             <Flame className="w-3.5 h-3.5 fill-white" /> BLACK FRIDAY OFICIAL 2026
           </span>
           <span>
-            🏁 O Rei das Derrapagens: <strong>Kart Drift 201 Mini 350W com R$ 591 OFF</strong> • <strong>Frete Grátis até 150 km</strong> • Veículo 100% Montado!
+            O Rei das Derrapagens: <strong>Kart Drift 201 Mini 350W com R$ 591 OFF</strong> • <strong>Frete Grátis até 150 km</strong> • Veículo 100% Montado!
           </span>
         </div>
       </div>
@@ -146,7 +146,7 @@ export function DriftLandingPage() {
             to="/black-friday/patinete"
             className="inline-flex items-center gap-1.5 text-amber-300 hover:text-white font-bold underline transition-colors"
           >
-            <span>🛴 Patinete Elétrico Dobrável XM-01 350W (R$ 1.899)</span>
+            <span>Patinete Elétrico Dobrável XM-01 350W (R$ 1.899)</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -734,11 +734,11 @@ export function DriftLandingPage() {
             <div className="space-y-2">
               <h4 className="font-bold text-white text-xs uppercase tracking-wider">Nossas 2 Unidades em Macatuba/SP:</h4>
               <p className="text-slate-300">
-                🛠️ <strong className="text-white">Loja 1 (Assistência Técnica & Peças):</strong><br />
+                <strong className="text-white">Loja 1 (Assistência Técnica & Peças):</strong><br />
                 Alameda Tiradentes, 348 – Centro, Macatuba/SP
               </p>
               <p className="text-slate-300 pt-1">
-                🛵 <strong className="text-white">Loja 2 (Showroom & Vendas):</strong><br />
+                <strong className="text-white">Loja 2 (Showroom & Vendas):</strong><br />
                 Rua José Cruzerá, 241 – Jardim Planalto, Macatuba/SP
               </p>
             </div>

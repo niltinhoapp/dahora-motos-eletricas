@@ -5,11 +5,17 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: '/dahora-motos-eletricas/',
   plugins: [react()],
+  esbuild: {
+    legalComments: 'none',
+    drop: ['console', 'debugger'],
+  },
   resolve: {
     preserveSymlinks: true,
   },
   build: {
     target: 'es2020',
+    minify: 'esbuild',
+    cssMinify: true,
     cssCodeSplit: true,
     chunkSizeWarningLimit: 600,
     rollupOptions: {

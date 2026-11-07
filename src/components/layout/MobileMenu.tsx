@@ -71,7 +71,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           >
             <div>
               <span className="text-[10px] bg-black/40 text-amber-200 px-2.5 py-0.5 rounded-full font-black uppercase tracking-wider">
-                🔥 Black Friday Oficial
+                Black Friday Oficial
               </span>
               <p className="font-extrabold text-sm mt-1 text-white">Triciclo Drift Infantil 360°</p>
               <p className="text-[11px] text-red-100">Desconto R$ 591 • Frete Grátis 150km</p>

@@ -30,6 +30,16 @@ export function getNewProducts(): Product[] {
 }
 
 export function getProductsByCategory(categorySlug: string): Product[] {
+  // Suporte a rotas legadas e consolidadas
+  if (categorySlug === 'motos-eletricas') {
+    return demoProducts.filter(
+      (p) => p.categoryId === 'cat-motos-ate-1000w' || p.categoryId === 'cat-motos-1001w-a-2000w'
+    );
+  }
+  if (categorySlug === 'triciclos-eletricos') {
+    return demoProducts.filter((p) => p.categoryId === 'cat-modelos-especiais');
+  }
+
   const category = demoCategories.find((c) => c.slug === categorySlug);
   if (!category) return [];
   return demoProducts.filter((p) => p.categoryId === category.id);
@@ -135,6 +145,12 @@ export function getAllCategories(): Category[] {
 }
 
 export function getCategoryBySlug(slug: string): Category | undefined {
+  if (slug === 'motos-eletricas') {
+    return demoCategories.find((c) => c.slug === 'motos-eletricas-ate-1000w');
+  }
+  if (slug === 'triciclos-eletricos') {
+    return demoCategories.find((c) => c.slug === 'modelos-especiais');
+  }
   return demoCategories.find((c) => c.slug === slug);
 }
 

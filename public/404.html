@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Da Hora Motos Elétricas</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA router - redireciona rotas diretas sem usar hash /#/
+      var pathSegmentsToKeep = 1; // mantem o segmento base '/dahora-motos-eletricas'
+      var l = window.location;
+      var redirectUrl =
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash;
+      l.replace(redirectUrl);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
