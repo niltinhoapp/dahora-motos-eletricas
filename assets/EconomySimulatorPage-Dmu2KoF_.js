@@ -1,0 +1,1 @@
+import{r,j as o}from"./vendor-react-BcdB47MK.js";import{E as t}from"./index-CeYHfth0.js";import"./vendor-icons-cTwxgtrW.js";function s(){return r.useEffect(()=>{document.title="Simulador de Economia | Da Hora Motos Elétricas",window.scrollTo(0,0)},[]),o.jsx("div",{className:"py-6",children:o.jsx(t,{})})}export{s as EconomySimulatorPage};
