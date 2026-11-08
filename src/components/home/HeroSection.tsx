@@ -118,7 +118,15 @@ export function HeroSection() {
 
           {/* Right Column: Hero Visual Showcase with Real Image */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
-            <div className="w-full aspect-square max-w-md lg:max-w-none rounded-3xl bg-gradient-to-br from-dahora-surface-dark via-dahora-midnight to-dahora-surface-dark border border-dahora-border-dark overflow-hidden relative shadow-premium group">
+            <div className="w-full aspect-square max-w-md lg:max-w-none rounded-3xl bg-gradient-to-br from-dahora-surface-dark via-dahora-midnight to-dahora-surface-dark border border-dahora-border-dark overflow-hidden relative shadow-premium group flex items-center justify-center">
+              {/* Fundo ambiente desfocado preenchendo as laterais naturalmente */}
+              <img
+                src={heroVehicleImg}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-35 brightness-75 select-none pointer-events-none"
+              />
+              {/* Moto 100% visível, nítida e sem corte */}
               <img
                 src={heroVehicleImg}
                 alt="Moto Elétrica E80 Speed Da Hora Motos"
@@ -127,7 +135,7 @@ export function HeroSection() {
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="relative z-10 w-full h-full object-contain p-2 sm:p-3 group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dahora-black via-transparent to-transparent opacity-80" />
 

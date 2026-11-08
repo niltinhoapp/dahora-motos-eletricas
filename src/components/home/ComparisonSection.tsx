@@ -80,8 +80,9 @@ export function ComparisonSection() {
                   <th key={p.id} className="p-4 font-bold text-white w-1/4 text-center">
                     <div className="space-y-2">
                       {p.images?.[0]?.url && (
-                        <Link to={`/produto/${p.slug}`} className="block w-20 h-20 mx-auto rounded-xl overflow-hidden bg-slate-950 border border-dahora-border-dark shadow-sm">
-                          <img src={p.images[0].url} alt={p.name} className="w-full h-full object-cover" />
+                        <Link to={`/produto/${p.slug}`} className="block w-20 h-20 mx-auto rounded-xl overflow-hidden bg-slate-900 border border-dahora-border-dark shadow-sm relative flex items-center justify-center">
+                          <img src={p.images[0].url} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover blur-lg scale-125 opacity-35" />
+                          <img src={p.images[0].url} alt={p.name} className="relative z-10 w-full h-full object-contain p-1" />
                         </Link>
                       )}
                       <Link to={`/produto/${p.slug}`} className="hover:text-dahora-cyan transition-colors block">

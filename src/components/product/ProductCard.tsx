@@ -47,21 +47,31 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="card-product group flex flex-col h-full bg-white relative">
-      {/* Visual media container - Imagem preenche 100% sem abas laterais */}
+      {/* Visual media container - Enquadramento completo sem cortes e sem abas pretas */}
       <Link
         to={`/produto/${product.slug}`}
         aria-label={`Ver detalhes de ${product.name}`}
-        className="block relative aspect-[4/3] bg-slate-950 overflow-hidden border-b border-dahora-border"
+        className="block relative aspect-[4/3] bg-slate-900 overflow-hidden border-b border-dahora-border flex items-center justify-center"
       >
         {mainImage && !imgError ? (
-          <img
-            src={mainImage}
-            alt={product.name}
-            onError={() => setImgError(true)}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-            loading="lazy"
-            decoding="async"
-          />
+          <>
+            {/* Fundo ambiente desfocado preenchendo as laterais naturalmente */}
+            <img
+              src={mainImage}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-35 brightness-75 select-none pointer-events-none"
+            />
+            {/* Veículo 100% visível, nítido e sem corte de rodas ou guidão */}
+            <img
+              src={mainImage}
+              alt={product.name}
+              onError={() => setImgError(true)}
+              className="relative z-10 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500 ease-out"
+              loading="lazy"
+              decoding="async"
+            />
+          </>
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-dahora-surface-dark to-dahora-midnight flex flex-col items-center justify-center p-6 text-center transition-transform duration-500 group-hover:scale-105">
             <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-dahora-emerald mb-2 shadow-glow-emerald">

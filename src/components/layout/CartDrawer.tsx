@@ -86,11 +86,14 @@ export function CartDrawer() {
                     {/* Thumbnail */}
                     <div className="w-20 h-20 rounded-xl bg-dahora-midnight border border-dahora-border-dark flex items-center justify-center shrink-0 overflow-hidden relative group">
                       {item.product.images?.[0]?.url ? (
-                        <img
-                          src={item.product.images[0].url}
-                          alt={item.product.name}
-                          className="w-full h-full object-cover"
-                        />
+                        <>
+                          <img src={item.product.images[0].url} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover blur-md scale-125 opacity-30" />
+                          <img
+                            src={item.product.images[0].url}
+                            alt={item.product.name}
+                            className="relative z-10 w-full h-full object-contain p-1"
+                          />
+                        </>
                       ) : (
                         <div className="text-xs text-center text-dahora-cyan font-mono p-1">
                           {item.product.name.slice(0, 10)}

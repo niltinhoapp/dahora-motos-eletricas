@@ -272,12 +272,18 @@ export function DriftLandingPage() {
                   </span>
                 </div>
 
-                {/* Imagem Principal - Preenche todo o espaço sem abas laterais */}
-                <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center group">
+                {/* Imagem Principal - Veículo 100% visível, nítido e sem abas pretas */}
+                <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center group">
+                  <img
+                    src={selectedColor.image}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-35 brightness-75 select-none pointer-events-none"
+                  />
                   <img
                     src={selectedColor.image}
                     alt={`Kart Elétrico Drift 201 Mini 350W Black Friday - ${selectedColor.name}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="relative z-10 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
                   />
                   <div className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-[11px] font-semibold text-slate-300 flex items-center gap-1.5">
