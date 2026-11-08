@@ -36,12 +36,12 @@ export function CategoriesSection() {
               className="group bg-white rounded-3xl border border-dahora-border overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>
-                {/* Real Photographic Header - Imagem 100% visível sem sobreposições bloqueando o veículo */}
-                <div className="relative aspect-[4/3] bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden flex items-center justify-center p-5 border-b border-dahora-border">
+                {/* Real Photographic Header - Preenche todo o espaço sem abas pretas laterais */}
+                <div className="relative aspect-[4/3] bg-slate-950 overflow-hidden border-b border-dahora-border">
                   <img
                     src={category.image}
                     alt={category.name}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                     decoding="async"
                   />

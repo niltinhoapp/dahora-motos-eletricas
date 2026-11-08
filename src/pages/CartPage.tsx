@@ -101,8 +101,18 @@ export function CartPage() {
                 >
                   {/* Thumbnail & Title */}
                   <div className="flex items-center gap-4">
-                    <div className="w-20 h-20 rounded-2xl bg-dahora-midnight border border-dahora-border-dark flex items-center justify-center text-dahora-emerald font-bold text-xs shrink-0">
-                      {item.product.name.slice(0, 8)}
+                    <div className="w-20 h-20 rounded-2xl bg-dahora-midnight border border-dahora-border-dark flex items-center justify-center shrink-0 overflow-hidden">
+                      {item.product.images?.[0]?.url ? (
+                        <img
+                          src={item.product.images[0].url}
+                          alt={item.product.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-dahora-emerald font-bold text-xs">
+                          {item.product.name.slice(0, 8)}
+                        </span>
+                      )}
                     </div>
                     <div>
                       <Link

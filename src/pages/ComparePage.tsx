@@ -81,7 +81,12 @@ export function ComparePage() {
                   <th className="p-4 font-bold text-dahora-text w-1/4">Característica</th>
                   {selectedProducts.map((p) => (
                     <th key={p.id} className="p-4 text-center w-1/4">
-                      <div className="space-y-1">
+                      <div className="space-y-2">
+                        {p.images?.[0]?.url && (
+                          <Link to={`/produto/${p.slug}`} className="block w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-xl overflow-hidden bg-slate-950 border border-dahora-border shadow-sm">
+                            <img src={p.images[0].url} alt={p.name} className="w-full h-full object-cover" />
+                          </Link>
+                        )}
                         <Link
                           to={`/produto/${p.slug}`}
                           className="font-display font-bold text-sm text-dahora-text hover:text-emerald-700 transition-colors block"

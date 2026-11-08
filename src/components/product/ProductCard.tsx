@@ -47,18 +47,18 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="card-product group flex flex-col h-full bg-white relative">
-      {/* Visual media container - Enquadramento completo e sem corte */}
+      {/* Visual media container - Imagem preenche 100% sem abas laterais */}
       <Link
         to={`/produto/${product.slug}`}
         aria-label={`Ver detalhes de ${product.name}`}
-        className="block relative aspect-[4/3] bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden border-b border-dahora-border"
+        className="block relative aspect-[4/3] bg-slate-950 overflow-hidden border-b border-dahora-border"
       >
         {mainImage && !imgError ? (
           <img
             src={mainImage}
             alt={product.name}
             onError={() => setImgError(true)}
-            className="w-full h-full object-contain p-5 sm:p-6 group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
             loading="lazy"
             decoding="async"
           />

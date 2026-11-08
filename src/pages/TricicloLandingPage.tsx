@@ -278,12 +278,12 @@ export function TricicloLandingPage() {
                   </span>
                 </div>
 
-                {/* Imagem Principal */}
+                {/* Imagem Principal - Preenche todo o espaço sem abas laterais */}
                 <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center group">
                   <img
                     src={selectedColor.image}
                     alt={`Triciclo Elétrico Drift Infantil Black Friday - ${selectedColor.name}`}
-                    className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
                   />
                   <div className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-[11px] font-semibold text-slate-300 flex items-center gap-1.5">

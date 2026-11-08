@@ -84,10 +84,18 @@ export function CartDrawer() {
                 {items.map((item) => (
                   <li key={`${item.product.id}-${item.variantId || 'default'}`} className="pt-4 first:pt-0 flex gap-4">
                     {/* Thumbnail */}
-                    <div className="w-20 h-20 rounded-xl bg-dahora-midnight border border-dahora-border-dark flex items-center justify-center p-2 shrink-0 overflow-hidden relative group">
-                      <div className="text-xs text-center text-dahora-cyan font-mono">
-                        {item.product.name.slice(0, 10)}
-                      </div>
+                    <div className="w-20 h-20 rounded-xl bg-dahora-midnight border border-dahora-border-dark flex items-center justify-center shrink-0 overflow-hidden relative group">
+                      {item.product.images?.[0]?.url ? (
+                        <img
+                          src={item.product.images[0].url}
+                          alt={item.product.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="text-xs text-center text-dahora-cyan font-mono p-1">
+                          {item.product.name.slice(0, 10)}
+                        </div>
+                      )}
                     </div>
 
                     {/* Details */}

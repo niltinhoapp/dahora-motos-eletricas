@@ -78,9 +78,16 @@ export function ComparisonSection() {
                 <th className="p-4 font-bold text-gray-300 w-1/4">Especificação</th>
                 {selectedProducts.map((p) => (
                   <th key={p.id} className="p-4 font-bold text-white w-1/4 text-center">
-                    <Link to={`/produto/${p.slug}`} className="hover:text-dahora-cyan transition-colors">
-                      {p.name}
-                    </Link>
+                    <div className="space-y-2">
+                      {p.images?.[0]?.url && (
+                        <Link to={`/produto/${p.slug}`} className="block w-20 h-20 mx-auto rounded-xl overflow-hidden bg-slate-950 border border-dahora-border-dark shadow-sm">
+                          <img src={p.images[0].url} alt={p.name} className="w-full h-full object-cover" />
+                        </Link>
+                      )}
+                      <Link to={`/produto/${p.slug}`} className="hover:text-dahora-cyan transition-colors block">
+                        {p.name}
+                      </Link>
+                    </div>
                   </th>
                 ))}
               </tr>

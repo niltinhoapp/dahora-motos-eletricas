@@ -272,12 +272,12 @@ export function PatineteLandingPage() {
                   </span>
                 </div>
 
-                {/* Imagem Principal - Enquadramento completo sem sobreposições */}
+                {/* Imagem Principal - Preenche todo o espaço sem abas laterais */}
                 <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center group">
                   <img
                     src={selectedImage.url}
                     alt={`Patinete Elétrico XM-01 350W Da Hora Motos - ${selectedImage.title}`}
-                    className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
                   />
                 </div>
@@ -301,7 +301,7 @@ export function PatineteLandingPage() {
                           aria-label={`Ver foto ${img.title}`}
                         >
                           <div className="w-full aspect-square rounded-lg overflow-hidden bg-slate-900 border border-slate-800">
-                            <img src={img.url} alt={img.title} className="w-full h-full object-contain p-1" />
+                            <img src={img.url} alt={img.title} className="w-full h-full object-cover" />
                           </div>
                           <span className="text-[10px] font-bold text-slate-200 truncate w-full text-center">
                             Foto {img.id.replace('img-', '')}
