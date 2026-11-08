@@ -151,7 +151,7 @@ export function Footer() {
             >
               <li>
                 <Link to="/showroom" className="text-gray-400 hover:text-white transition-colors">
-                  Loja 1: Alameda Tiradentes, 348 (Assistência Técnica)
+                  Loja 1: Alameda Tiradentes, 348 (Vendas, Oficina & Peças)
                 </Link>
               </li>
               <li>

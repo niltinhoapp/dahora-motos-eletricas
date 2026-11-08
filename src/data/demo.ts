@@ -10,12 +10,12 @@ import type { Product, Category, Banner, FAQItem, Review, StoreSettings, Physica
 
 export const macatubaStores: PhysicalStore[] = [
   {
-    id: 'loja-1-assistencia',
-    name: 'Loja 1 — Assistência Técnica & Peças',
-    tag: 'Loja 1 • Assistência Técnica & Oficina',
+    id: 'loja-1-vendas-assistencia',
+    name: 'Loja 1 — Vendas, Assistência Técnica & Peças',
+    tag: 'Loja 1 • Vendas, Oficina & Peças',
     street: 'Alameda Tiradentes',
     number: '348',
-    complement: 'Assistência Técnica Especializada, Oficina e Peças',
+    complement: 'Showroom de Vendas, Oficina Especializada e Peças',
     neighborhood: 'Jardim Capri / Rodoviária',
     city: 'Macatuba',
     state: 'SP',
@@ -55,7 +55,7 @@ export const defaultStoreSettings: StoreSettings = {
   email: 'contato@dahoramotos.com.br',
   stores: macatubaStores,
   announcementBar: {
-    text: 'ENTREGA GRÁTIS EM ATÉ 150 KM DE MACATUBA/SP • LOJA 1: ASSISTÊNCIA TÉCNICA • LOJA 2: VENDAS',
+    text: 'ENTREGA GRÁTIS EM ATÉ 150 KM DE MACATUBA/SP • LOJA 1: VENDAS & OFICINA • LOJA 2: SHOWROOM',
     isActive: true,
   },
 };
@@ -2216,7 +2216,7 @@ export const demoFAQItems: FAQItem[] = [
   {
     id: 'faq-1',
     question: 'Onde ficam as lojas físicas da Da Hora em Macatuba?',
-    answer: 'Contamos com 2 unidades em Macatuba/SP: a Loja 1 (Assistência Técnica & Peças) fica na Alameda Tiradentes, nº 348 (ao lado da Rodoviária), e a Loja 2 (Showroom de Vendas & Novos) fica na Rua José Cruzerá, nº 241, Jardim Planalto.',
+    answer: 'Contamos com 2 unidades em Macatuba/SP que comercializam toda a linha de veículos: a Loja 1 (Vendas, Oficina & Assistência Técnica) fica na Alameda Tiradentes, nº 348 (ao lado da Rodoviária), e a Loja 2 (Showroom de Vendas & Novos) fica na Rua José Cruzerá, nº 241, Jardim Planalto.',
     category: 'Showroom',
     order: 1,
   },

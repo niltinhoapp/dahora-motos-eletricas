@@ -429,7 +429,7 @@ export function ProductDetailPage() {
                     <span>Suporte Local em Macatuba</span>
                   </h4>
                   <p className="text-dahora-gray leading-relaxed">
-                    Dispomos de 2 unidades físicas em Macatuba (Alameda Tiradentes, 348 e Rua José Cruzerá, 241, Jardim Planalto) para assistência técnica, showroom de vendas, peças de reposição e revisões.
+                    Dispomos de 2 unidades físicas em Macatuba (Alameda Tiradentes, 348 e Rua José Cruzerá, 241, Jardim Planalto) para compra de veículos 0km, test-ride, assistência técnica especializada, peças de reposição e oficina mecânica própria.
                   </p>
                 </div>
               </div>

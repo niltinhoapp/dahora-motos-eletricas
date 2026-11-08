@@ -734,7 +734,7 @@ export function DriftLandingPage() {
             <div className="space-y-2">
               <h4 className="font-bold text-white text-xs uppercase tracking-wider">Nossas 2 Unidades em Macatuba/SP:</h4>
               <p className="text-slate-300">
-                <strong className="text-white">Loja 1 (Assistência Técnica & Peças):</strong><br />
+                <strong className="text-white">Loja 1 (Vendas, Oficina & Peças):</strong><br />
                 Alameda Tiradentes, 348 – Centro, Macatuba/SP
               </p>
               <p className="text-slate-300 pt-1">

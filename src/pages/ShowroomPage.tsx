@@ -33,10 +33,10 @@ export function ShowroomPage() {
                 <Wrench className="w-5 h-5" />
               </div>
               <h3 className="font-bold text-base text-dahora-text">
-                Loja 1: Assistência Técnica & Oficina
+                Loja 1: Showroom de Vendas, Oficina & Peças
               </h3>
               <p className="text-slate-600 leading-relaxed text-xs">
-                Localizada na Alameda Tiradentes, 348 (ao lado da Rodoviária Municipal de Macatuba), concentra nossa oficina mecânica e elétrica especializada, bancada de testes de baterias, montagem técnica, revisões preventivas e estoque de peças de reposição originais.
+                Localizada na Alameda Tiradentes, 348 (ao lado da Rodoviária Municipal de Macatuba), conta com showroom completo para compra de veículos 0km e concentra nossa oficina mecânica e elétrica especializada, montagem técnica, revisões preventivas e estoque de peças de reposição originais.
               </p>
             </div>
 

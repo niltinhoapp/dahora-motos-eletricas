@@ -14,13 +14,13 @@ export function ShowroomSection() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-dahora-cyan mb-2">
             <Store className="w-3.5 h-3.5" />
-            <span>LOJA 1: ASSISTÊNCIA TÉCNICA • LOJA 2: SHOWROOM DE VENDAS</span>
+            <span>LOJA 1: VENDAS & OFICINA • LOJA 2: SHOWROOM DE VENDAS</span>
           </div>
           <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-white">
             Nossas 2 Unidades em Macatuba/SP
           </h2>
           <p className="text-sm text-gray-300 mt-2">
-            Separamos o showroom comercial da nossa oficina mecânica/elétrica para você ter o melhor atendimento em vendas e o mais completo suporte pós-venda.
+            Você encontra nossos veículos para pronta entrega tanto na Loja 1 quanto na Loja 2, além de contar com oficina mecânica/elétrica especializada e peças na Loja 1.
           </p>
         </div>
 

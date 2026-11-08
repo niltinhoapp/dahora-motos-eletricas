@@ -36,7 +36,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-dahora-cyan text-xs font-semibold tracking-wide backdrop-blur-sm">
                 <Sparkles className="w-3.5 h-3.5 text-dahora-cyan animate-pulse" />
-                <span>DA HORA MOTOS • LOJA 1 ASSISTÊNCIA • LOJA 2 SHOWROOM</span>
+                <span>DA HORA MOTOS • 2 LOJAS EM MACATUBA COM VENDAS, SHOWROOM E OFICINA</span>
               </div>
 
               <Link
@@ -89,8 +89,8 @@ export function HeroSection() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-white block">2 Lojas Físicas</span>
-                  <p className="text-[11px] text-gray-400">Oficina (Loja 1) e Showroom (Loja 2)</p>
+                  <span className="text-xs font-bold text-white block">2 Lojas com Vendas</span>
+                  <p className="text-[11px] text-gray-400">Loja 1 (Vendas & Oficina) e Loja 2 (Showroom)</p>
                 </div>
               </div>
 
