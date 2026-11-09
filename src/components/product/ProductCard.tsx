@@ -23,6 +23,23 @@ export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart();
   const [added, setAdded] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 8; // -4 to 4 deg
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * -8;
+      setTilt({ x: Math.round(x), y: Math.round(y) });
+      setIsHovering(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    setTilt({ x: 0, y: 0 });
+  };
 
   const hasDiscount =
     product.promotionalPrice && product.promotionalPrice < product.price;
@@ -46,7 +63,18 @@ export function ProductCard({ product }: ProductCardProps) {
   const mainImage = product.images?.[0]?.url;
 
   return (
-    <article className="card-product group flex flex-col h-full bg-white relative">
+    <article
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transform: isHovering
+          ? `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg) translateY(-4px)`
+          : 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)',
+        transformStyle: 'preserve-3d',
+        transition: isHovering ? 'transform 0.1s ease-out' : 'transform 0.4s ease-out',
+      }}
+      className="card-product group flex flex-col h-full bg-white relative hover:shadow-2xl hover:border-dahora-emerald/40"
+    >
       {/* Visual media container - Enquadramento completo sem cortes e sem abas pretas */}
       <Link
         to={`/produto/${product.slug}`}
@@ -159,8 +187,9 @@ export function ProductCard({ product }: ProductCardProps) {
             </div>
 
             {product.pixPrice && (
-              <div className="text-xs font-bold text-emerald-700 mt-0.5">
-                {formatCurrency(product.pixPrice)} à vista no Pix
+              <div className="text-xs font-bold text-emerald-700 mt-0.5 inline-flex items-center gap-1.5 group-hover:text-dahora-emerald-dark transition-colors">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 group-hover:animate-ping" />
+                <span>{formatCurrency(product.pixPrice)} à vista no Pix</span>
               </div>
             )}
 

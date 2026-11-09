@@ -1,6 +1,7 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { HeroSection } from '../components/home/HeroSection';
 import { CategoriesSection } from '../components/home/CategoriesSection';
+import { HighPerformanceFeature } from '../components/home/HighPerformanceFeature';
 import { FeaturedProductsSection } from '../components/home/FeaturedProductsSection';
 import { WhyBuySection } from '../components/home/WhyBuySection';
 
@@ -20,6 +21,7 @@ export function HomePage() {
     <div className="flex flex-col">
       <HeroSection />
       <CategoriesSection />
+      <HighPerformanceFeature />
       <FeaturedProductsSection />
       <WhyBuySection />
       <Suspense fallback={<div className="h-20" />}>

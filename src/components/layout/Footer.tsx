@@ -4,7 +4,9 @@ import {
   Zap,
   MapPin,
   ChevronDown,
-  Instagram
+  Instagram,
+  Truck,
+  ArrowRight
 } from 'lucide-react';
 import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { defaultStoreSettings, demoCategories, macatubaStores } from '../../data/demo';
@@ -28,6 +30,83 @@ export function Footer() {
     <footer className="bg-dahora-black text-gray-300 border-t border-dahora-border-dark pt-16 pb-12">
       <div className="container-dahora">
         <h2 className="sr-only">Informações da Concessionária e Navegação</h2>
+
+        {/* Radar de Entrega Técnica - Raio de 150 km ao redor de Macatuba */}
+        <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-950 via-dahora-surface-dark to-slate-950 border border-dahora-border-dark relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Texto Explicativo e Cidades Atendidas */}
+            <div className="lg:col-span-7 space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                <Truck className="w-3.5 h-3.5" />
+                <span>LOGÍSTICA ESPECIALIZADA PRÓPRIA</span>
+              </div>
+              <h3 className="font-display font-black text-xl sm:text-2xl text-white">
+                Frete Grátis em até 150 km de Macatuba/SP
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed max-w-xl">
+                Seu veículo elétrico chega 100% montado, revisado e pronto para andar. Atendemos Macatuba, Bauru, Jaú, Lençóis Paulista, Botucatu e toda a região central paulista com entrega técnica e frete grátis.
+              </p>
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                {['Macatuba', 'Lençóis Paulista', 'Bauru', 'Jaú', 'Botucatu', 'Pederneiras', 'Barra Bonita', 'Agudos'].map((city) => (
+                  <span key={city} className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300">
+                    {city}
+                  </span>
+                ))}
+              </div>
+              <div className="pt-2">
+                <Link to="/entrega" className="text-xs font-bold text-dahora-emerald hover:text-white inline-flex items-center gap-1 transition-colors">
+                  <span>Conferir regulamento da entrega técnica</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Radar Vetorial Animado em Tempo Real */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full border border-dahora-border-dark bg-slate-900/80 flex items-center justify-center overflow-hidden">
+                
+                {/* Linhas de Mira e Eixos do Radar */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-full h-px bg-white/10" />
+                  <div className="h-full w-px bg-white/10 absolute" />
+                </div>
+
+                {/* Anéis de Distância */}
+                <div className="absolute w-44 h-44 rounded-full border border-dashed border-emerald-500/20 flex items-center justify-center">
+                  <span className="absolute top-1 text-[9px] text-gray-500 font-mono">100 km</span>
+                </div>
+                <div className="absolute w-24 h-24 rounded-full border border-dashed border-emerald-500/25 flex items-center justify-center">
+                  <span className="absolute top-1 text-[9px] text-gray-500 font-mono">50 km</span>
+                </div>
+
+                {/* Ondas Expansivas do Radar */}
+                <span className="absolute w-20 h-20 rounded-full border-2 border-emerald-500/60 animate-radar-ring-1 pointer-events-none" />
+                <span className="absolute w-20 h-20 rounded-full border-2 border-cyan-500/50 animate-radar-ring-2 pointer-events-none" />
+                <span className="absolute w-20 h-20 rounded-full border-2 border-emerald-400/40 animate-radar-ring-3 pointer-events-none" />
+
+                {/* Círculo Máximo 150 km */}
+                <div className="absolute inset-3 rounded-full border border-emerald-500/40" />
+                <span className="absolute top-2 text-[10px] text-emerald-400 font-mono font-bold tracking-wider">
+                  RAIO 150 KM
+                </span>
+
+                {/* Centro: Macatuba */}
+                <div className="relative z-10 flex flex-col items-center">
+                  <div className="w-5 h-5 rounded-full bg-dahora-emerald text-dahora-black flex items-center justify-center shadow-glow-emerald">
+                    <span className="w-2 h-2 rounded-full bg-dahora-black" />
+                  </div>
+                  <span className="mt-1 px-2 py-0.5 rounded bg-dahora-black/90 border border-dahora-emerald/40 text-[10px] font-black text-white uppercase tracking-wider">
+                    Macatuba
+                  </span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-dahora-border-dark">
           {/* Column 1: Brand Info (2 cols) */}

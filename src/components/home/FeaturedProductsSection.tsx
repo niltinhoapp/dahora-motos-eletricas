@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { ProductCard } from '../product/ProductCard';
@@ -5,9 +6,22 @@ import { getFeaturedProducts } from '../../services/productService';
 
 export function FeaturedProductsSection() {
   const featured = getFeaturedProducts();
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsInView(true);
+      },
+      { threshold: 0.15 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="section-padding bg-white border-y border-dahora-border">
+    <section ref={sectionRef} className="section-padding bg-white border-y border-dahora-border">
       <div className="container-dahora">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -33,10 +47,19 @@ export function FeaturedProductsSection() {
           </Link>
         </div>
 
-        {/* Product Cards Grid */}
+        {/* Product Cards Grid com Revelação Escalonada (Stagger) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featured.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {featured.map((product, index) => (
+            <div
+              key={product.id}
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: isInView ? 'translateY(0)' : 'translateY(24px)',
+                transition: `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 90}ms, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 90}ms`,
+              }}
+            >
+              <ProductCard product={product} />
+            </div>
           ))}
         </div>
 
@@ -44,7 +67,7 @@ export function FeaturedProductsSection() {
         <div className="mt-12 text-center">
           <Link
             to="/veiculos"
-            className="btn-primary py-3 px-8 text-sm inline-flex items-center gap-2 shadow-card"
+            className="btn-primary btn-electric-arc py-3 px-8 text-sm inline-flex items-center gap-2 shadow-card"
           >
             <span>Ver Todo o Catálogo de Veículos</span>
             <ArrowRight className="w-4 h-4" />

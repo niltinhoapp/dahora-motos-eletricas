@@ -114,6 +114,24 @@ export function HeroSection() {
   const [parallaxOffset, setParallaxOffset] = useState({ x: 0, y: 0 });
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
+  // Efeito de Inicialização Digital (Typewriter / Boot)
+  const fullTagline = "DESCUBRA A MOBILIDADE ELÉTRICA.";
+  const [typedTagline, setTypedTagline] = useState("");
+  const [isBootDone, setIsBootDone] = useState(false);
+
+  useEffect(() => {
+    let charIdx = 0;
+    const bootTimer = setInterval(() => {
+      charIdx++;
+      setTypedTagline(fullTagline.slice(0, charIdx));
+      if (charIdx >= fullTagline.length) {
+        clearInterval(bootTimer);
+        setIsBootDone(true);
+      }
+    }, 45);
+    return () => clearInterval(bootTimer);
+  }, []);
+
   const whatsappNumber = env.WHATSAPP_NUMBER || '5514998877886';
   const whatsappUrl = buildWhatsAppUrl(
     whatsappNumber,
@@ -178,6 +196,35 @@ export function HeroSection() {
   return (
     <section className="relative bg-gradient-to-b from-dahora-black via-slate-950 to-dahora-black text-white overflow-hidden py-14 sm:py-20 lg:py-24 border-b border-dahora-border-dark">
       
+      {/* Linhas de Fluxo de Energia SVG (Circuitos Elétricos de Alta Performance) */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-20 select-none z-0"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="electricStreamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#10b981" />
+            <stop offset="50%" stopColor="#06b6d4" />
+            <stop offset="100%" stopColor="#22c55e" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M-50,200 Q250,80 550,220 T1150,140 T1750,260"
+          fill="none"
+          stroke="url(#electricStreamGrad)"
+          strokeWidth="1.5"
+          className="animate-electric-stream"
+        />
+        <path
+          d="M100,-20 Q450,280 800,90 T1450,320 T2000,100"
+          fill="none"
+          stroke="url(#electricStreamGrad)"
+          strokeWidth="1"
+          className="animate-electric-stream-fast"
+        />
+      </svg>
+
       {/* Luzes ambiente de estúdio automotivo */}
       <div className="absolute top-1/4 -left-48 w-96 h-96 bg-dahora-emerald/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-dahora-cyan/10 rounded-full blur-3xl pointer-events-none" />
@@ -216,14 +263,19 @@ export function HeroSection() {
               </Link>
             </div>
 
-            {/* Headline Principal e Linha de Destaque */}
+            {/* Headline Principal e Linha de Destaque com Painel Digital Typewriter */}
             <div className="space-y-2">
               <h1 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-5xl xl:text-6xl tracking-tight leading-[1.08] text-white animate-fade-in-up">
                 SUA PRÓXIMA EXPERIÊNCIA <br className="hidden sm:inline" />
                 <span className="text-white">COMEÇA AQUI.</span>
               </h1>
-              <div className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-gradient-emerald tracking-tight animate-fade-in-up [animation-delay:100ms]">
-                DESCUBRA A MOBILIDADE ELÉTRICA.
+              
+              {/* Efeito Painel Digital Inicializando */}
+              <div className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-gradient-emerald tracking-tight flex items-center justify-center lg:justify-start min-h-[2.5rem]">
+                <span>{typedTagline}</span>
+                {!isBootDone && (
+                  <span className="inline-block w-2 sm:w-2.5 h-6 sm:h-7 bg-dahora-emerald ml-1 animate-pulse shadow-glow-emerald" />
+                )}
               </div>
             </div>
 
@@ -232,11 +284,11 @@ export function HeroSection() {
               Motos, scooters, patinetes, drifts e muito mais. Encontre o modelo ideal para você com a confiança da maior concessionária digital de Macatuba e região.
             </p>
 
-            {/* Botões de Ação (CTAs Principais) */}
+            {/* Botões de Ação com Efeito de Arco Elétrico no Hover */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2 animate-fade-in-up [animation-delay:250ms]">
               <Link
                 to="/veiculos"
-                className="btn-primary w-full sm:w-auto text-base py-3.5 px-8 shadow-glow-emerald hover:scale-[1.02] flex items-center justify-center gap-2 font-bold"
+                className="btn-primary btn-electric-arc w-full sm:w-auto text-base py-3.5 px-8 shadow-glow-emerald hover:scale-[1.02] flex items-center justify-center gap-2 font-bold"
               >
                 <span>EXPLORAR VEÍCULOS</span>
                 <ArrowRight className="w-4 h-4" />
@@ -265,11 +317,11 @@ export function HeroSection() {
               </a>
             </div>
 
-            {/* Linha Discreta de Credibilidade da Concessionária (Rodapé da Hero) */}
+            {/* Linha Discreta de Credibilidade da Concessionária com Ícones Vivos e Animados */}
             <div className="pt-6 border-t border-dahora-border-dark/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left animate-fade-in-up [animation-delay:350ms]">
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+              <div className="group flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-dahora-emerald/30 hover:bg-white/10 transition-all duration-300">
                 <div className="w-8 h-8 rounded-lg bg-dahora-emerald/15 flex items-center justify-center text-dahora-emerald shrink-0">
-                  <MapPin className="w-4 h-4" />
+                  <MapPin className="w-4 h-4 animate-map-pulse" />
                 </div>
                 <div>
                   <span className="text-xs font-bold text-white block">Duas Lojas Físicas</span>
@@ -277,9 +329,9 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+              <div className="group flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-dahora-cyan/30 hover:bg-white/10 transition-all duration-300">
                 <div className="w-8 h-8 rounded-lg bg-dahora-cyan/15 flex items-center justify-center text-dahora-cyan shrink-0">
-                  <Wrench className="w-4 h-4" />
+                  <Wrench className="w-4 h-4 animate-wrench-turn" />
                 </div>
                 <div>
                   <span className="text-xs font-bold text-white block">Oficina Especializada</span>
@@ -287,9 +339,9 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+              <div className="group flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-dahora-emerald/30 hover:bg-white/10 transition-all duration-300">
                 <div className="w-8 h-8 rounded-lg bg-dahora-emerald/15 flex items-center justify-center text-dahora-emerald shrink-0">
-                  <Truck className="w-4 h-4" />
+                  <Truck className="w-4 h-4 animate-truck-glide" />
                 </div>
                 <div>
                   <span className="text-xs font-bold text-white block">Entrega Grátis 150 km</span>
