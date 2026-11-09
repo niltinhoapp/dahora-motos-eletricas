@@ -195,4 +195,61 @@
   .safe-top {
     padding-top: env(safe-area-inset-top, 0px);
   }
+
+  /* GPU-Accelerated Subtle Hero Animations */
+  @keyframes floatVehicle {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes electricAura {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1.15);
+    }
+    50% {
+      opacity: 0.55;
+      transform: scale(1.25);
+    }
+  }
+
+  @keyframes lightSweep {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    25%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.25);
+    }
+    50% {
+      box-shadow: 0 0 28px rgba(37, 211, 102, 0.5);
+    }
+  }
+
+  .animate-float-vehicle {
+    animation: floatVehicle 4.5s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-electric-aura {
+    animation: electricAura 4s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  .animate-light-sweep {
+    animation: lightSweep 7s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
 }

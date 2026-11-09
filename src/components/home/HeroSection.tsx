@@ -33,7 +33,7 @@ export function HeroSection() {
           {/* Left Column: Commercial Copy & CTAs */}
           <div className="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-left">
             {/* Promo Banner Pill */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 animate-fade-in">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-dahora-cyan text-xs font-semibold tracking-wide backdrop-blur-sm">
                 <Sparkles className="w-3.5 h-3.5 text-dahora-cyan animate-pulse" />
                 <span>DA HORA MOTOS • 2 LOJAS EM MACATUBA COM VENDAS, SHOWROOM E OFICINA</span>
@@ -43,30 +43,30 @@ export function HeroSection() {
                 to="/black-friday/drift"
                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-600/30 to-amber-600/30 border border-red-500/50 text-red-200 text-xs font-black hover:scale-105 transition-all shadow-md"
               >
-                <Flame className="w-3.5 h-3.5 text-red-400 fill-red-400" />
+                <Flame className="w-3.5 h-3.5 text-red-400 fill-red-400 animate-pulse" />
                 <span>ESQUENTA BLACK: ATÉ 21X NO CARTÃO [VER OFERTAS]</span>
                 <ArrowRight className="w-3 h-3 text-amber-300" />
               </Link>
             </div>
 
             {/* Main Heading */}
-            <h1 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-white">
+            <h1 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-white animate-fade-in-up">
               A evolução da sua{' '}
               <span className="text-gradient-emerald">mobilidade começa aqui.</span>
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light animate-fade-in-up [animation-delay:150ms]">
               Motos, scooters, triciclos e patinetes elétricos 0km selecionados para sua economia diária e lazer. <strong>Entrega grátis em até 150 km de Macatuba/SP</strong> com veículo 100% montado, revisado e suporte técnico da nossa oficina própria.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2 animate-fade-in-up [animation-delay:250ms]">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp w-full sm:w-auto text-base py-3.5 px-8 shadow-glow-emerald hover:scale-[1.02] flex items-center justify-center gap-2.5 font-bold"
+                className="btn-whatsapp w-full sm:w-auto text-base py-3.5 px-8 shadow-glow-emerald hover:scale-[1.02] flex items-center justify-center gap-2.5 font-bold animate-pulse-glow"
                 aria-label="Falar com consultor no WhatsApp oficial"
               >
                 <WhatsAppIcon className="w-5 h-5 text-dahora-black" />
@@ -75,7 +75,7 @@ export function HeroSection() {
 
               <Link
                 to="/veiculos"
-                className="btn-secondary w-full sm:w-auto text-base py-3.5 px-8 text-white border-white/20 hover:bg-white/5 hover:border-dahora-emerald flex items-center justify-center gap-2"
+                className="btn-secondary w-full sm:w-auto text-base py-3.5 px-8 text-white border-white/20 hover:bg-white/5 hover:border-dahora-emerald flex items-center justify-center gap-2 transition-all hover:scale-[1.01]"
               >
                 <span>EXPLORAR CATEGORIAS</span>
                 <ArrowRight className="w-4 h-4" />
@@ -83,8 +83,8 @@ export function HeroSection() {
             </div>
 
             {/* 3 Commercial Trust Pillars */}
-            <div className="pt-6 border-t border-dahora-border-dark/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+            <div className="pt-6 border-t border-dahora-border-dark/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left animate-fade-in-up [animation-delay:350ms]">
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
                 <div className="w-9 h-9 rounded-lg bg-dahora-emerald/15 flex items-center justify-center text-dahora-emerald shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
@@ -94,7 +94,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
                 <div className="w-9 h-9 rounded-lg bg-dahora-cyan/15 flex items-center justify-center text-dahora-cyan shrink-0">
                   <Zap className="w-5 h-5" />
                 </div>
@@ -104,7 +104,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
                 <div className="w-9 h-9 rounded-lg bg-dahora-emerald/15 flex items-center justify-center text-dahora-emerald shrink-0">
                   <Truck className="w-5 h-5" />
                 </div>
@@ -118,15 +118,22 @@ export function HeroSection() {
 
           {/* Right Column: Hero Visual Showcase with Real Image */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
-            <div className="w-full max-w-md lg:max-w-none rounded-3xl bg-gradient-to-br from-dahora-surface-dark via-dahora-midnight to-dahora-surface-dark border border-dahora-border-dark overflow-hidden shadow-premium group flex flex-col">
-              {/* Imagem 100% limpa e sem textos sobrepostos cobrindo o veículo */}
+            <div className="w-full max-w-md lg:max-w-none rounded-3xl bg-gradient-to-br from-dahora-surface-dark via-dahora-midnight to-dahora-surface-dark border border-dahora-border-dark overflow-hidden shadow-premium group flex flex-col relative animate-fade-in-up [animation-delay:200ms]">
+              {/* Feixe de Luz Deslizante Sutil (Reflexo de Vitrine) */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
+                <div className="w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-light-sweep" />
+              </div>
+
+              {/* Imagem 100% limpa com Aura Elétrica e Flutuação Suave */}
               <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden flex items-center justify-center">
+                {/* Aura de energia pulsante atrás do veículo */}
                 <img
                   src={heroVehicleImg}
                   alt=""
                   aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-35 brightness-75 select-none pointer-events-none"
+                  className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-35 brightness-75 select-none pointer-events-none animate-electric-aura"
                 />
+                {/* Moto com movimento de respiração/flutuação suave - 100% íntegra sem corte */}
                 <img
                   src={heroVehicleImg}
                   alt="Moto Elétrica E80 Speed Da Hora Motos"
@@ -135,12 +142,12 @@ export function HeroSection() {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="relative z-10 w-full h-full object-contain p-2 sm:p-3 group-hover:scale-105 transition-transform duration-700"
+                  className="relative z-10 w-full h-full object-contain p-2 sm:p-3 animate-float-vehicle"
                 />
               </div>
 
               {/* Informações Comerciais posicionadas ABAIXO da imagem */}
-              <div className="p-4 sm:p-5 border-t border-dahora-border-dark bg-dahora-black/70 space-y-2">
+              <div className="p-4 sm:p-5 border-t border-dahora-border-dark bg-dahora-black/70 space-y-2 relative z-10">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-dahora-cyan bg-dahora-black/80 px-2.5 py-1 rounded-md border border-dahora-cyan/30">
                     DESTAQUE DA CONCESSIONÁRIA
