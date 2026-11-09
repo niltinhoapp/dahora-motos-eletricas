@@ -272,7 +272,7 @@ export function DriftLandingPage() {
                   </span>
                 </div>
 
-                {/* Imagem Principal - Veículo 100% visível, nítido e sem abas pretas */}
+                {/* Imagem Principal - 100% limpa sem textos sobrepostos */}
                 <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center group">
                   <img
                     src={selectedColor.image}
@@ -286,10 +286,12 @@ export function DriftLandingPage() {
                     className="relative z-10 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
                   />
-                  <div className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-[11px] font-semibold text-slate-300 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Som Bluetooth + Farol & Rodinhas LED 360°</span>
-                  </div>
+                </div>
+
+                {/* Destaque de Recursos posicionado fora da imagem */}
+                <div className="mt-3 bg-slate-950/80 px-3.5 py-2 rounded-xl border border-slate-800 text-xs font-semibold text-slate-300 flex items-center justify-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>Som Bluetooth Integrado • Farol • Rodinhas LED 360°</span>
                 </div>
 
                 {/* Seletor de Cores Miniaturas */}

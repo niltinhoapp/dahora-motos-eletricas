@@ -118,39 +118,42 @@ export function HeroSection() {
 
           {/* Right Column: Hero Visual Showcase with Real Image */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
-            <div className="w-full aspect-square max-w-md lg:max-w-none rounded-3xl bg-gradient-to-br from-dahora-surface-dark via-dahora-midnight to-dahora-surface-dark border border-dahora-border-dark overflow-hidden relative shadow-premium group flex items-center justify-center">
-              {/* Fundo ambiente desfocado preenchendo as laterais naturalmente */}
-              <img
-                src={heroVehicleImg}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-35 brightness-75 select-none pointer-events-none"
-              />
-              {/* Moto 100% visível, nítida e sem corte */}
-              <img
-                src={heroVehicleImg}
-                alt="Moto Elétrica E80 Speed Da Hora Motos"
-                width={600}
-                height={600}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="relative z-10 w-full h-full object-contain p-2 sm:p-3 group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dahora-black via-transparent to-transparent opacity-80" />
+            <div className="w-full max-w-md lg:max-w-none rounded-3xl bg-gradient-to-br from-dahora-surface-dark via-dahora-midnight to-dahora-surface-dark border border-dahora-border-dark overflow-hidden shadow-premium group flex flex-col">
+              {/* Imagem 100% limpa e sem textos sobrepostos cobrindo o veículo */}
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden flex items-center justify-center">
+                <img
+                  src={heroVehicleImg}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-35 brightness-75 select-none pointer-events-none"
+                />
+                <img
+                  src={heroVehicleImg}
+                  alt="Moto Elétrica E80 Speed Da Hora Motos"
+                  width={600}
+                  height={600}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="relative z-10 w-full h-full object-contain p-2 sm:p-3 group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
 
-              <div className="absolute bottom-6 left-6 right-6 z-10 space-y-2">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-dahora-cyan bg-dahora-black/80 px-2.5 py-1 rounded-md backdrop-blur-sm border border-dahora-cyan/30">
-                  DESTAQUE DA CONCESSIONÁRIA
-                </span>
-                <p className="font-display font-extrabold text-xl text-white">
-                  MOTO ELÉTRICA E80 SPEED
-                </p>
-                <div className="flex items-center gap-2 text-xs">
-                  <span className="text-dahora-emerald font-extrabold text-lg tabular-nums">
+              {/* Informações Comerciais posicionadas ABAIXO da imagem */}
+              <div className="p-4 sm:p-5 border-t border-dahora-border-dark bg-dahora-black/70 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-dahora-cyan bg-dahora-black/80 px-2.5 py-1 rounded-md border border-dahora-cyan/30">
+                    DESTAQUE DA CONCESSIONÁRIA
+                  </span>
+                  <span className="text-dahora-emerald font-extrabold text-xl tabular-nums">
                     R$ 10.900
                   </span>
-                  <span className="text-gray-300">ou 12x sem juros • até 21x</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <p className="font-display font-extrabold text-base sm:text-lg text-white">
+                    MOTO ELÉTRICA E80 SPEED
+                  </p>
+                  <span className="text-xs text-gray-300">ou 12x sem juros • até 21x</span>
                 </div>
               </div>
             </div>

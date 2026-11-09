@@ -82,39 +82,35 @@ export function ProductCard({ product }: ProductCardProps) {
             </span>
           </div>
         )}
-
-        {/* Badges Overlay */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
-          {product.isNew && (
-            <span className="bg-dahora-cyan text-dahora-black text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm">
-              Lançamento
-            </span>
-          )}
-          {hasDiscount && (
-            <span className="badge-promo text-[10px] shadow-sm">
-              {formatDiscount(product.price, product.promotionalPrice!)} OFF
-            </span>
-          )}
-        </div>
-
-        {/* Availability Badge */}
-        <div className="absolute top-3 right-3 z-10">
-          {product.isAvailable ? (
-            <span className="inline-flex items-center gap-1 text-[10px] font-semibold bg-dahora-emerald/20 text-dahora-emerald px-2 py-0.5 rounded-full backdrop-blur-md border border-dahora-emerald/40 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-dahora-emerald animate-pulse" />
-              Pronta Entrega
-            </span>
-          ) : (
-            <span className="badge-unavailable text-[10px]">
-              Sob consulta
-            </span>
-          )}
-        </div>
       </Link>
 
       {/* Card Content */}
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
+          {/* Status Badges - Posicionados fora da imagem para visualização 100% limpa do veículo */}
+          <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
+            {product.isNew && (
+              <span className="bg-dahora-cyan/15 text-dahora-cyan-dark border border-dahora-cyan/30 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md">
+                Lançamento
+              </span>
+            )}
+            {hasDiscount && (
+              <span className="bg-red-50 text-red-700 border border-red-200 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md">
+                {formatDiscount(product.price, product.promotionalPrice!)} OFF
+              </span>
+            )}
+            {product.isAvailable ? (
+              <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md inline-flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                Pronta Entrega
+              </span>
+            ) : (
+              <span className="bg-gray-100 text-gray-600 border border-gray-200 text-[10px] font-bold uppercase px-2 py-0.5 rounded-md">
+                Sob consulta
+              </span>
+            )}
+          </div>
+
           {/* Category & Name */}
           <div className="text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
             {demoCategories.find((c) => c.id === product.categoryId)?.name || 'Veículo Elétrico'}

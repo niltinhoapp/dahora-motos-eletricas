@@ -36,7 +36,7 @@ export function CategoriesSection() {
               className="group bg-white rounded-3xl border border-dahora-border overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>
-                {/* Real Photographic Header - Veículo 100% visível com fundo ambiente sem abas pretas */}
+                {/* Real Photographic Header - Imagem 100% limpa sem textos sobrepostos */}
                 <div className="relative aspect-[4/3] bg-slate-900 overflow-hidden border-b border-dahora-border flex items-center justify-center">
                   <img
                     src={category.image}
@@ -51,15 +51,17 @@ export function CategoriesSection() {
                     loading="lazy"
                     decoding="async"
                   />
-                  <span className="absolute top-3 right-3 text-[11px] font-bold bg-slate-900/80 text-emerald-400 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-emerald-500/30 shadow-sm">
-                    {category.productCount} {category.productCount === 1 ? 'modelo' : 'modelos'}
-                  </span>
                 </div>
 
                 <div className="p-5">
-                  <h3 className="font-display font-bold text-lg text-dahora-text group-hover:text-dahora-emerald-dark transition-colors mb-1.5">
-                    {category.name}
-                  </h3>
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <h3 className="font-display font-bold text-lg text-dahora-text group-hover:text-dahora-emerald-dark transition-colors">
+                      {category.name}
+                    </h3>
+                    <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full shrink-0">
+                      {category.productCount} {category.productCount === 1 ? 'modelo' : 'modelos'}
+                    </span>
+                  </div>
                   <p className="text-xs text-slate-600 leading-relaxed">
                     {category.description}
                   </p>

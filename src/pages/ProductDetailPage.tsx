@@ -123,20 +123,6 @@ export function ProductDetailPage() {
                   <Zap className="w-12 h-12 fill-dahora-emerald" />
                 </div>
               )}
-
-              {/* Status Badges */}
-              <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
-                {product.isNew && (
-                  <span className="bg-dahora-cyan text-dahora-black text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow-md">
-                    Lançamento
-                  </span>
-                )}
-                {hasDiscount && (
-                  <span className="badge-promo text-xs shadow-md">
-                    {formatDiscount(product.price, product.promotionalPrice!)} OFF
-                  </span>
-                )}
-              </div>
             </div>
 
             {/* Thumbnail Strip */}
@@ -190,12 +176,34 @@ export function ProductDetailPage() {
           {/* Right Column: Pricing & Purchase Controls */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
-              {/* Category & Title */}
+              {/* Category, Badges & Title */}
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">
-                  {product.brand} • MACATUBA/SP
-                </span>
-                <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text mt-1">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">
+                    {product.brand} • MACATUBA/SP
+                  </span>
+                  {product.isNew && (
+                    <span className="bg-dahora-cyan/15 text-dahora-cyan-dark border border-dahora-cyan/30 text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">
+                      Lançamento
+                    </span>
+                  )}
+                  {hasDiscount && (
+                    <span className="bg-red-50 text-red-700 border border-red-200 text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">
+                      {formatDiscount(product.price, product.promotionalPrice!)} OFF
+                    </span>
+                  )}
+                  {product.isAvailable ? (
+                    <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded-full inline-flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                      Pronta Entrega
+                    </span>
+                  ) : (
+                    <span className="bg-gray-100 text-gray-600 border border-gray-200 text-[11px] font-bold uppercase px-2.5 py-0.5 rounded-full">
+                      Sob consulta
+                    </span>
+                  )}
+                </div>
+                <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-dahora-text">
                   {product.name}
                 </h1>
                 <p className="text-xs text-slate-600 mt-2 leading-relaxed">
