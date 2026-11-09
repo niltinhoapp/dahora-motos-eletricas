@@ -240,6 +240,21 @@
     will-change: transform;
   }
 
+  .animate-float-delay-1 {
+    animation: floatVehicle 4.8s ease-in-out 1.2s infinite;
+    will-change: transform;
+  }
+
+  .animate-float-delay-2 {
+    animation: floatVehicle 5.2s ease-in-out 2.4s infinite;
+    will-change: transform;
+  }
+
+  .animate-float-delay-3 {
+    animation: floatVehicle 4.2s ease-in-out 0.8s infinite;
+    will-change: transform;
+  }
+
   .animate-electric-aura {
     animation: electricAura 4s ease-in-out infinite;
     will-change: transform, opacity;
